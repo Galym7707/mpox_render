@@ -6,7 +6,6 @@ Monkeypox Detection Bot is a Flask-based web application designed to detect monk
 
 1. Go to [Google Drive link](https://drive.google.com/drive/folders/1qvXAtKYn-J5znK5yxDa8HDvd3h5ZlEqK?usp=sharing).
 2. Click the **Download all** button to download the entire project to your computer.
-3. Once downloaded, unzip the project if necessary (for example, if it is downloaded as an archive).
 
 ## 🚀 Installing and Running the Project
 
