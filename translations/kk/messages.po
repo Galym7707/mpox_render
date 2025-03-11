@@ -1,0 +1,159 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# --- Стандартные переводы ---
+msgid "Upload an Image"
+msgstr "Суретті жүктеңіз"
+
+msgid "Prediction:"
+msgstr "Болжау:"
+
+msgid "Confidence:"
+msgstr "Сенімділік:"
+
+msgid "Causes:"
+msgstr "Себептері:"
+
+msgid "Symptoms:"
+msgstr "Белгілері:"
+
+msgid "Prevention:"
+msgstr "Алдын алу жолдары:"
+
+msgid "Treatment:"
+msgstr "Емдеу жолдары:"
+
+msgid "Choose file"
+msgstr "Файлды таңдаңыз"
+
+msgid "No file chosen"
+msgstr "Файл таңдалмаған"
+
+msgid "Submit"
+msgstr "Жіберу"
+
+msgid "Chickenpox"
+msgstr "Тауық шешек"
+
+msgid "Hand, foot and mouth disease"
+msgstr "Энтеровирусты везикулярлы стоматит"
+
+msgid "Monkeypox"
+msgstr "Маймыл шешек"
+
+msgid "Measles"
+msgstr "Қызылша"
+
+msgid "Cowpox"
+msgstr "Сиыр шешек"
+
+msgid "Healthy"
+msgstr "Дені сау"
+
+msgid "Title"
+msgstr "Тақырып"
+
+msgid "Overview"
+msgstr "Қарау"
+
+msgid "Symptoms"
+msgstr "Симптомдары"
+
+msgid "Causes"
+msgstr "Себептер"
+
+msgid "Treatment"
+msgstr "Емдеу"
+
+msgid "Prevention"
+msgstr "Алдын алу"
+
+msgid "Disease Prediction"
+msgstr "Ауруды болжау"
+
+msgid "Clear Data"
+msgstr "Деректерді тазалау"
+
+# --- Новые строки ---
+msgid "Home"
+msgstr "Басты бет"
+
+msgid "Our Team"
+msgstr "Біздің команда"
+
+msgid "Contact Us"
+msgstr "Байланыс"
+
+msgid "Language"
+msgstr "Тілі"
+
+msgid "AI Explanation"
+msgstr "AI Түсініктеме"
+
+msgid "Ask AI"
+msgstr "AI-дан сұрау"
+
+msgid "Type your question here..."
+msgstr "Сұрағыңызды осында жазыңыз..."
+
+msgid "Here is an AI Explanation for:"
+msgstr "AI былай түсіндіреді:"
+
+msgid "Yedigeyev Galym"
+msgstr "Едигеев Ғалым"
+
+msgid "Lavrentyev Artyom"
+msgstr "Лаврентьев Артем"
+
+msgid "ML Engineer"
+msgstr "ML Инженері"
+
+msgid "Full-Stack Web Developer"
+msgstr "Full-Stack веб-разработчигі"
+
+msgid "Machine Learning Engineer"
+msgstr "Машинамен Оқыту Инженері"
+
+msgid "Our AI system can detect certain diseases from images in just a few clicks!"
+msgstr "Біздің AI жүйеміз бейнелерден кейбір ауруларды санаулы сәтте анықтай алады!"
+
+msgid "We support multiple languages. Feel free to switch using the top-right menu."
+msgstr "Біз бірнеше тілді қолдаймыз. Жоғарғы оң жақ мәзірді пайдаланып ауыстырыңыз."
+
+msgid "How to Use"
+msgstr "Қолдану тәсілі"
+
+msgid "Drag and drop or click to upload your image."
+msgstr "Суретті жүктеу үшін сүйреп апарыңыз немесе басыңыз."
+
+msgid "Press \"Submit\" to get a result from our model."
+msgstr "\"Жіберу\" түймесін басып, модельдің нәтижесін алыңыз."
+
+msgid "Check out the detailed info below!"
+msgstr "Төмендегі толық ақпаратты қараңыз!"
+
+msgid "Our Team"
+msgstr "Біздің команда"
+
+msgid "We are the minds behind this project"
+msgstr "Бұл жобаның авторлары біз боламыз"
+
+msgid "Member One"
+msgstr "Бірінші қатысушы"
+
+msgid "Member Two"
+msgstr "Екінші қатысушы"
+
+msgid "ML Engineer"
+msgstr "ML инженері"
+
+msgid "Frontend Dev"
+msgstr "Фронтенд әзірлеуші"
+
+msgid "If you have any questions or feedback, feel free to reach out!"
+msgstr "Сұрақтарыңыз немесе пікірлеріңіз болса, бізбен байланысыңыз!"
+
+msgid "Night Mode"
+msgstr "Түнгі режим"
