@@ -1,0 +1,160 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+# --- Стандартные переводы ---
+msgid "Upload an Image"
+msgstr "Upload an Image"
+
+msgid "Prediction:"
+msgstr "Prediction:"
+
+msgid "Confidence:"
+msgstr "Confidence:"
+
+msgid "Causes:"
+msgstr "Causes:"
+
+msgid "Symptoms:"
+msgstr "Symptoms:"
+
+msgid "Prevention:"
+msgstr "Prevention:"
+
+msgid "Treatment:"
+msgstr "Treatment:"
+
+msgid "Choose file"
+msgstr "Choose file"
+
+msgid "No file chosen"
+msgstr "No file chosen"
+
+msgid "Submit"
+msgstr "Submit"
+
+msgid "Chickenpox"
+msgstr "Chickenpox"
+
+msgid "Hand, foot and mouth disease"
+msgstr "Hand, foot and mouth disease"
+
+msgid "Monkeypox"
+msgstr "Monkeypox"
+
+msgid "Measles"
+msgstr "Measles"
+
+msgid "Cowpox"
+msgstr "Cowpox"
+
+msgid "Healthy"
+msgstr "Healthy"
+
+msgid "Title"
+msgstr "Title"
+
+msgid "Overview"
+msgstr "Overview"
+
+msgid "Symptoms"
+msgstr "Symptoms"
+
+msgid "Causes"
+msgstr "Causes"
+
+msgid "Treatment"
+msgstr "Treatment"
+
+msgid "Prevention"
+msgstr "Prevention"
+
+msgid "Disease Prediction"
+msgstr "Disease Prediction"
+
+msgid "Clear Data"
+msgstr "Clear Data"
+
+# --- Новые строки ---
+msgid "Home"
+msgstr "Home"
+
+msgid "Our Team"
+msgstr "Our Team"
+
+msgid "Contact Us"
+msgstr "Contact Us"
+
+msgid "Language"
+msgstr "Language"
+
+msgid "AI Explanation"
+msgstr "AI Explanation"
+
+msgid "Ask AI"
+msgstr "Ask AI"
+
+msgid "Type your question here..."
+msgstr "Type your question here..."
+
+msgid "Here is an AI Explanation for:"
+msgstr "Here is an AI Explanation for:"
+
+msgid "Yedigeyev Galym"
+msgstr "Yedigeyev Galym"
+
+msgid "Lavrentyev Artyom"
+msgstr "Lavrentyev Artyom"
+
+msgid "ML Engineer"
+msgstr "ML Engineer"
+
+msgid "Full-Stack Web Developer"
+msgstr "Full-Stack Web Developer"
+
+msgid "Machine Learning Engineer"
+msgstr "Machine Learning Engineer"
+
+msgid "Our AI system can detect certain diseases from images in just a few clicks!"
+msgstr "Our AI system can detect certain diseases from images in just a few clicks!"
+
+msgid "We support multiple languages. Feel free to switch using the top-right menu."
+msgstr "We support multiple languages. Feel free to switch using the top-right menu."
+
+msgid "How to Use"
+msgstr "How to Use"
+
+msgid "Drag and drop or click to upload your image."
+msgstr "Drag and drop or click to upload your image."
+
+msgid "Press \"Submit\" to get a result from our model."
+msgstr "Press \"Submit\" to get a result from our model."
+
+msgid "Check out the detailed info below!"
+msgstr "Check out the detailed info below!"
+
+msgid "Our Team"
+msgstr "Our Team"
+
+msgid "We are the minds behind this project"
+msgstr "We are the minds behind this project"
+
+msgid "Member One"
+msgstr "Member One"
+
+msgid "Member Two"
+msgstr "Member Two"
+
+msgid "ML Engineer"
+msgstr "ML Engineer"
+
+msgid "Frontend Dev"
+msgstr "Frontend Dev"
+
+msgid "If you have any questions or feedback, feel free to reach out!"
+msgstr "If you have any questions or feedback, feel free to reach out!"
+
+msgid "Night Mode"
+msgstr "Night Mode"
