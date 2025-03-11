@@ -1,5 +1,15 @@
+<<<<<<< HEAD
 Flask
 Flask-Babel
 numpy
 Pillow
 tensorflow
+=======
+Flask
+Flask-Babel
+numpy
+Pillow
+tensorflow
+gunicorn
+flask-cors
+>>>>>>> 6462cab (Initial commit)

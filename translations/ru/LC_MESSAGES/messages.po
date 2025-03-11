@@ -157,4 +157,8 @@ msgid "If you have any questions or feedback, feel free to reach out!"
 msgstr "Если у вас есть вопросы или предложения, свяжитесь с нами!"
 
 msgid "Night Mode"
+<<<<<<< HEAD
 msgstr "Ночной режим"
+=======
+msgstr "Ночной режим"
+>>>>>>> 6462cab (Initial commit)
