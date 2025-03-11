@@ -1,0 +1,648 @@
+/* -------- GLOBAL RESET -------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+  По умолчанию — темная тема 
+  (body.dark-theme) 
+*/
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #0a0a0a; /* Темный цвет */
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* -------- HEADER -------- */
+.site-header {
+  background: #1f1f4a; /* Тёмный фиолетово-синий */
+  color: #fff;
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* Левая часть (логотип) */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+.site-logo {
+  height: 80px; /* Увеличенный размер лого */
+  width: auto;
+}
+
+/* Меню по центру */
+.main-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+.main-nav-list li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+}
+.main-nav-list li a:hover {
+  border-color: #fff;
+}
+
+/* Языковой выпадающий список */
+.lang-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.lang-btn {
+  background: none;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  outline: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+.lang-btn:hover {
+  border-color: #fff;
+}
+.lang-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff; /* Выпадающее меню оставим светлым */
+  color: #333;
+  min-width: 120px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  margin: 0;
+  padding: 0.5rem 0;
+  list-style: none;
+  z-index: 1000;
+}
+.lang-dropdown-content li {
+  margin: 0;
+  padding: 0;
+}
+.lang-dropdown-content li a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s;
+  font-size: 0.9rem;
+}
+.lang-dropdown-content li a:hover {
+  background-color: #eee;
+}
+.lang-dropdown:hover .lang-dropdown-content {
+  display: block;
+}
+
+/* -------- HERO SECTION -------- */
+.hero-section {
+  background: #141432; /* Тёмный фон */
+  padding: 3rem 1rem;
+  text-align: center;
+}
+.hero-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.hero-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #66ffff;
+}
+.hero-subtext {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #bbb;
+}
+.hero-instructions {
+  text-align: left;
+  margin: 0 auto 2rem;
+  max-width: 600px;
+  background: #1f1f4a;
+  padding: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  color: #eee;
+}
+.hero-instructions h3 {
+  margin-bottom: 0.6rem;
+}
+.hero-instructions ol {
+  list-style: decimal inside;
+  line-height: 1.6;
+}
+.hero-note {
+  font-style: italic;
+  color: #666;
+}
+
+/* -------- UPLOAD SECTION -------- */
+.upload-section {
+  padding: 2rem 1rem;
+}
+.upload-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #1f1f4a; /* Тёмная карточка */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  padding: 2rem;
+  text-align: center;
+  color: #eee;
+}
+.upload-container h2 {
+  margin-bottom: 1rem;
+  color: #66ffff;
+}
+
+/* Drag-and-drop area */
+.drag-and-drop-area {
+  border: 2px dashed #555;
+  border-radius: 12px;
+  padding: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  background-color: #2f2f6a;
+  margin-bottom: 20px;
+}
+.drag-and-drop-area:hover {
+  background-color: #3f3f7a;
+  border-color: #66ffff;
+}
+.drag-and-drop-area.dragover {
+  background-color: #3f3f7a;
+  border-color: #66ffff;
+}
+
+#file-label {
+  display: inline-block;
+  background-color: #66ffff;
+  color: #000;
+  padding: 10px 24px;
+  border-radius: 40px;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+}
+#file-label:hover {
+  background-color: #99ffff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+#file-chosen {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+.buttons-wrapper {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+}
+.button-submit,
+.button-clear {
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  border: none;
+}
+.button-submit {
+  background-color: #28a745;
+  color: #fff;
+}
+.button-submit:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+.button-clear {
+  background-color: #ffdddd;
+  color: #990000;
+  border: 2px solid #ff4d4d;
+}
+.button-clear:hover {
+  background-color: #ff4d4d;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.result-container {
+  margin-top: 20px;
+  text-align: center;
+}
+.uploaded-image {
+  max-width: 100%;
+  margin: 20px 0;
+  border-radius: 15px;
+  box-shadow: 0 6px 8px rgba(0,0,0,0.6);
+  border: 2px solid #eee;
+}
+.disease-info {
+  margin: 0 auto;
+  text-align: left;
+  max-width: 600px;
+}
+.disease-info h2 {
+  margin-top: 0;
+  color: #66ffff;
+}
+.disease-info p,
+.disease-info li {
+  line-height: 1.6;
+}
+
+/* -------- TEAM SECTION -------- */
+.team-section {
+  background: #0f0f1f;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #eee;
+}
+.team-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.team-card {
+  background: #1f1f4a;
+  width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  padding: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+  color: #fff;
+}
+.team-card:hover {
+  transform: translateY(-4px);
+}
+.team-photo {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.team-card h3 {
+  margin: 0.8rem 0 0.3rem;
+  color: #66ffff;
+}
+.team-card p {
+  margin: 0;
+  color: #ddd;
+}
+
+/* Модалки */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  position: relative;
+  animation: fadeIn 0.4s;
+}
+.close-modal {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+@keyframes fadeIn {
+  from {opacity: 0;} to {opacity: 1;}
+}
+
+/* -------- CONTACT SECTION -------- */
+.contact-section {
+  padding: 3rem 1rem;
+  background: #141432;
+  text-align: center;
+  color: #eee;
+}
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.contact-container h2 {
+  margin-bottom: 1rem;
+  color: #66ffff;
+}
+.contact-list {
+  margin-top: 1rem;
+  text-align: left;
+  display: inline-block;
+}
+.contact-list li {
+  margin: 0.5rem 0;
+}
+
+/* -------- FOOTER -------- */
+.footer {
+  background: #1f1f4a;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+.footer p {
+  margin: 0;
+}
+
+/* ---------------------------
+   НИЖЕ: ПЕРЕКЛЮЧАТЕЛЬ (NIGHT MODE)
+---------------------------- */
+
+/* Тумблер */
+.night-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Отступы между луной/текстом/свитчем */
+  margin-left: 1rem;
+}
+
+/* Иконка луны */
+.moon-icon {
+  width: 32px; /* Увеличенный размер */
+  height: auto;
+  vertical-align: middle;
+}
+
+/* Текст Night Mode */
+#night-mode-label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+}
+
+/* Лейбл-свитч */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* Шарик */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px; top: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+/* input checked */
+.switch input:checked + .slider {
+  background-color: #66ffff;
+}
+.switch input:checked + .slider:before {
+  transform: translateX(26px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.disease-info {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 700px;
+  text-align: left;
+}
+
+.disease-info h2 {
+  color: #2f6187;
+  margin-bottom: 10px;
+}
+
+.disease-info h4 {
+  color: #333;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.disease-info ul {
+  margin-left: 20px;
+}
+
+.disease-info p,
+.disease-info li {
+  line-height: 1.6;
+  color: #444;
+}
+
+
+/* =========================
+   LIGHT THEME OVERRIDES
+   ========================= */
+
+/* Основной фон */
+body.light-theme {
+  background: #e8eaf3;
+  color: #333;
+}
+
+/* Header — серый фон, контрастный текст */
+body.light-theme .site-header {
+  background: #b0b4ce;
+  color: #222;
+  border-bottom: 1px solid #a1a4b8;
+}
+body.light-theme .site-header a {
+  color: #222;
+  font-weight: 500;
+}
+body.light-theme .main-nav-list li a:hover {
+  border-color: #444;
+}
+
+/* HERO SECTION — мягкий светло-голубой */
+body.light-theme .hero-section {
+  background: #dfe8f2;
+}
+body.light-theme .hero-container h2 {
+  color: #2f6187;
+}
+body.light-theme .hero-subtext {
+  color: #444;
+}
+body.light-theme .hero-instructions {
+  background: #f9fbff;
+  color: #333;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+/* UPLOAD SECTION — светлый нейтральный фон */
+body.light-theme .upload-section {
+  background: #f3f5fa;
+}
+body.light-theme .upload-container {
+  background: #ffffff;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+body.light-theme .upload-container h2 {
+  color: #2f6187;
+}
+
+/* Drag-and-drop area */
+body.light-theme .drag-and-drop-area {
+  background-color: #f7f8fa;
+  border-color: #bbb;
+}
+body.light-theme .drag-and-drop-area:hover,
+body.light-theme .drag-and-drop-area.dragover {
+  background-color: #e6effc;
+  border-color: #2f6187;
+}
+
+body.light-theme #file-label {
+  background-color: #2f6187;
+  color: #ffffff;
+}
+body.light-theme #file-label:hover {
+  background-color: #234d6b;
+}
+body.light-theme #file-chosen {
+  color: #444;
+}
+
+/* AI EXPLANATION SECTION — мягкий мятный */
+body.light-theme .ai-explanation {
+  background: #e7f4ef;
+  color: #333;
+}
+body.light-theme .ai-container h2 {
+  color: #2c7c5e;
+}
+
+/* TEAM SECTION — мягкий кремовый оттенок */
+body.light-theme .team-section {
+  background: #f9f5ec;
+  color: #333;
+}
+body.light-theme .team-title h2 {
+  color: #8a703b;
+}
+body.light-theme .team-title p {
+  color: #555;
+}
+body.light-theme .team-card {
+  background: #ffffff;
+  color: #333;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+body.light-theme .team-card h3 {
+  color: #2f6187;
+}
+body.light-theme .team-card p {
+  color: #555;
+}
+
+/* CONTACT SECTION — мягкий бледно-розовый */
+body.light-theme .contact-section {
+  background: #fbf1f3;
+  color: #333;
+}
+body.light-theme .contact-container h2 {
+  color: #a6445f;
+}
+body.light-theme .contact-list li {
+  color: #555;
+}
+
+/* Footer — серый фон */
+body.light-theme .footer {
+  background: #b0b4ce;
+  color: #222;
+  border-top: 1px solid #a1a4b8;
+}
+
+/* Buttons */
+body.light-theme .button-submit {
+  background-color: #3c7c46;
+  color: #fff;
+}
+body.light-theme .button-submit:hover {
+  background-color: #306638;
+}
+body.light-theme .button-clear {
+  background-color: #f2b4b4;
+  color: #7a1e1e;
+  border: 2px solid #d26c6c;
+}
+body.light-theme .button-clear:hover {
+  background-color: #d26c6c;
+  color: #ffffff;
+}
+
+/* Общие стили (опционально для лучшего внешнего вида) */
+body.light-theme .buttons-wrapper {
+  justify-content: center;
+}
+
+
+
+/* Buttons остаются прежними, они контрастные и понятные */
