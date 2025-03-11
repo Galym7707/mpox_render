@@ -1,0 +1,160 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+# --- Стандартные переводы ---
+msgid "Upload an Image"
+msgstr "Загрузите изображение"
+
+msgid "Prediction:"
+msgstr "Предсказание:"
+
+msgid "Confidence:"
+msgstr "Уверенность:"
+
+msgid "Causes:"
+msgstr "Причины:"
+
+msgid "Symptoms:"
+msgstr "Симптомы:"
+
+msgid "Prevention:"
+msgstr "Профилактика:"
+
+msgid "Treatment:"
+msgstr "Лечение:"
+
+msgid "Choose file"
+msgstr "Выберите файл"
+
+msgid "No file chosen"
+msgstr "Файл не выбран"
+
+msgid "Submit"
+msgstr "Отправить"
+
+msgid "Chickenpox"
+msgstr "Ветряная оспа"
+
+msgid "Hand, foot and mouth disease"
+msgstr "Энтерови́русный везикуля́рный стомати́т"
+
+msgid "Monkeypox"
+msgstr "Оспа обезьяны"
+
+msgid "Measles"
+msgstr "Корь"
+
+msgid "Cowpox"
+msgstr "Коровья оспа"
+
+msgid "Healthy"
+msgstr "Здоровый"
+
+msgid "Title"
+msgstr "Заголовок"
+
+msgid "Overview"
+msgstr "Обзор"
+
+msgid "Symptoms"
+msgstr "Симптомы"
+
+msgid "Causes"
+msgstr "Причины"
+
+msgid "Treatment"
+msgstr "Лечение"
+
+msgid "Prevention"
+msgstr "Профилактика"
+
+msgid "Disease Prediction"
+msgstr "Предсказание заболевания"
+
+msgid "Clear Data"
+msgstr "Очистить данные"
+
+# --- Новые строки ---
+msgid "Home"
+msgstr "Главная"
+
+msgid "Our Team"
+msgstr "Наша команда"
+
+msgid "Contact Us"
+msgstr "Связаться"
+
+msgid "Language"
+msgstr "Язык"
+
+msgid "AI Explanation"
+msgstr "AI Пояснение"
+
+msgid "Ask AI"
+msgstr "Спросить AI"
+
+msgid "Type your question here..."
+msgstr "Введите ваш вопрос здесь..."
+
+msgid "Here is an AI Explanation for:"
+msgstr "Вот пояснение от AI для:"
+
+msgid "Yedigeyev Galym"
+msgstr "Едигеев Галым"
+
+msgid "Lavrentyev Artyom"
+msgstr "Лаврентьев Артем"
+
+msgid "ML Engineer"
+msgstr "ML Инженер"
+
+msgid "Full-Stack Web Developer"
+msgstr "Full-Stack веб-разработчик"
+
+msgid "Machine Learning Engineer"
+msgstr "Инженер по машинному обучению"
+
+msgid "Our AI system can detect certain diseases from images in just a few clicks!"
+msgstr "Наша AI-система может обнаруживать некоторые болезни по изображениям за считанные секунды!"
+
+msgid "We support multiple languages. Feel free to switch using the top-right menu."
+msgstr "Мы поддерживаем несколько языков. Выберите язык в правом верхнем углу."
+
+msgid "How to Use"
+msgstr "Как использовать"
+
+msgid "Drag and drop or click to upload your image."
+msgstr "Перетащите файл или нажмите, чтобы загрузить изображение."
+
+msgid "Press \"Submit\" to get a result from our model."
+msgstr "Нажмите «Отправить», чтобы получить результат от нашей модели."
+
+msgid "Check out the detailed info below!"
+msgstr "Посмотрите подробную информацию ниже!"
+
+msgid "Our Team"
+msgstr "Наша команда"
+
+msgid "We are the minds behind this project"
+msgstr "Мы – авторы этого проекта"
+
+msgid "Member One"
+msgstr "Участник Один"
+
+msgid "Member Two"
+msgstr "Участник Два"
+
+msgid "ML Engineer"
+msgstr "ML инженер"
+
+msgid "Frontend Dev"
+msgstr "Фронтенд-разработчик"
+
+msgid "If you have any questions or feedback, feel free to reach out!"
+msgstr "Если у вас есть вопросы или предложения, свяжитесь с нами!"
+
+msgid "Night Mode"
+msgstr "Ночной режим"
