@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="{{ g.locale }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ _('Disease Prediction') }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="dark-theme" id="root-body">
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-left">
+      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" class="site-logo">
+    </div>
+
+    <nav class="main-nav">
+      <ul class="main-nav-list">
+        <li><a href="#hero-section">{{ _('Home') }}</a></li>
+        <li><a href="#team-section">{{ _('Our Team') }}</a></li>
+        <li><a href="#contact-section">{{ _('Contact Us') }}</a></li>
+      </ul>
+    </nav>
+
+    <div class="lang-dropdown">
+      <button class="lang-btn">{{ _('Language') }}</button>
+      <ul class="lang-dropdown-content">
+        <li><a href="?lang=en">{{ _('English') }}</a></li>
+        <li><a href="?lang=ru">{{ _('Russian') }}</a></li>
+        <li><a href="?lang=kk">{{ _('Kazakh') }}</a></li>
+      </ul>
+    </div>
+
+    <div class="night-mode-toggle">
+      <img src="{{ url_for('static', filename='img/moon.png') }}" alt="Night Mode Icon" class="moon-icon">
+      <span id="night-mode-label">{{ _('Night Mode') }}</span>
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle-btn">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="hero-section">
+    <div class="hero-container">
+      <h2 class="hero-title">{{ _('Our AI system can detect certain diseases from images in just a few clicks!') }}</h2>
+      <p class="hero-subtext">{{ _('We support multiple languages. Feel free to switch using the top-right menu.') }}</p>
+      <div class="hero-instructions">
+        <h3>{{ _('How to Use') }}</h3>
+        <ol>
+          <li>{{ _('Drag and drop or click to upload your image.') }}</li>
+          <li>{{ _('Press "Submit" to get a result from our model.') }}</li>
+          <li>{{ _('Check out the detailed info below!') }}</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPLOAD SECTION -->
+  <section class="upload-section" id="upload-section">
+    <div class="upload-container">
+      <h2>{{ _('Disease Prediction') }}</h2>
+      <form id="upload-form" class="file-upload-wrapper" enctype="multipart/form-data">
+        <div class="drag-and-drop-area" id="drag-and-drop-area">
+          <p>{{ _('Drag and drop your file here, or click to select one.') }}</p>
+          <label for="uploaded-image" id="file-label">{{ _('Upload an Image') }}</label>
+          <input type="file" id="uploaded-image" name="image" accept="image/*" hidden>
+        </div>
+        <p id="file-chosen">{{ _('No file chosen') }}</p>
+        <div class="buttons-wrapper">
+          <button type="submit" class="button-submit" id="button-submit">{{ _('Submit') }}</button>
+          <button type="button" class="button-clear" id="button-clear">{{ _('Clear Data') }}</button>
+        </div>
+      </form>
+      <div id="result" class="result-container">
+        {% if prediction %}
+          {% if image_url %}
+            <img src="{{ image_url }}" class="uploaded-image">
+          {% endif %}
+          <div class="disease-info">
+            <h2>{{ _('Prediction:') }} {{ translated_prediction }}</h2>
+            <p><strong>{{ _('Confidence:') }}</strong> {{ confidence }}%</p>
+
+            {% if disease_info.Symptoms %}
+              <h4>{{ _('Symptoms:') }}</h4>
+              <ul>
+                {% for symptom in disease_info.Symptoms %}
+                  <li>{{ symptom }}</li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <p>{{ _('No data available') }}</p>
+            {% endif %}
+
+            {% if disease_info.Causes %}
+              <h4>{{ _('Causes:') }}</h4>
+              <ul>
+                {% for cause in disease_info.Causes %}
+                  <li>{{ cause }}</li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <p>{{ _('No data available') }}</p>
+            {% endif %}
+
+            {% if disease_info.Prevention %}
+              <h4>{{ _('Prevention:') }}</h4>
+              <ul>
+                {% for prev in disease_info.Prevention %}
+                  <li>{{ prev }}</li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <p>{{ _('No data available') }}</p>
+            {% endif %}
+
+            {% if disease_info.Treatment %}
+              <p><strong>{{ _('Treatment:') }}</strong> {{ disease_info.Treatment }}</p>
+            {% else %}
+              <p>{{ _('No data available') }}</p>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TEAM SECTION -->
+  <section class="team-section" id="team-section">
+    <div class="team-container">
+      <h2 class="section-title">{{ _('Our Team') }}</h2>
+      <p class="section-subtitle">{{ _('Meet the amazing people behind this project.') }}</p>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="{{ url_for('static', filename='img/member1.jpg') }}" alt="Galym Yedigeyev" class="team-photo">
+          <h3>Galym Yedigeyev</h3>
+          <p>{{ _('Full-Stack Developer') }}</p>
+        </div>
+        <div class="team-card">
+          <img src="{{ url_for('static', filename='img/member2.jpg') }}" alt="Artyom Lavrentyev" class="team-photo">
+          <h3>Artyom Lavrentyev</h3>
+          <p>{{ _('Machine Learning Engineer') }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section" id="contact-section">
+    <div class="contact-container">
+      <h2 class="section-title">{{ _('Contact Us') }}</h2>
+      <p class="section-subtitle">{{ _('If you have any questions or feedback, feel free to reach out!') }}</p>
+      <ul class="contact-list">
+        <li><strong>Email (Galym):</strong> galymtashtek@gmail.com</li>
+        <li><strong>Email (Artyom):</strong> mpoxdetection@gmail.com</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>{{ _('All rights reserved') }} &copy; 2025</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
