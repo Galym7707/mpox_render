@@ -9,6 +9,11 @@
   По умолчанию — темная тема 
   (body.dark-theme) 
 */
+/* Темный режим */
+body.dark-theme {
+  background-color: #0a0a0a;  /* Темный фон */
+  color: #eee;
+}
 body {
   font-family: 'Roboto', sans-serif;
   background: #0a0a0a; /* Темный цвет */

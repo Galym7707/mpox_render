@@ -1,15 +1,7 @@
-<<<<<<< HEAD
 Flask
 Flask-Babel
-numpy
-Pillow
-tensorflow
-=======
-Flask
-Flask-Babel
-numpy
-Pillow
-tensorflow
-gunicorn
 flask-cors
->>>>>>> 6462cab (Initial commit)
+numpy
+Pillow
+gunicorn
+tensorflow-cpu  # Используем CPU-версию TensorFlow для снижения потребления памяти
