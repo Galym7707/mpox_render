@@ -5,4 +5,3 @@ numpy
 Pillow
 gunicorn
 tensorflow-cpu  # Используем CPU-версию TensorFlow для снижения потребления памяти
-pip install gunicorn
