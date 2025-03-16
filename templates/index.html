@@ -78,7 +78,7 @@
             <img src="{{ image_url }}" class="uploaded-image">
           {% endif %}
           <div class="disease-info">
-            <h2>{{ _('Prediction:') }} {{ translated_prediction }}</h2>
+            <h2>{{ _('Prediction:') }} {{ prediction }}</h2>
             <p><strong>{{ _('Confidence:') }}</strong> {{ confidence }}%</p>
 
             {% if disease_info.Symptoms %}
