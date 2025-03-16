@@ -276,14 +276,14 @@ document.addEventListener('DOMContentLoaded', () => {
           resultContainer.appendChild(uploadedImage);
       }
 
-      const { prediction, confidence, info, translated_prediction } = data;
+      const { prediction, confidence, info } = data;  // Убрал translated_prediction
       const diseaseInfo = document.createElement('div');
       diseaseInfo.className = 'disease-info';
 
       const t = translations[currentLanguage];
 
       diseaseInfo.innerHTML = `
-        <h2>${t.result}: ${translated_prediction}</h2>
+        <h2>${t.result}: ${prediction}</h2>  <!-- Исправил здесь -->
         <p><strong>${t.confidence}:</strong> ${confidence}%</p>
       `;
 
