@@ -1,7 +1,7 @@
-﻿Flask
+Flask
 Flask-Babel
 flask-cors
 numpy
 Pillow
 gunicorn
-tensorflow-cpu  # РСЃРїРѕР»СЊР·СѓРµРј CPU-РІРµСЂСЃРёСЋ TensorFlow РґР»СЏ СЃРЅРёР¶РµРЅРёСЏ РїРѕС‚СЂРµР±Р»РµРЅРёСЏ РїР°РјСЏС‚Рё
+tensorflow-cpu  # Используем CPU-версию TensorFlow для снижения потребления памяти
