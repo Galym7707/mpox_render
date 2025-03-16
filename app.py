@@ -23,15 +23,13 @@ babel = Babel(app, locale_selector=lambda: g.get('locale', 'en'))
 
 # Пусть для модели
 MODEL_PATH = os.path.join('models', 'simple_model.keras')
-GOOGLE_DRIVE_FILE_ID = "1XCU4RYM1vwhOJ6MDWrG4p4JiCvIVfF-S"
+DROPBOX_LINK = "https://www.dropbox.com/scl/fi/m9a3rj98z7zcnxxkeqv4j/simple_model.keras?rlkey=fw291bkxrh38sr5swbnouosom&dl=1"
 
 def download_model():
     """Скачивание модели, если её нет."""
     if not os.path.exists(MODEL_PATH):
-        print("Модель не найдена, скачиваю с Google Drive...")
-        url = f"https://drive.google.com/uc?id={GOOGLE_DRIVE_FILE_ID}"
-        response = requests.get(url, stream=True)
-
+        print("Модель не найдена, скачиваю с Dropbox...")
+        response = requests.get(DROPBOX_LINK, stream=True)
         if response.status_code == 200:
             os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
             with open(MODEL_PATH, 'wb') as f:
