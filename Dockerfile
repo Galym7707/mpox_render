@@ -10,15 +10,15 @@ COPY . .
 # Устанавливаем зависимости
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Устанавливаем curl (он есть в slim-образе)
+# Устанавливаем curl
 RUN apt-get update && apt-get install -y curl
 
-# Загружаем модель с Dropbox (ЗАМЕНЯЕМ `wget` НА `curl`)
+# Загружаем модель с Dropbox
 RUN mkdir -p models && \
     curl -L "https://www.dropbox.com/scl/fi/m9a3rj98z7zcnxxkeqv4j/simple_model.keras?rlkey=fw291bkxrh38sr5swbnouosom&dl=1" -o models/simple_model.keras
 
-# Открываем порт (важно для Railway)
+# Открываем порт (Railway требует EXPOSE)
 EXPOSE 5000
 
-# Запускаем приложение
-CMD ["python", "app.py"]
+# Запускаем приложение через Gunicorn (WSGI-сервер)
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app"]
