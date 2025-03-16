@@ -141,6 +141,7 @@ def clear_session():
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    download_model()  # ← скачивание модели ПЕРЕД запуском Flask
+    download_model()  # ← Скачивание модели перед запуском Flask
     app.run(host='0.0.0.0', port=5000, debug=True)
+
 
