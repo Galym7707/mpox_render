@@ -23,30 +23,30 @@ babel = Babel(app, locale_selector=lambda: g.get('locale', 'en'))
 
 # Пусть для модели
 MODEL_PATH = os.path.join("models", "simple_model.keras")
-DROPBOX_LINK = "https://www.dropbox.com/scl/fi/m9a3rj98z7zcnxxkeqv4j/simple_model.keras?rlkey=fw291bkxrh38sr5swbnouosom&dl=1"
 
 def download_model():
     """Скачивание модели, если её нет."""
-    os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)  # ФОРСИРУЕМ СОЗДАНИЕ ПАПКИ
+    os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
 
     if not os.path.exists(MODEL_PATH):
         print("🔴 Модель не найдена! Скачиваю с Dropbox...")
-        response = requests.get(DROPBOX_LINK, stream=True)
+        DROPBOX_LINK = "https://www.dropbox.com/scl/fi/m9a3rj98z7zcnxxkeqv4j/simple_model.keras?rlkey=fw291bkxrh38sr5swbnouosom&dl=1"
+        
+        headers = {'User-Agent': 'Wget/1.20.3 (linux-gnu)'}
+        response = requests.get(DROPBOX_LINK, headers=headers, stream=True)
         
         if response.status_code == 200:
             with open(MODEL_PATH, "wb") as f:
-                for chunk in response.iter_content(1024):
+                for chunk in response.iter_content(chunk_size=8192):
                     f.write(chunk)
             print("✅ Модель успешно скачана!")
 
-            # Проверяем, скачался ли файл
-            if os.path.exists(MODEL_PATH) and os.path.getsize(MODEL_PATH) > 100_000:
-                print(f"✅ Файл модели {MODEL_PATH} успешно загружен ({os.path.getsize(MODEL_PATH)} байт)")
-            else:
+            if os.path.getsize(MODEL_PATH) < 1000:
                 print("❌ Ошибка: модель скачалась некорректно!")
                 os.remove(MODEL_PATH)
         else:
             print(f"❌ Ошибка скачивания модели: HTTP {response.status_code}")
+
 
 # Загружаем модель перед запуском
 download_model()
