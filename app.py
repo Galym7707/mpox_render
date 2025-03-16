@@ -1,14 +1,16 @@
+import os
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"  # ← Добавляем эту строку
+
 from flask import Flask, request, jsonify, render_template, g, url_for, session, redirect, make_response
 from flask_babel import Babel, _
 from PIL import Image
 import numpy as np
 from tensorflow.keras.models import load_model
-import os
 import logging
 import requests
 from werkzeug.utils import secure_filename
 from translations.disease_data import disease_info
-
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"  # Отключаем oneDNN
 app = Flask(__name__, static_folder='static', template_folder='templates')
 app.secret_key = "mysecretkey"
 app.config['BABEL_DEFAULT_LOCALE'] = 'en'
