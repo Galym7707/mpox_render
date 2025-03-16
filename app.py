@@ -38,12 +38,11 @@ def download_model():
         else:
             raise Exception(f"❌ Ошибка скачивания модели: {response.status_code}")
 
-# Вызываем скачивание перед загрузкой модели
-download_model()
-
-# Теперь загружаем модель, когда уже убедились, что файл есть
-model = load_model(MODEL_PATH)
-print("✅ Модель успешно загружена!")
+# Важно! скачиваем и загружаем модель ПЕРЕД запуском сервера:
+with app.app_context():
+    download_model()
+    model = load_model(MODEL_PATH)
+    print("✅ Модель успешно загружена!")
 
 label_mapping = {
     0: 'Chickenpox',
@@ -68,7 +67,6 @@ def allowed_file(filename):
 
 @app.route('/')
 def index():
-    lang = g.locale
     prediction_key = session.get('prediction')
     image_url = session.get('image_url')
     confidence = session.get('confidence')
@@ -76,7 +74,7 @@ def index():
 
     if prediction_key:
         disease_info_data = disease_info.get(prediction_key, {})
-        disease_info_localized = disease_info_data.get(lang, disease_info_data.get('en', {}))
+        disease_info_localized = disease_info_data.get(g.locale, disease_info_data.get('en', {}))
         disease_info_translated = {
             "Symptoms": disease_info_localized.get("symptoms", []),
             "Causes": disease_info_localized.get("causes", []),
@@ -86,10 +84,10 @@ def index():
 
     return render_template(
         'index.html',
-        lang=lang,
+        lang=g.locale,
         prediction=prediction_key,
-        confidence=confidence,
-        image_url=image_url,
+        confidence=session.get('confidence'),
+        image_url=session.get('image_url'),
         disease_info=disease_info_translated,
     )
 
@@ -115,7 +113,6 @@ def upload_file():
             prediction = model.predict(image_array)
             predicted_class = int(np.argmax(prediction[0]))
             confidence = float(round(prediction[0][predicted_class] * 100, 2))
-
             disease_key = label_mapping[predicted_class]
 
             disease_info_data = disease_info.get(disease_key, {}).get(g.locale, disease_info.get(disease_key, {}).get('en', {}))
@@ -129,12 +126,7 @@ def upload_file():
                 image_url=session['image_url'],
                 prediction=disease_key,
                 confidence=confidence,
-                info={
-                    "Symptoms": disease_info_data.get("symptoms", []),
-                    "Causes": disease_info_data.get("causes", []),
-                    "Prevention": disease_info_data.get("prevention", []),
-                    "Treatment": disease_info_data.get("treatment", "")
-                }
+                info=disease_info_data
             )
 
         except Exception as e:
@@ -149,4 +141,6 @@ def clear_session():
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
+    download_model()  # ← скачивание модели ПЕРЕД запуском Flask
     app.run(debug=True)
+
