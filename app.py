@@ -87,7 +87,7 @@ def index():
     return render_template(
         'index.html',
         lang=lang,
-        translated_prediction=prediction_key,  # ← здесь исправлено имя переменной
+        prediction=prediction_key,
         confidence=confidence,
         image_url=image_url,
         disease_info=disease_info_translated,
