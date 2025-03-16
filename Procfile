@@ -1,1 +1,1 @@
-web: python -c "import app" && gunicorn app:app
+web: bash postinstall.sh && python app.py
