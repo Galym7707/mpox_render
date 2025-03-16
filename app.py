@@ -26,7 +26,7 @@ MODEL_PATH = os.path.join('models', 'simple_model.keras')
 GOOGLE_DRIVE_FILE_ID = "1XCU4RYM1vwhOJ6MDWrG4p4JiCvIVfF-S"
 
 def download_model():
-    """Функция скачивания модели, если её нет"""
+    """Скачивание модели, если её нет."""
     if not os.path.exists(MODEL_PATH):
         print("Модель не найдена, скачиваю с Google Drive...")
         url = f"https://drive.google.com/uc?id={GOOGLE_DRIVE_FILE_ID}"
@@ -41,9 +41,15 @@ def download_model():
         else:
             print(f"Ошибка скачивания модели: {response.status_code}")
 
+
 # Загружаем модель перед запуском
 download_model()
-model = load_model(MODEL_PATH)
+# Загружаем модель
+if os.path.exists(MODEL_PATH):
+    model = load_model(MODEL_PATH)
+    print("Модель успешно загружена!")
+else:
+    print("Ошибка: Модель не найдена после скачивания!")
 
 label_mapping = {
     0: 'Chickenpox',
