@@ -29,7 +29,9 @@ def download_model():
     """Скачивание модели, если её нет."""
     if not os.path.exists(MODEL_PATH):
         print("Модель не найдена, скачиваю с Dropbox...")
-        response = requests.get(DROPBOX_LINK, stream=True)
+        DROPBOX_DIRECT_LINK = "https://www.dl.dropboxusercontent.com/s/m9a3rj98z7zcnxxkeqv4j/simple_model.keras?dl=1"
+        
+        response = requests.get(DROPBOX_DIRECT_LINK, stream=True)
         if response.status_code == 200:
             os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
             with open(MODEL_PATH, 'wb') as f:
