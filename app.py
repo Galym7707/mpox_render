@@ -1,7 +1,7 @@
 import os
-os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"  # ← Добавляем эту строку
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"  # Отключаем oneDNN для стабильности
 
-from flask import Flask, request, jsonify, render_template, g, url_for, session, redirect, make_response
+from flask import Flask, request, jsonify, render_template, g, url_for, session, redirect
 from flask_babel import Babel, _
 from PIL import Image
 import numpy as np
@@ -10,19 +10,22 @@ import logging
 import requests
 from werkzeug.utils import secure_filename
 from translations.disease_data import disease_info
-os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"  # Отключаем oneDNN
+
+# Flask настройки
 app = Flask(__name__, static_folder='static', template_folder='templates')
 app.secret_key = "mysecretkey"
 app.config['BABEL_DEFAULT_LOCALE'] = 'en'
 app.config['BABEL_SUPPORTED_LOCALES'] = ['en', 'ru', 'kk']
 app.config['BABEL_TRANSLATION_DIRECTORIES'] = 'translations'
 
+# Настройка папки загрузок
 UPLOAD_FOLDER = os.path.join(app.static_folder, 'uploads')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 babel = Babel(app, locale_selector=lambda: g.get('locale', 'en'))
 
+# Модель нейросети
 MODEL_PATH = os.path.join('models', 'simple_model.keras')
 DROPBOX_LINK = "https://www.dropbox.com/scl/fi/m9a3rj98z7zcnxxkeqv4j/simple_model.keras?rlkey=fw291bkxrh38sr5swbnouosom&dl=1"
 
@@ -40,12 +43,13 @@ def download_model():
         else:
             raise Exception(f"❌ Ошибка скачивания модели: {response.status_code}")
 
-# Важно! скачиваем и загружаем модель ПЕРЕД запуском сервера:
+# Загрузка модели перед запуском сервера
 with app.app_context():
     download_model()
     model = load_model(MODEL_PATH)
     print("✅ Модель успешно загружена!")
 
+# Сопоставление классов
 label_mapping = {
     0: 'Chickenpox',
     1: 'Cowpox',
@@ -69,29 +73,7 @@ def allowed_file(filename):
 
 @app.route('/')
 def index():
-    prediction_key = session.get('prediction')
-    image_url = session.get('image_url')
-    confidence = session.get('confidence')
-    disease_info_translated = {}
-
-    if prediction_key:
-        disease_info_data = disease_info.get(prediction_key, {})
-        disease_info_localized = disease_info_data.get(g.locale, disease_info_data.get('en', {}))
-        disease_info_translated = {
-            "Symptoms": disease_info_localized.get("symptoms", []),
-            "Causes": disease_info_localized.get("causes", []),
-            "Prevention": disease_info_localized.get("prevention", []),
-            "Treatment": disease_info_localized.get("treatment", "")
-        }
-
-    return render_template(
-        'index.html',
-        lang=g.locale,
-        prediction=prediction_key,
-        confidence=session.get('confidence'),
-        image_url=session.get('image_url'),
-        disease_info=disease_info_translated,
-    )
+    return render_template('index.html', lang=g.locale)
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -117,7 +99,9 @@ def upload_file():
             confidence = float(round(prediction[0][predicted_class] * 100, 2))
             disease_key = label_mapping[predicted_class]
 
-            disease_info_data = disease_info.get(disease_key, {}).get(g.locale, disease_info.get(disease_key, {}).get('en', {}))
+            # исправлено здесь ↓↓↓
+            disease_info_data = disease_info.get(disease_key, {})
+            disease_info_localized = disease_info_data.get(g.locale, disease_info_data.get('en', {}))
 
             session['image_url'] = url_for('static', filename=f'uploads/{filename}')
             session['prediction'] = disease_key
@@ -128,7 +112,12 @@ def upload_file():
                 image_url=session['image_url'],
                 prediction=disease_key,
                 confidence=confidence,
-                info=disease_info_data
+                info={
+                    "Symptoms": disease_info_data.get("symptoms", []),
+                    "Causes": disease_info_data.get("causes", []),
+                    "Prevention": disease_info_data.get("prevention", []),
+                    "Treatment": disease_info_data.get("treatment", "")
+                }
             )
 
         except Exception as e:
@@ -136,6 +125,7 @@ def upload_file():
             return jsonify(error=str(e)), 500
 
     return jsonify(error=_('Invalid file format')), 400
+
 
 @app.route('/clear', methods=['POST'])
 def clear_session():
@@ -146,6 +136,3 @@ if __name__ == '__main__':
     download_model()
     port = int(os.environ.get('PORT', 8080))
     app.run(host='0.0.0.0', port=port, debug=False)  # <-- Убираем debug
-
-
-
