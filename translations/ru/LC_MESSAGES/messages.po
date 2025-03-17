@@ -1,164 +1,120 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-03-17 20:52+0600\n"
+"PO-Revision-Date: 2025-03-17 20:52+0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
 
+#: app.py:100
+msgid "No file uploaded"
+msgstr "Файл не загружен"
 
-# --- Стандартные переводы ---
-msgid "Upload an Image"
-msgstr "Загрузите изображение"
-
-msgid "Prediction:"
-msgstr "Предсказание:"
-
-msgid "Confidence:"
-msgstr "Уверенность:"
-
-msgid "Causes:"
-msgstr "Причины:"
-
-msgid "Symptoms:"
-msgstr "Симптомы:"
-
-msgid "Prevention:"
-msgstr "Профилактика:"
-
-msgid "Treatment:"
-msgstr "Лечение:"
-
-msgid "Choose file"
-msgstr "Выберите файл"
-
-msgid "No file chosen"
+#: app.py:104
+msgid "No file selected"
 msgstr "Файл не выбран"
 
-msgid "Submit"
-msgstr "Отправить"
+#: app.py:142
+msgid "Invalid file format"
+msgstr "Недопустимый формат файла"
 
-msgid "Chickenpox"
-msgstr "Ветряная оспа"
-
-msgid "Hand, foot and mouth disease"
-msgstr "Энтерови́русный везикуля́рный стомати́т"
-
-msgid "Monkeypox"
-msgstr "Оспа обезьяны"
-
-msgid "Measles"
-msgstr "Корь"
-
-msgid "Cowpox"
-msgstr "Коровья оспа"
-
-msgid "Healthy"
-msgstr "Здоровый"
-
-msgid "Title"
-msgstr "Заголовок"
-
-msgid "Overview"
-msgstr "Обзор"
-
-msgid "Symptoms"
-msgstr "Симптомы"
-
-msgid "Causes"
-msgstr "Причины"
-
-msgid "Treatment"
-msgstr "Лечение"
-
-msgid "Prevention"
-msgstr "Профилактика"
-
+#: templates/index.html:7 templates/index.html:39
 msgid "Disease Prediction"
 msgstr "Предсказание заболевания"
 
-msgid "Clear Data"
-msgstr "Очистить данные"
-
-# --- Новые строки ---
+#: templates/index.html:19
 msgid "Home"
 msgstr "Главная"
 
+#: templates/index.html:20 templates/index.html:100
 msgid "Our Team"
 msgstr "Наша команда"
 
+#: templates/index.html:21 templates/index.html:120
 msgid "Contact Us"
-msgstr "Связаться"
+msgstr "Связаться с нами"
 
-msgid "Language"
-msgstr "Язык"
+#: templates/index.html:28
+msgid "Night Mode"
+msgstr "Ночной режим"
 
-msgid "AI Explanation"
-msgstr "AI Пояснение"
+#: templates/index.html:42
+msgid "Drag and drop your file here, or click to select one."
+msgstr "Перетащите файл сюда или нажмите, чтобы выбрать."
 
-msgid "Ask AI"
-msgstr "Спросить AI"
+#: templates/index.html:43
+msgid "Upload an Image"
+msgstr "Загрузите изображение"
 
-msgid "Type your question here..."
-msgstr "Введите ваш вопрос здесь..."
+#: templates/index.html:46
+msgid "No file chosen"
+msgstr "Файл не выбран"
 
-msgid "Here is an AI Explanation for:"
-msgstr "Вот пояснение от AI для:"
+#: templates/index.html:48
+msgid "Submit"
+msgstr "Отправить"
 
-msgid "Yedigeyev Galym"
-msgstr "Едигеев Галым"
+#: templates/index.html:49
+msgid "Clear Data"
+msgstr "Очистить данные"
 
-msgid "Lavrentyev Artyom"
-msgstr "Лаврентьев Артем"
+#: templates/index.html:58
+msgid "Prediction:"
+msgstr "Предсказание:"
 
-msgid "ML Engineer"
-msgstr "ML Инженер"
+#: templates/index.html:59
+msgid "Confidence:"
+msgstr "Уверенность:"
 
-msgid "Full-Stack Web Developer"
-msgstr "Full-Stack веб-разработчик"
+#: templates/index.html:62
+msgid "Symptoms:"
+msgstr "Симптомы:"
 
+#: templates/index.html:71
+msgid "Causes:"
+msgstr "Причины:"
+
+#: templates/index.html:80
+msgid "Prevention:"
+msgstr "Профилактика:"
+
+#: templates/index.html:89
+msgid "Treatment:"
+msgstr "Лечение:"
+
+#: templates/index.html:101
+msgid "Meet the amazing people behind this project."
+msgstr "Познакомьтесь с удивительными людьми, стоящими за этим проектом."
+
+#: templates/index.html:106
+msgid "Full-Stack Developer"
+msgstr "Full-Stack разработчик"
+
+#: templates/index.html:111
 msgid "Machine Learning Engineer"
 msgstr "Инженер по машинному обучению"
 
-msgid "Our AI system can detect certain diseases from images in just a few clicks!"
-msgstr "Наша AI-система может обнаруживать некоторые болезни по изображениям за считанные секунды!"
-
-msgid "We support multiple languages. Feel free to switch using the top-right menu."
-msgstr "Мы поддерживаем несколько языков. Выберите язык в правом верхнем углу."
-
-msgid "How to Use"
-msgstr "Как использовать"
-
-msgid "Drag and drop or click to upload your image."
-msgstr "Перетащите файл или нажмите, чтобы загрузить изображение."
-
-msgid "Press \"Submit\" to get a result from our model."
-msgstr "Нажмите «Отправить», чтобы получить результат от нашей модели."
-
-msgid "Check out the detailed info below!"
-msgstr "Посмотрите подробную информацию ниже!"
-
-msgid "Our Team"
-msgstr "Наша команда"
-
-msgid "We are the minds behind this project"
-msgstr "Мы – авторы этого проекта"
-
-msgid "Member One"
-msgstr "Участник Один"
-
-msgid "Member Two"
-msgstr "Участник Два"
-
-msgid "ML Engineer"
-msgstr "ML инженер"
-
-msgid "Frontend Dev"
-msgstr "Фронтенд-разработчик"
-
+#: templates/index.html:121
 msgid "If you have any questions or feedback, feel free to reach out!"
 msgstr "Если у вас есть вопросы или предложения, свяжитесь с нами!"
 
-msgid "Night Mode"
-<<<<<<< HEAD
-msgstr "Ночной режим"
-=======
-msgstr "Ночной режим"
->>>>>>> 6462cab (Initial commit)
+#: templates/index.html:131
+msgid "All rights reserved"
+msgstr "Все права защищены"
+
+#: templates/index.html:27
+msgid "Language"
+msgstr "Язык"

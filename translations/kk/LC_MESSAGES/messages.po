@@ -1,163 +1,119 @@
+# Kazakh translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-03-17 20:52+0600\n"
+"PO-Revision-Date: 2025-03-17 20:52+0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: kk\n"
+"Language-Team: kk <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
 
-# --- Стандартные переводы ---
-msgid "Upload an Image"
-msgstr "Суретті жүктеңіз"
+#: app.py:100
+msgid "No file uploaded"
+msgstr "Файл жүктелмеді"
 
-msgid "Prediction:"
-msgstr "Болжау:"
+#: app.py:104
+msgid "No file selected"
+msgstr "Файл таңдалмады"
 
-msgid "Confidence:"
-msgstr "Сенімділік:"
+#: app.py:142
+msgid "Invalid file format"
+msgstr "Жарамсыз файл форматы"
 
-msgid "Causes:"
-msgstr "Себептері:"
-
-msgid "Symptoms:"
-msgstr "Белгілері:"
-
-msgid "Prevention:"
-msgstr "Алдын алу жолдары:"
-
-msgid "Treatment:"
-msgstr "Емдеу жолдары:"
-
-msgid "Choose file"
-msgstr "Файлды таңдаңыз"
-
-msgid "No file chosen"
-msgstr "Файл таңдалмаған"
-
-msgid "Submit"
-msgstr "Жіберу"
-
-msgid "Chickenpox"
-msgstr "Тауық шешек"
-
-msgid "Hand, foot and mouth disease"
-msgstr "Энтеровирусты везикулярлы стоматит"
-
-msgid "Monkeypox"
-msgstr "Маймыл шешек"
-
-msgid "Measles"
-msgstr "Қызылша"
-
-msgid "Cowpox"
-msgstr "Сиыр шешек"
-
-msgid "Healthy"
-msgstr "Дені сау"
-
-msgid "Title"
-msgstr "Тақырып"
-
-msgid "Overview"
-msgstr "Қарау"
-
-msgid "Symptoms"
-msgstr "Симптомдары"
-
-msgid "Causes"
-msgstr "Себептер"
-
-msgid "Treatment"
-msgstr "Емдеу"
-
-msgid "Prevention"
-msgstr "Алдын алу"
-
+#: templates/index.html:7 templates/index.html:39
 msgid "Disease Prediction"
 msgstr "Ауруды болжау"
 
-msgid "Clear Data"
-msgstr "Деректерді тазалау"
-
-# --- Новые строки ---
+#: templates/index.html:19
 msgid "Home"
 msgstr "Басты бет"
 
+#: templates/index.html:20 templates/index.html:100
 msgid "Our Team"
 msgstr "Біздің команда"
 
+#: templates/index.html:21 templates/index.html:120
 msgid "Contact Us"
 msgstr "Байланыс"
 
-msgid "Language"
-msgstr "Тілі"
+#: templates/index.html:28
+msgid "Night Mode"
+msgstr "Түнгі режим"
 
-msgid "AI Explanation"
-msgstr "AI Түсініктеме"
+#: templates/index.html:42
+msgid "Drag and drop your file here, or click to select one."
+msgstr "Файлды осында сүйреп апарыңыз немесе таңдау үшін басыңыз."
 
-msgid "Ask AI"
-msgstr "AI-дан сұрау"
+#: templates/index.html:43
+msgid "Upload an Image"
+msgstr "Суретті жүктеңіз"
 
-msgid "Type your question here..."
-msgstr "Сұрағыңызды осында жазыңыз..."
+#: templates/index.html:46
+msgid "No file chosen"
+msgstr "Файл таңдалмады"
 
-msgid "Here is an AI Explanation for:"
-msgstr "AI былай түсіндіреді:"
+#: templates/index.html:48
+msgid "Submit"
+msgstr "Жіберу"
 
-msgid "Yedigeyev Galym"
-msgstr "Едигеев Ғалым"
+#: templates/index.html:49
+msgid "Clear Data"
+msgstr "Деректерді тазалау"
 
-msgid "Lavrentyev Artyom"
-msgstr "Лаврентьев Артем"
+#: templates/index.html:58
+msgid "Prediction:"
+msgstr "Болжау:"
 
-msgid "ML Engineer"
-msgstr "ML Инженері"
+#: templates/index.html:59
+msgid "Confidence:"
+msgstr "Сенімділік:"
 
-msgid "Full-Stack Web Developer"
-msgstr "Full-Stack веб-разработчигі"
+#: templates/index.html:62
+msgid "Symptoms:"
+msgstr "Белгілері:"
 
+#: templates/index.html:71
+msgid "Causes:"
+msgstr "Себептері:"
+
+#: templates/index.html:80
+msgid "Prevention:"
+msgstr "Алдын алу жолдары:"
+
+#: templates/index.html:89
+msgid "Treatment:"
+msgstr "Емдеу жолдары:"
+
+#: templates/index.html:101
+msgid "Meet the amazing people behind this project."
+msgstr "Бұл жобаның авторларымен танысыңыз."
+
+#: templates/index.html:106
+msgid "Full-Stack Developer"
+msgstr "Full-Stack веб-әзірлеуші"
+
+#: templates/index.html:111
 msgid "Machine Learning Engineer"
-msgstr "Машинамен Оқыту Инженері"
+msgstr "Машинамен оқыту инженері"
 
-msgid "Our AI system can detect certain diseases from images in just a few clicks!"
-msgstr "Біздің AI жүйеміз бейнелерден кейбір ауруларды санаулы сәтте анықтай алады!"
-
-msgid "We support multiple languages. Feel free to switch using the top-right menu."
-msgstr "Біз бірнеше тілді қолдаймыз. Жоғарғы оң жақ мәзірді пайдаланып ауыстырыңыз."
-
-msgid "How to Use"
-msgstr "Қолдану тәсілі"
-
-msgid "Drag and drop or click to upload your image."
-msgstr "Суретті жүктеу үшін сүйреп апарыңыз немесе басыңыз."
-
-msgid "Press \"Submit\" to get a result from our model."
-msgstr "\"Жіберу\" түймесін басып, модельдің нәтижесін алыңыз."
-
-msgid "Check out the detailed info below!"
-msgstr "Төмендегі толық ақпаратты қараңыз!"
-
-msgid "Our Team"
-msgstr "Біздің команда"
-
-msgid "We are the minds behind this project"
-msgstr "Бұл жобаның авторлары біз боламыз"
-
-msgid "Member One"
-msgstr "Бірінші қатысушы"
-
-msgid "Member Two"
-msgstr "Екінші қатысушы"
-
-msgid "ML Engineer"
-msgstr "ML инженері"
-
-msgid "Frontend Dev"
-msgstr "Фронтенд әзірлеуші"
-
+#: templates/index.html:121
 msgid "If you have any questions or feedback, feel free to reach out!"
 msgstr "Сұрақтарыңыз немесе пікірлеріңіз болса, бізбен байланысыңыз!"
 
-msgid "Night Mode"
-<<<<<<< HEAD
-msgstr "Түнгі режим"
-=======
-msgstr "Түнгі режим"
->>>>>>> 6462cab (Initial commit)
+#: templates/index.html:131
+msgid "All rights reserved"
+msgstr "Барлық құқықтар қорғалған"
+
+#: templates/index.html:27
+msgid "Language"
+msgstr "Тіл"

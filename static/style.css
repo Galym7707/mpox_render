@@ -70,9 +70,16 @@ body {
 }
 
 /* Языковой выпадающий список */
+.controls-container {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Отступ между элементами */
+}
+
 .lang-dropdown {
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
 }
 
 .lang-btn {
@@ -85,29 +92,33 @@ body {
   outline: none;
   border-bottom: 2px solid transparent;
   transition: border-color 0.3s;
+  padding: 5px 10px;
 }
 .lang-btn:hover {
   border-color: #fff;
 }
+
 .lang-dropdown-content {
   display: none;
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: #fff; /* Выпадающее меню оставим светлым */
+  background-color: #fff;
   color: #333;
   min-width: 120px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
   margin: 0;
   padding: 0.5rem 0;
   list-style: none;
   z-index: 1000;
 }
+
 .lang-dropdown-content li {
   margin: 0;
   padding: 0;
 }
+
 .lang-dropdown-content li a {
   display: block;
   text-decoration: none;
@@ -116,9 +127,11 @@ body {
   transition: background-color 0.2s;
   font-size: 0.9rem;
 }
+
 .lang-dropdown-content li a:hover {
   background-color: #eee;
 }
+
 .lang-dropdown:hover .lang-dropdown-content {
   display: block;
 }
@@ -229,34 +242,108 @@ body {
   margin-top: 20px;
   justify-content: center;
 }
-.button-submit,
-.button-clear {
-  padding: 12px 28px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  border: none;
-}
 .button-submit {
   background-color: #28a745;
   color: #fff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s;
 }
+
 .button-submit:hover {
   background-color: #218838;
   transform: scale(1.05);
 }
+
 .button-clear {
-  background-color: #ffdddd;
-  color: #990000;
-  border: 2px solid #ff4d4d;
-}
-.button-clear:hover {
-  background-color: #ff4d4d;
+  background-color: #f44336;
   color: #fff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+}
+
+.button-clear:hover {
+  background-color: #e02424;
   transform: scale(1.05);
 }
+
+.upload-container, .result-container, .drag-and-drop-area {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Стиль для disease-info */
+.disease-info {
+  background-color: #ffffff; /* По умолчанию светлый */
+  color: #000000; /* Чёрный текст */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* Темный режим */
+.dark-theme .disease-info {
+  background-color: #1e1e1e;  /* Тёмный фон */
+  color: #ffffff; /* Белый текст */
+  border: 1px solid #444; /* Серые границы */
+}
+/* Темный режим для disease-info */
+.dark-theme .disease-info {
+  background-color: #1e1e1e;  /* Тёмный фон */
+  color: #ffffff; /* Белый текст */
+  border: 1px solid #444; /* Серые границы */
+}
+
+/* Улучшение читаемости текста */
+.dark-theme .disease-info h2 {
+  color: #66ffff; /* Голубой заголовок */
+}
+
+.dark-theme .disease-info h4 {
+  color: #66c2ff; /* Светло-синий */
+}
+
+.dark-theme .disease-info p,
+.dark-theme .disease-info li {
+  color: #dddddd; /* Светло-серый текст */
+}
+
+@media (max-width: 768px) {
+  .site-header, .main-nav-list {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0.5rem;
+  }
+
+  .upload-container {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .uploaded-image, .result-container, .disease-info {
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  .buttons-wrapper {
+    flex-direction: column;
+  }
+
+  .button-submit, .button-clear {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
 
 .result-container {
   margin-top: 20px;
@@ -358,21 +445,6 @@ body {
   from {opacity: 0;} to {opacity: 1;}
 }
 
-/* Добавляем поддержку мобильных устройств */
-@media screen and (max-width: 768px) {
-  .upload-container {
-    width: 90%;
-    padding: 15px;
-  }
-
-  .drag-and-drop-area {
-    padding: 20px;
-  }
-
-  .uploaded-image {
-    width: 100%;
-  }
-}
 /* -------- CONTACT SECTION -------- */
 .contact-section {
   padding: 3rem 1rem;
@@ -381,22 +453,44 @@ body {
   color: #eee;
 }
 .contact-container {
+  text-align: center;
   max-width: 600px;
   margin: 0 auto;
+  padding: 20px;
 }
 .contact-container h2 {
   margin-bottom: 1rem;
   color: #66ffff;
 }
 .contact-list {
-  margin-top: 1rem;
-  text-align: left;
-  display: inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .contact-list li {
-  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+.contact-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+.contact-list a {
+  color: #1da1f2;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
+.contact-list a:hover {
+  color: #0d8ae8;
+}
 /* -------- FOOTER -------- */
 .footer {
   background: #1f1f4a;
@@ -663,6 +757,34 @@ body.light-theme .buttons-wrapper {
   justify-content: center;
 }
 
+/* Дизайн кнопок */
+#button-submit, #button-clear {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
 
+#button-submit {
+  background-color: #28a745;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+#button-submit:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
 
-/* Buttons остаются прежними, они контрастные и понятные */
+#button-clear {
+  background-color: #dc3545;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+#button-clear:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+

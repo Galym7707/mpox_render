@@ -22,24 +22,29 @@
       </ul>
     </nav>
 
-    <div class="lang-dropdown">
-      <button class="lang-btn">{{ _('Language') }}</button>
-      <ul class="lang-dropdown-content">
-        <li><a href="?lang=en">{{ _('English') }}</a></li>
-        <li><a href="?lang=ru">{{ _('Russian') }}</a></li>
-        <li><a href="?lang=kk">{{ _('Kazakh') }}</a></li>
-      </ul>
-    </div>
-
-    <div class="night-mode-toggle">
-      <img src="{{ url_for('static', filename='img/moon.png') }}" class="moon-icon">
-      <span id="night-mode-label">{{ _('Night Mode') }}</span>
-      <label class="switch">
-        <input type="checkbox" id="theme-toggle-btn" checked>
-        <span class="slider round"></span>
-      </label>
-    </div>
+    <div class="controls-container">
+      <!-- Добавляем кнопку смены языка -->
+      <div class="lang-dropdown">
+        <button class="lang-btn">{{ _('Language') }}</button>
+        <ul class="lang-dropdown-content">
+          <li><a href="?lang=en">English</a></li>
+          <li><a href="?lang=ru">Русский</a></li>
+          <li><a href="?lang=kk">Қазақша</a></li>
+        </ul>
+      </div>
+    
+      <div class="night-mode-toggle">
+        <img src="{{ url_for('static', filename='img/moon.png') }}" class="moon-icon">
+        <span id="night-mode-label">{{ _('Night Mode') }}</span>
+        <label class="switch">
+          <input type="checkbox" id="theme-toggle-btn" checked>
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>    
   </header>
+
+
 
   <section class="upload-section" id="upload-section">
     <div class="upload-container">
@@ -52,8 +57,8 @@
         </div>
         <p id="file-chosen">{{ _('No file chosen') }}</p>
         <div class="buttons-wrapper">
-          <button type="submit" id="button-submit">{{ _('Submit') }}</button>
-          <button type="button" id="button-clear">{{ _('Clear Data') }}</button>
+          <button type="submit" id="button-submit" class="btn btn-primary">{{ _('Submit') }}</button>
+          <button type="button" id="button-clear" class="btn btn-danger">{{ _('Clear Data') }}</button>
         </div>
       </form>
       <div id="result" class="result-container">
@@ -124,14 +129,12 @@
   <!-- CONTACT SECTION -->
   <section class="contact-section" id="contact-section">
     <div class="contact-container">
-      <h2 class="section-title">{{ _('Contact Us') }}</h2>
-      <p class="section-subtitle">{{ _('If you have any questions or feedback, feel free to reach out!') }}</p>
-      <ul class="contact-list">
-        <li><strong>Email (Galym):</strong> galymtashtek@gmail.com</li>
-        <li><strong>Email (Artyom):</strong> mpoxdetection@gmail.com</li>
-      </ul>
+        <h2 class="section-title">{{ _('Contact Us') }}</h2>
+        <p class="section-subtitle">{{ _('If you have any questions or feedback, feel free to reach out!') }}</p>
+        <ul class="contact-list"></ul> <!-- Оставляем пустым, JS добавит -->
     </div>
   </section>
+
 
   <!-- FOOTER -->
   <footer class="footer">

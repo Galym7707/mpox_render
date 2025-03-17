@@ -1,28 +1,29 @@
-
+# Translations template for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-03-17 20:47+0600\n"
+"POT-Creation-Date: 2025-03-17 20:52+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: en\n"
-"Language-Team: en <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: app.py:100
-#, fuzzy
 msgid "No file uploaded"
-msgstr "No file chosen"
+msgstr ""
 
 #: app.py:104
-#, fuzzy
 msgid "No file selected"
-msgstr "No file chosen"
+msgstr ""
 
 #: app.py:142
 msgid "Invalid file format"
@@ -30,88 +31,83 @@ msgstr ""
 
 #: templates/index.html:7 templates/index.html:39
 msgid "Disease Prediction"
-msgstr "Disease Prediction"
+msgstr ""
 
-# --- Новые строки ---
 #: templates/index.html:19
 msgid "Home"
-msgstr "Home"
+msgstr ""
 
 #: templates/index.html:20 templates/index.html:100
 msgid "Our Team"
-msgstr "Our Team"
+msgstr ""
 
 #: templates/index.html:21 templates/index.html:120
 msgid "Contact Us"
-msgstr "Contact Us"
+msgstr ""
 
 #: templates/index.html:28
 msgid "Night Mode"
-msgstr "Night Mode"
+msgstr ""
 
 #: templates/index.html:42
-#, fuzzy
 msgid "Drag and drop your file here, or click to select one."
-msgstr "Drag and drop or click to upload your image."
+msgstr ""
 
-# --- Стандартные переводы ---
 #: templates/index.html:43
 msgid "Upload an Image"
-msgstr "Upload an Image"
+msgstr ""
 
 #: templates/index.html:46
 msgid "No file chosen"
-msgstr "No file chosen"
+msgstr ""
 
 #: templates/index.html:48
 msgid "Submit"
-msgstr "Submit"
+msgstr ""
 
 #: templates/index.html:49
 msgid "Clear Data"
-msgstr "Clear Data"
+msgstr ""
 
 #: templates/index.html:58
 msgid "Prediction:"
-msgstr "Prediction:"
+msgstr ""
 
 #: templates/index.html:59
 msgid "Confidence:"
-msgstr "Confidence:"
+msgstr ""
 
 #: templates/index.html:62
 msgid "Symptoms:"
-msgstr "Symptoms:"
+msgstr ""
 
 #: templates/index.html:71
 msgid "Causes:"
-msgstr "Causes:"
+msgstr ""
 
 #: templates/index.html:80
 msgid "Prevention:"
-msgstr "Prevention:"
+msgstr ""
 
 #: templates/index.html:89
 msgid "Treatment:"
-msgstr "Treatment:"
+msgstr ""
 
 #: templates/index.html:101
-#, fuzzy
 msgid "Meet the amazing people behind this project."
-msgstr "We are the minds behind this project"
+msgstr ""
 
 #: templates/index.html:106
-#, fuzzy
 msgid "Full-Stack Developer"
-msgstr "Full-Stack Web Developer"
+msgstr ""
 
 #: templates/index.html:111
 msgid "Machine Learning Engineer"
-msgstr "Machine Learning Engineer"
+msgstr ""
 
 #: templates/index.html:121
 msgid "If you have any questions or feedback, feel free to reach out!"
-msgstr "If you have any questions or feedback, feel free to reach out!"
+msgstr ""
 
 #: templates/index.html:131
 msgid "All rights reserved"
@@ -273,9 +269,8 @@ msgid "Could not open file {filename!r}: {message}"
 msgstr ""
 
 #: venv/Lib/site-packages/click/formatting.py:156
-#, fuzzy
 msgid "Usage:"
-msgstr "Causes:"
+msgstr ""
 
 #: venv/Lib/site-packages/click/parser.py:233
 #, python-brace-format
@@ -369,9 +364,8 @@ msgid "{value!r} is not a valid UUID."
 msgstr ""
 
 #: venv/Lib/site-packages/click/types.py:826
-#, fuzzy
 msgid "file"
-msgstr "Title"
+msgstr ""
 
 #: venv/Lib/site-packages/click/types.py:828
 msgid "directory"
@@ -417,100 +411,4 @@ msgid "{len_type} values are required, but {len_value} was given."
 msgid_plural "{len_type} values are required, but {len_value} were given."
 msgstr[0] ""
 msgstr[1] ""
-
-#~ msgid "Choose file"
-#~ msgstr "Choose file"
-
-#~ msgid "Chickenpox"
-#~ msgstr "Chickenpox"
-
-#~ msgid "Hand, foot and mouth disease"
-#~ msgstr "Hand, foot and mouth disease"
-
-#~ msgid "Monkeypox"
-#~ msgstr "Monkeypox"
-
-#~ msgid "Measles"
-#~ msgstr "Measles"
-
-#~ msgid "Cowpox"
-#~ msgstr "Cowpox"
-
-#~ msgid "Healthy"
-#~ msgstr "Healthy"
-
-#~ msgid "Overview"
-#~ msgstr "Overview"
-
-#~ msgid "Symptoms"
-#~ msgstr "Symptoms"
-
-#~ msgid "Causes"
-#~ msgstr "Causes"
-
-#~ msgid "Treatment"
-#~ msgstr "Treatment"
-
-#~ msgid "Prevention"
-#~ msgstr "Prevention"
-
-#~ msgid "Language"
-#~ msgstr "Language"
-
-#~ msgid "AI Explanation"
-#~ msgstr "AI Explanation"
-
-#~ msgid "Ask AI"
-#~ msgstr "Ask AI"
-
-#~ msgid "Type your question here..."
-#~ msgstr "Type your question here..."
-
-#~ msgid "Here is an AI Explanation for:"
-#~ msgstr "Here is an AI Explanation for:"
-
-#~ msgid "Yedigeyev Galym"
-#~ msgstr "Yedigeyev Galym"
-
-#~ msgid "Lavrentyev Artyom"
-#~ msgstr "Lavrentyev Artyom"
-
-#~ msgid "ML Engineer"
-#~ msgstr "ML Engineer"
-
-#~ msgid ""
-#~ "Our AI system can detect certain "
-#~ "diseases from images in just a few"
-#~ " clicks!"
-#~ msgstr ""
-#~ "Our AI system can detect certain "
-#~ "diseases from images in just a few"
-#~ " clicks!"
-
-#~ msgid ""
-#~ "We support multiple languages. Feel free"
-#~ " to switch using the top-right "
-#~ "menu."
-#~ msgstr ""
-#~ "We support multiple languages. Feel free"
-#~ " to switch using the top-right "
-#~ "menu."
-
-#~ msgid "How to Use"
-#~ msgstr "How to Use"
-
-#~ msgid "Press \"Submit\" to get a result from our model."
-#~ msgstr "Press \"Submit\" to get a result from our model."
-
-#~ msgid "Check out the detailed info below!"
-#~ msgstr "Check out the detailed info below!"
-
-#~ msgid "Member One"
-#~ msgstr "Member One"
-
-#~ msgid "Member Two"
-#~ msgstr "Member Two"
-
-#~ msgid "Frontend Dev"
-#~ msgstr "Frontend Dev"
 

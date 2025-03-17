@@ -1,7 +1,7 @@
 import os
-os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"  # Отключаем oneDNN для стабильности
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"  # ← Добавляем эту строку
 
-from flask import Flask, request, jsonify, render_template, g, url_for, session, redirect
+from flask import Flask, request, jsonify, render_template, g, url_for, session, redirect, make_response
 from flask_babel import Babel, _
 from PIL import Image
 import numpy as np
@@ -10,22 +10,19 @@ import logging
 import requests
 from werkzeug.utils import secure_filename
 from translations.disease_data import disease_info
-
-# Flask настройки
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"  # Отключаем oneDNN
 app = Flask(__name__, static_folder='static', template_folder='templates')
 app.secret_key = "mysecretkey"
 app.config['BABEL_DEFAULT_LOCALE'] = 'en'
 app.config['BABEL_SUPPORTED_LOCALES'] = ['en', 'ru', 'kk']
 app.config['BABEL_TRANSLATION_DIRECTORIES'] = 'translations'
 
-# Настройка папки загрузок
 UPLOAD_FOLDER = os.path.join(app.static_folder, 'uploads')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 babel = Babel(app, locale_selector=lambda: g.get('locale', 'en'))
 
-# Модель нейросети
 MODEL_PATH = os.path.join('models', 'simple_model.keras')
 DROPBOX_LINK = "https://www.dropbox.com/scl/fi/m9a3rj98z7zcnxxkeqv4j/simple_model.keras?rlkey=fw291bkxrh38sr5swbnouosom&dl=1"
 
@@ -43,13 +40,12 @@ def download_model():
         else:
             raise Exception(f"❌ Ошибка скачивания модели: {response.status_code}")
 
-# Загрузка модели перед запуском сервера
+# Важно! скачиваем и загружаем модель ПЕРЕД запуском сервера:
 with app.app_context():
     download_model()
     model = load_model(MODEL_PATH)
     print("✅ Модель успешно загружена!")
 
-# Сопоставление классов
 label_mapping = {
     0: 'Chickenpox',
     1: 'Cowpox',
@@ -73,7 +69,30 @@ def allowed_file(filename):
 
 @app.route('/')
 def index():
-    return render_template('index.html', lang=g.locale)
+    prediction_key = session.get('prediction')
+    image_url = session.get('image_url')
+    confidence = session.get('confidence')
+    disease_info_translated = {}
+
+    if prediction_key:
+        disease_info_data = disease_info.get(prediction_key, {})
+        disease_info_localized = disease_info_data.get(g.locale, disease_info_data.get('en', {}))
+        disease_info_translated = {
+            "Symptoms": disease_info_localized.get("symptoms", []),
+            "Causes": disease_info_localized.get("causes", []),
+            "Prevention": disease_info_localized.get("prevention", []),
+            "Treatment": disease_info_localized.get("treatment", "")
+        }
+
+    return render_template(
+        'index.html',
+        lang=g.locale,
+        prediction=prediction_key,
+        confidence=session.get('confidence'),
+        image_url=session.get('image_url'),
+        disease_info=disease_info_translated,
+    )
+
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -99,25 +118,21 @@ def upload_file():
             confidence = float(round(prediction[0][predicted_class] * 100, 2))
             disease_key = label_mapping[predicted_class]
 
-            # исправлено здесь ↓↓↓
+            # 🔥 Теперь гарантированно загружаем правильные данные
             disease_info_data = disease_info.get(disease_key, {})
             disease_info_localized = disease_info_data.get(g.locale, disease_info_data.get('en', {}))
 
+            # 🔥 Обновляем `session`, чтобы браузер мог сразу получить новые данные
             session['image_url'] = url_for('static', filename=f'uploads/{filename}')
             session['prediction'] = disease_key
             session['confidence'] = confidence
-            session['disease_info'] = disease_info_data
+            session['disease_info'] = disease_info_localized
 
             return jsonify(
                 image_url=session['image_url'],
                 prediction=disease_key,
                 confidence=confidence,
-                info={
-                    "Symptoms": disease_info_data.get("symptoms", []),
-                    "Causes": disease_info_data.get("causes", []),
-                    "Prevention": disease_info_data.get("prevention", []),
-                    "Treatment": disease_info_data.get("treatment", "")
-                }
+                info=disease_info_localized  # 🔥 Теперь передается сразу
             )
 
         except Exception as e:
