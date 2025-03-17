@@ -27,11 +27,28 @@ document.addEventListener('DOMContentLoaded', () => {
         bodyRoot.classList.toggle('light-theme', !themeToggleCheckbox.checked);
     });
 
-    clearBtn.addEventListener('click', () => {
-        fileInput.value = '';
-        fileChosen.textContent = translations[lang].fileNotChosen;
-        resultContainer.innerHTML = '';
+    clearBtn.addEventListener('click', async () => {
+        try {
+            const response = await fetch('/clear', { method: 'POST' });
+            const data = await response.json();
+    
+            if (data.error) {
+                alert("Error: " + data.error);
+                return;
+            }
+    
+            // Обновляем UI после очистки
+            fileInput.value = '';
+            fileChosen.textContent = translations[lang].fileNotChosen;
+            resultContainer.innerHTML = '';
+    
+            alert(translations[lang].clearData + " - " + data.message);
+            location.reload(); // Перезагружаем страницу
+        } catch (err) {
+            alert("Error: " + err.message);
+        }
     });
+    
 
     fileInput.addEventListener('change', () => {
         fileChosen.textContent = fileInput.files.length ? fileInput.files[0].name : translations[lang].fileNotChosen;

@@ -144,8 +144,20 @@ def upload_file():
 
 @app.route('/clear', methods=['POST'])
 def clear_session():
-    session.clear()
-    return redirect(url_for('index'))
+    try:
+        # Удаляем загруженные файлы
+        for filename in os.listdir(app.config['UPLOAD_FOLDER']):
+            file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+
+        # Очистка сессии
+        session.clear()
+        return jsonify(message=_("All data cleared successfully."))
+
+    except Exception as e:
+        logging.exception("Ошибка при очистке данных")
+        return jsonify(error=str(e)), 500
 
 if __name__ == '__main__':
     download_model()
