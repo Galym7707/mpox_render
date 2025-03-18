@@ -327,14 +327,16 @@ body {
   .upload-container,
   .result-container,
   .team-container,
-  .contact-container {
+  .contact-container,
+  .hero-container {
     width: 95%;
     margin: 0 auto; /* Центрируем */
+    text-align: center;
   }
 
   /* 🛠 Логотип */
   .site-logo {
-    height: 50px; /* Уменьшаем размер */
+    height: 45px; /* Уменьшаем размер */
     display: block;
     margin: 0 auto;
   }
@@ -348,7 +350,7 @@ body {
   .main-nav-list {
     flex-direction: row !important;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
   }
 
   .main-nav-list li a {
@@ -367,6 +369,25 @@ body {
   .lang-dropdown {
     display: flex;
     align-items: center;
+  }
+
+  /* 🛠 Hero Section */
+  .hero-section {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .hero-container h1 {
+    font-size: 1.5rem; /* Уменьшаем заголовок */
+  }
+
+  .hero-subtext {
+    font-size: 1rem;
+  }
+
+  .hero-instructions {
+    font-size: 0.9rem;
+    padding: 15px;
   }
 
   /* 🛠 Уменьшаем кнопки */
@@ -389,7 +410,7 @@ body {
   }
 
   .team-photo {
-    height: 180px;
+    height: 160px;
     border-radius: 10px;
   }
 
@@ -409,7 +430,7 @@ body {
 
   /* 🛠 Дополнительное исправление для Disease Prediction */
   .drag-and-drop-area {
-    padding: 20px;
+    padding: 15px;
   }
 }
 
