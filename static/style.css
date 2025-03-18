@@ -16,24 +16,22 @@ body.dark-theme {
 }
 body {
   font-family: 'Roboto', sans-serif;
-  background: #0a0a0a; /* Темный цвет */
+  background: #0a0a0a;
   color: #eee;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-size: 16px; /* Уменьшаем размер шрифта */
 }
 
-/* -------- HEADER -------- */
+
+/* HEADER */
 .site-header {
-  background: #1f1f4a; /* Тёмный фиолетово-синий */
-  color: #fff;
-  padding: 0.8rem 1rem;
+  background: #1f1f4a;
+  padding: 0.6rem 0.8rem; /* Уменьшаем отступы */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 999;
 }
 
 /* Левая часть (логотип) */
@@ -41,8 +39,9 @@ body {
   display: flex;
   align-items: center;
 }
+
 .site-logo {
-  height: 80px; /* Увеличенный размер лого */
+  height: 60px; /* Уменьшаем логотип */
   width: auto;
 }
 
@@ -52,19 +51,19 @@ body {
   display: flex;
   justify-content: center;
 }
+
 .main-nav-list {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 20px; /* Уменьшаем промежуток */
 }
 .main-nav-list li a {
   text-decoration: none;
   color: #fff;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-bottom: 2px solid transparent;
-  transition: 0.3s;
+  font-size: 0.9rem; /* Меньший размер шрифта */
+  font-weight: 500;
 }
+
 .main-nav-list li a:hover {
   border-color: #fff;
 }
@@ -73,7 +72,7 @@ body {
 .controls-container {
   display: flex;
   align-items: center;
-  gap: 15px; /* Отступ между элементами */
+  gap: 10px; /* Меньше отступ */
 }
 
 .lang-dropdown {
@@ -195,6 +194,7 @@ body {
 .upload-container h2 {
   margin-bottom: 1rem;
   color: #66ffff;
+  font-size: 1.5rem;
 }
 
 /* Drag-and-drop area */
@@ -245,7 +245,7 @@ body {
 .button-submit {
   background-color: #28a745;
   color: #fff;
-  padding: 12px 28px;
+  padding: 10px 16px;
   border-radius: 30px;
   font-size: 16px;
   cursor: pointer;
@@ -318,29 +318,40 @@ body {
 }
 
 @media (max-width: 768px) {
-  .site-header, .main-nav-list {
+  .site-header {
     flex-direction: column;
     gap: 10px;
     padding: 0.5rem;
+    text-align: center;
   }
 
-  .upload-container {
-    padding: 15px;
-    width: 100%;
-  }
-
-  .uploaded-image, .result-container, .disease-info {
-    width: 100%;
-    margin: 10px auto;
-  }
-
-  .buttons-wrapper {
+  .main-nav-list {
     flex-direction: column;
+    align-items: center;
+    gap: 8px;
   }
 
-  .button-submit, .button-clear {
+  .controls-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Контейнер загрузки */
+  .upload-container {
+    padding: 10px;
+    width: 95%;
+  }
+
+  .button-submit,
+  .button-clear {
     width: 100%;
     margin-top: 10px;
+  }
+
+  /* Размер изображений */
+  .uploaded-image {
+    max-width: 100%;
+    height: auto;
   }
 }
 
@@ -518,7 +529,7 @@ body {
 
 /* Иконка луны */
 .moon-icon {
-  width: 32px; /* Увеличенный размер */
+  width: 24px; /* Увеличенный размер */
   height: auto;
   vertical-align: middle;
 }
