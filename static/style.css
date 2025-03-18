@@ -318,143 +318,101 @@ body {
 }
 
 @media (max-width: 768px) {
-  /* Хедер */
-  .site-header {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 1rem;
+  /* 🛠 Общие исправления */
+  body {
+    font-size: 14px; /* Уменьшаем шрифт для мобильных */
   }
 
+  /* 🛠 Фикс выравнивания контейнеров */
+  .upload-container,
+  .result-container,
+  .team-container,
+  .contact-container {
+    width: 95%;
+    margin: 0 auto; /* Центрируем */
+  }
+
+  /* 🛠 Логотип */
   .site-logo {
-    height: 50px; /* Уменьшаем логотип */
+    height: 50px; /* Уменьшаем размер */
+    display: block;
+    margin: 0 auto;
   }
 
-  /* Навигация */
+  /* 🛠 Меню в один ряд */
   .main-nav {
-    flex: none;
+    display: flex;
+    justify-content: center;
   }
 
   .main-nav-list {
-    flex-direction: row;
+    flex-direction: row !important;
+    justify-content: center;
     gap: 10px;
   }
 
   .main-nav-list li a {
-    font-size: 0.85rem; /* Уменьшаем шрифт */
+    font-size: 0.8rem; /* Меньше размер шрифта */
   }
 
-  /* Управление темой и языком */
+  /* 🛠 Исправление положения кнопок */
   .controls-container {
-    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* 🛠 Night Mode и Language */
+  .night-mode-toggle,
+  .lang-dropdown {
+    display: flex;
     align-items: center;
-    gap: 5px;
   }
 
-  .lang-btn {
-    font-size: 0.85rem;
-  }
-
-  .moon-icon {
-    width: 24px;
-  }
-
-  #night-mode-label {
-    font-size: 0.85rem;
-  }
-
-  /* Контейнер загрузки */
-  .upload-container {
-    padding: 10px;
-    width: 95%;
-  }
-
-  .upload-container h2 {
-    font-size: 1.3rem; /* Уменьшаем заголовок */
-  }
-
-  .drag-and-drop-area {
-    padding: 20px;
-    font-size: 0.9rem;
-  }
-
-  #file-label {
-    font-size: 0.85rem;
-    padding: 8px 16px;
-  }
-
-  /* Кнопки */
-  .buttons-wrapper {
-    flex-direction: column;
-  }
-
+  /* 🛠 Уменьшаем кнопки */
   .button-submit,
   .button-clear {
-    width: 100%;
-    font-size: 0.9rem;
-    padding: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
   }
 
-  /* Контейнер предсказания */
-  .disease-info {
-    padding: 15px;
-    max-width: 100%;
-    font-size: 0.9rem;
-  }
-
-  .disease-info h2 {
-    font-size: 1.1rem;
-  }
-
-  .disease-info p,
-  .disease-info li {
-    font-size: 0.85rem;
-  }
-
-  /* Команда (TEAM SECTION) */
+  /* 🛠 Team Section: Два человека в ряд */
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Два человека в ряд */
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки */
     gap: 10px;
   }
 
   .team-card {
     width: 100%;
-    padding: 0.8rem;
+    max-width: 200px; /* Ограничиваем размер */
   }
 
   .team-photo {
-    height: 160px;
+    height: 180px;
+    border-radius: 10px;
   }
 
-  .team-card h3 {
-    font-size: 1rem;
-  }
-
-  .team-card p {
-    font-size: 0.85rem;
-  }
-
-  /* Контактная секция */
-  .contact-container {
-    padding: 15px;
-    font-size: 0.9rem;
-  }
-
-  .contact-container h2 {
-    font-size: 1.2rem;
-  }
-
+  /* 🛠 Контакты: Выравниваем */
   .contact-list li {
-    padding: 8px;
-    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
   }
 
-  .contact-icon {
-    width: 20px;
-    height: 20px;
+  /* 🛠 Исправление для кнопок */
+  .button-submit,
+  .button-clear {
+    width: 100%;
+  }
+
+  /* 🛠 Дополнительное исправление для Disease Prediction */
+  .drag-and-drop-area {
+    padding: 20px;
   }
 }
+
 
 .result-container {
   margin-top: 20px;
