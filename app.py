@@ -73,9 +73,13 @@ def index():
     image_url = session.get('image_url')
     confidence = session.get('confidence')
     disease_info_translated = {}
+    translated_disease_name = prediction_key  # По умолчанию оригинальное название
 
     if prediction_key:
+        # 🔥 Теперь берем переведенное название из disease_info
         disease_info_data = disease_info.get(prediction_key, {})
+        translated_disease_name = disease_info_data.get(g.locale, {}).get("title", prediction_key)  # Получаем переведенное название
+
         disease_info_localized = disease_info_data.get(g.locale, disease_info_data.get('en', {}))
         disease_info_translated = {
             "Symptoms": disease_info_localized.get("symptoms", []),
@@ -87,12 +91,11 @@ def index():
     return render_template(
         'index.html',
         lang=g.locale,
-        prediction=prediction_key,
+        prediction=translated_disease_name,  # Теперь передаем переведенное название
         confidence=session.get('confidence'),
         image_url=session.get('image_url'),
         disease_info=disease_info_translated,
     )
-
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -118,21 +121,23 @@ def upload_file():
             confidence = float(round(prediction[0][predicted_class] * 100, 2))
             disease_key = label_mapping[predicted_class]
 
-            # 🔥 Теперь гарантированно загружаем правильные данные
+            # 🔥 Получаем переведенное название
             disease_info_data = disease_info.get(disease_key, {})
+            translated_disease_name = disease_info_data.get(g.locale, {}).get("title", disease_key)
+
             disease_info_localized = disease_info_data.get(g.locale, disease_info_data.get('en', {}))
 
-            # 🔥 Обновляем `session`, чтобы браузер мог сразу получить новые данные
+            # 🔥 Обновляем session, чтобы браузер мог сразу получить новые данные
             session['image_url'] = url_for('static', filename=f'uploads/{filename}')
-            session['prediction'] = disease_key
+            session['prediction'] = translated_disease_name  # Обновляем с переведенным названием
             session['confidence'] = confidence
             session['disease_info'] = disease_info_localized
 
             return jsonify(
                 image_url=session['image_url'],
-                prediction=disease_key,
+                prediction=translated_disease_name,  # Теперь передаем переведенное название
                 confidence=confidence,
-                info=disease_info_localized  # 🔥 Теперь передается сразу
+                info=disease_info_localized
             )
 
         except Exception as e:

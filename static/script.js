@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn = document.getElementById('button-submit');
     const clearBtn = document.getElementById('button-clear');
     const infoLanguageSelect = document.getElementById('info-language');
+    const langDropdownLinks = document.querySelectorAll(".lang-dropdown-content a");
 
     const translations = {
         en: { result: "Prediction", confidence: "Confidence", causes: "Causes", symptoms: "Symptoms", prevention: "Prevention", treatment: "Treatment", noData: "No data available", fileNotChosen: "No file chosen", submit: "Submit", clearData: "Clear Data", uploadError: "Failed to upload the image.", processing: "Processing..." },
@@ -49,6 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
+    
+    langDropdownLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            setTimeout(() => {
+                location.reload(); // Перезагрузка страницы, чтобы обновился перевод названия заболевания
+            }, 500);
+        });
+    });
 
     fileInput.addEventListener('change', () => {
         fileChosen.textContent = fileInput.files.length ? fileInput.files[0].name : translations[lang].fileNotChosen;
