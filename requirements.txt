@@ -4,4 +4,4 @@ flask-cors
 numpy
 Pillow
 gunicorn
-tensorflow-cpu  # Используем CPU-версию TensorFlow для снижения потребления памяти
+tensorflow-cpu  # CPU version only

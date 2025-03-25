@@ -118,3 +118,27 @@ msgstr "Все права защищены"
 #: templates/index.html:27
 msgid "Language"
 msgstr "Язык"
+
+#: templates/index.html:35
+msgid "Welcome to Monkeypox Detector"
+msgstr "Добро пожаловать в систему определения оспы обезьян"
+
+#: templates/index.html:36
+msgid "Our AI-powered tool helps you analyze skin images to predict possible diseases. Upload an image to get started."
+msgstr "Наш инструмент на базе ИИ помогает анализировать изображения кожи и предсказывать возможные заболевания. Загрузите изображение, чтобы начать."
+
+#: templates/index.html:38
+msgid "How to use:"
+msgstr "Как пользоваться:"
+
+#: templates/index.html:39
+msgid "Upload a clear image of the affected skin area."
+msgstr "Загрузите четкое изображение поражённого участка кожи."
+
+#: templates/index.html:40
+msgid "Click the \"Submit\" button and wait for the AI prediction."
+msgstr "Нажмите кнопку «Отправить» и дождитесь прогноза от ИИ."
+
+#: templates/index.html:41
+msgid "To get full disease details, select your preferred language from the top right."
+msgstr "Чтобы получить полную информацию о заболевании, выберите язык в правом верхнем углу."

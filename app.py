@@ -26,6 +26,7 @@ babel = Babel(app, locale_selector=lambda: g.get('locale', 'en'))
 MODEL_PATH = os.path.join('models', 'simple_model.keras')
 DROPBOX_LINK = "https://www.dropbox.com/scl/fi/m9a3rj98z7zcnxxkeqv4j/simple_model.keras?rlkey=fw291bkxrh38sr5swbnouosom&dl=1"
 
+
 def download_model():
     os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
 
@@ -73,15 +74,19 @@ def index():
     image_url = session.get('image_url')
     confidence = session.get('confidence')
     disease_info_translated = {}
-    translated_disease_name = prediction_key  # По умолчанию оригинальное название
+    translated_disease_name = None
 
     if prediction_key:
-        # 🔥 Теперь берем переведенное название из disease_info
+        # Получаем данные по болезни
         disease_info_data = disease_info.get(prediction_key, {})
-        translated_disease_name = disease_info_data.get(g.locale, {}).get("title", prediction_key)  # Получаем переведенное название
-
         disease_info_localized = disease_info_data.get(g.locale, disease_info_data.get('en', {}))
+
+        # Получаем переведённое название (title)
+        translated_disease_name = disease_info_localized.get("title", prediction_key)
+
+        # Подготавливаем остальную информацию
         disease_info_translated = {
+            "Title": translated_disease_name,
             "Symptoms": disease_info_localized.get("symptoms", []),
             "Causes": disease_info_localized.get("causes", []),
             "Prevention": disease_info_localized.get("prevention", []),
@@ -91,11 +96,12 @@ def index():
     return render_template(
         'index.html',
         lang=g.locale,
-        prediction=translated_disease_name,  # Теперь передаем переведенное название
-        confidence=session.get('confidence'),
-        image_url=session.get('image_url'),
-        disease_info=disease_info_translated,
+        prediction=translated_disease_name,
+        confidence=confidence,
+        image_url=image_url,
+        disease_info=disease_info_translated
     )
+
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -129,7 +135,7 @@ def upload_file():
 
             # 🔥 Обновляем session, чтобы браузер мог сразу получить новые данные
             session['image_url'] = url_for('static', filename=f'uploads/{filename}')
-            session['prediction'] = translated_disease_name  # Обновляем с переведенным названием
+            session['prediction'] = disease_key  # ✅ сохраняем оригинальное название
             session['confidence'] = confidence
             session['disease_info'] = disease_info_localized
 
