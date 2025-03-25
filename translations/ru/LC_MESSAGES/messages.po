@@ -136,7 +136,7 @@ msgid "Upload a clear image of the affected skin area."
 msgstr "Загрузите четкое изображение поражённого участка кожи."
 
 #: templates/index.html:40
-msgid "Click the \"Submit\" button and wait for the AI prediction."
+msgid "Click the \"Analyse Now\" button and wait for the AI prediction."
 msgstr "Нажмите кнопку «Отправить» и дождитесь прогноза от ИИ."
 
 #: templates/index.html:41
