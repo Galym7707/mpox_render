@@ -58,6 +58,9 @@ msgstr "Файлды осында сүйреп апарыңыз немесе т�
 msgid "Upload an Image"
 msgstr "Суретті жүктеңіз"
 
+msgid "Drag & Drop Image"
+msgstr "Суретті сүйреп апарыңыз
+
 #: templates/index.html:46
 msgid "No file chosen"
 msgstr "Файл таңдалмады"
@@ -141,3 +144,75 @@ msgstr "\\\"Жіберу\\\" түймесін басып, AI болжауын к
 #: templates/index.html:42
 msgid "To get full disease details, select your preferred language from the top right."
 msgstr "Ауру туралы толық ақпарат алу үшін оң жақ жоғарғы бұрыштан тілді таңдаңыз."
+
+#: templates/index.html:35
+msgid "MpoxDetection.ai"
+msgstr "MpoxDetection.ai"
+
+#: templates/index.html:36
+msgid "Your AI-Powered Skin Disease Detection Solution"
+msgstr "Тері ауруларын анықтайтын AI жүйесі"
+
+#: templates/index.html:37
+msgid "Accurate • Fast • Reliable"
+msgstr "Дәл • Жылдам • Сенімді"
+
+#: templates/index.html:44
+msgid "Drag & Drop Image"
+msgstr "Суретті сүйреп апарыңыз"
+
+#: templates/index.html:45
+msgid "or"
+msgstr "немесе"
+
+#: templates/index.html:46
+msgid "Browse Files"
+msgstr "Файлдарды таңдау"
+
+#: templates/index.html:47
+msgid "Supported formats: JPG, PNG up to 5MB"
+msgstr "Қолдайтын форматтар: JPG, PNG (5MB дейін)"
+
+#: templates/index.html:48
+msgid "Analyze Now"
+msgstr "Талдау"
+
+#: templates/index.html:49
+msgid "Clear"
+msgstr "Тазалау"
+
+#: templates/index.html:50
+msgid "Dark Mode"
+msgstr "Қараңғы режим"
+
+#: templates/index.html:51
+msgid "AI Skin Analysis"
+msgstr "Теріні AI арқылы талдау"
+
+#: templates/index.html:52
+msgid "Upload your image for instant diagnosis"
+msgstr "Жедел диагноз алу үшін суретті жүктеңіз"
+
+#: templates/index.html:53
+msgid "How to use:"
+msgstr "Қолдану нұсқаулығы:"
+
+#: templates/index.html:54
+msgid "1. Upload a clear image of the affected skin area."
+msgstr "1. Зақымданған тері аймағының анық суретін жүктеңіз."
+
+#: templates/index.html:55
+msgid "2. Click the \"Analyze Now\" button and wait for the AI prediction."
+msgstr "2. \"Талдау\" түймесін басып, AI болжауын күтіңіз."
+
+#: templates/index.html:56
+msgid "3. To get full disease details, select your preferred language from the top right."
+msgstr "3. Ауру туралы толық ақпарат алу үшін оң жақ жоғарғы бұрыштан тілді таңдаңыз."
+
+#: templates/index.html:57
+msgid "Full-Stack Developer"
+msgstr "Full-Stack әзірлеуші"
+
+#: templates/index.html:58
+msgid "Machine Learning Engineer"
+msgstr "Машиналық оқыту инженері"

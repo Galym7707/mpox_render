@@ -142,3 +142,48 @@ msgstr "Нажмите кнопку «Отправить» и дождитесь
 #: templates/index.html:41
 msgid "To get full disease details, select your preferred language from the top right."
 msgstr "Чтобы получить полную информацию о заболевании, выберите язык в правом верхнем углу."
+
+#: templates/index.html:35
+msgid "MpoxDetection.ai"
+msgstr "MpoxDetection.ai"
+
+#: templates/index.html:36
+msgid "Your AI-Powered Skin Disease Detection Solution"
+msgstr "Ваше решение для обнаружения кожных заболеваний на основе ИИ"
+
+#: templates/index.html:37
+msgid "Accurate • Fast • Reliable"
+msgstr "Точно • Быстро • Надёжно"
+
+msgid "Drag & Drop Image"
+msgstr "Перетащите изображение"
+
+#: templates/index.html:45
+msgid "or"
+msgstr "или"
+
+#: templates/index.html:46
+msgid "Browse Files"
+msgstr "Выбрать файл"
+
+#: templates/index.html:47
+msgid "Supported formats: JPG, PNG up to 5MB"
+msgstr "Поддерживаемые форматы: JPG, PNG до 5MB"
+
+#: templates/index.html:48
+msgid "Analyze Now"
+msgstr "Анализировать"
+
+#: templates/index.html:49
+msgid "Clear"
+msgstr "Очистить"
+
+#: templates/index.html:50
+msgid "Dark Mode"
+msgstr "Тёмный режим"
+
+msgid "Upload your image for instant diagnosis"
+msgstr "Загрузите свое изображение для мгновенной диагностики"
+
+msgid "AI Skin Analysis"
+msgstr "Анализ кожи с помощью ИИ"

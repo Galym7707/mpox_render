@@ -61,10 +61,13 @@
   <!-- HERO SECTION -->
   <section class="hero-section" id="hero-section">
     <div class="hero-container" data-aos="zoom-in">
-      <h1>{{ _('Welcome to Monkeypox Detector') }}</h1>
+      <h1>{{ _('MpoxDetection.ai') }}</h1>
       <p class="hero-subtext">
-        {{ _('Our AI-powered tool helps you analyze skin images to predict possible diseases. Upload an image to get started.') }}
+        {{ _('Your AI-Powered Skin Disease Detection Solution') }}
       </p>
+      <div class="hero-tagline">
+        {{ _('Accurate • Fast • Reliable') }}
+      </div><br>
       <div class="hero-instructions">
         <h3>{{ _('How to use:') }}</h3>
         <ol>
@@ -244,10 +247,13 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-content">
-      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" class="footer-logo">
-      <p>{{ _('All rights reserved') }} &copy; 2025</p>
+      <p>&copy; 2025 MpoxDetection.ai</p>
+      <a class="github-banner" href="https://github.com/Galym7707/mpox_render" target="_blank">
+        <i class="fab fa-github"></i> {{ _('Fork on GitHub') }}
+      </a>
     </div>
   </footer>
+  
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>

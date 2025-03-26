@@ -2,6 +2,19 @@
 
 Monkeypox Detection Bot — это веб-приложение на основе Flask, предназначенное для распознавания симптомов оспы обезьян с использованием искусственного интеллекта.
 
+## 🚀 Deployment
+
+1. Fork this repository
+2. Create Railway account
+3. Connect your GitHub account
+4. Deploy using this config:
+
+```yaml
+build:
+  command: pip install -r requirements.txt && python app.py
+environment:
+  FLASK_ENV: production
+
 ## 🛠 Структура проекта
 
 - `app.py`: основной файл приложения Flask.

@@ -15,9 +15,8 @@ msgstr ""
 "Generated-By: Babel 2.17.0\n"
 
 #: app.py:100
-#, fuzzy
 msgid "No file uploaded"
-msgstr "No file chosen"
+msgid "No file uploaded"
 
 #: app.py:104
 #, fuzzy
@@ -26,7 +25,7 @@ msgstr "No file chosen"
 
 #: app.py:142
 msgid "Invalid file format"
-msgstr ""
+msgstr "Invalid file format"
 
 #: templates/index.html:7 templates/index.html:39
 msgid "Disease Prediction"
@@ -537,3 +536,43 @@ msgstr "Click the \\\"Analyse Now\\\" button and wait for the AI prediction."
 #: templates/index.html:42
 msgid "To get full disease details, select your preferred language from the top right."
 msgstr "To get full disease details, select your preferred language from the top right."
+
+#: templates/index.html:35
+msgid "MpoxDetection.ai"
+msgstr "MpoxDetection.ai"
+
+#: templates/index.html:36
+msgid "Your AI-Powered Skin Disease Detection Solution"
+msgstr "Your AI-Powered Skin Disease Detection Solution"
+
+#: templates/index.html:37
+msgid "Accurate • Fast • Reliable"
+msgstr "Accurate • Fast • Reliable"
+
+#: templates/index.html:44
+msgid "Drag & Drop Image"
+msgstr "Drag & Drop Image"
+
+#: templates/index.html:45
+msgid "or"
+msgstr "or"
+
+#: templates/index.html:46
+msgid "Browse Files"
+msgstr "Browse Files"
+
+#: templates/index.html:47
+msgid "Supported formats: JPG, PNG up to 5MB"
+msgstr "Supported formats: JPG, PNG up to 5MB"
+
+#: templates/index.html:48
+msgid "Analyze Now"
+msgstr "Analyze Now"
+
+#: templates/index.html:49
+msgid "Clear"
+msgstr "Clear"
+
+#: templates/index.html:50
+msgid "Dark Mode"
+msgstr "Dark Mode"
