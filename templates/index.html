@@ -4,40 +4,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ _('Disease Prediction') }}</title>
+  <title>{{ _('MpoxDetection.ai - AI Skin Disease Analysis') }}</title> <!-- Improved Title -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- Updated Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"> <!-- Added Inter Font -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}"> <!-- Added Favicon Link -->
 </head>
 
 <body class="dark-theme" id="root-body">
-  
-  <!-- Анимированный фон -->
-  <div class="animated-background">
-    <div class="particle" data-speed="3"></div>
-    <div class="particle" data-speed="5"></div>
-    <div class="particle" data-speed="7"></div>
-  </div>
+
+  <!-- Removed animated background div - will use CSS gradients -->
 
   <header class="site-header">
     <div class="header-content">
       <div class="header-left">
-        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" class="site-logo" data-aos="fade-right">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="MpoxDetection.ai Logo" class="site-logo" data-aos="fade-right">
       </div>
-  
+
       <nav class="main-nav">
         <ul class="main-nav-list">
           <li data-aos="fade-down"><a href="#hero-section">{{ _('Home') }}</a></li>
-          <li data-aos="fade-down" data-aos-delay="100"><a href="#team-section">{{ _('Our Team') }}</a></li>
-          <li data-aos="fade-down" data-aos-delay="200"><a href="#contact-section">{{ _('Contact Us') }}</a></li>
+          <li data-aos="fade-down" data-aos-delay="100"><a href="#upload-section">{{ _('Analyze') }}</a></li>
+          <li data-aos="fade-down" data-aos-delay="200"><a href="#media-mentions">{{ _('Featured In') }}</a></li>
+          <li data-aos="fade-down" data-aos-delay="300"><a href="#team-section">{{ _('Our Team') }}</a></li>
+          <li data-aos="fade-down" data-aos-delay="400"><a href="#contact-section">{{ _('Contact Us') }}</a></li>
         </ul>
       </nav>
-  
+
       <div class="controls-container" data-aos="fade-left">
-        <!-- Языковой переключатель -->
+        <!-- Language Dropdown -->
         <div class="lang-dropdown">
           <button class="lang-btn">
-            <i class="fas fa-globe"></i> {{ _('Language') }}
+            <i class="fas fa-globe"></i> <span class="lang-text">{{ _('Language') }}</span>
           </button>
           <ul class="lang-dropdown-content">
             <li><a href="?lang=en" class="lang-link">English</a></li>
@@ -45,35 +44,55 @@
             <li><a href="?lang=kk" class="lang-link">Қазақша</a></li>
           </ul>
         </div>
-      
-        <!-- Переключатель темы -->
+
+        <!-- Theme Toggle -->
         <div class="night-mode-toggle">
-          <img src="{{ url_for('static', filename='img/moon.png') }}" class="moon-icon" alt="Night Mode">
           <label class="switch">
             <input type="checkbox" id="theme-toggle-btn" checked>
             <span class="slider round"></span>
+             <i class="fas fa-moon theme-icon moon"></i>
+             <i class="fas fa-sun theme-icon sun"></i>
           </label>
         </div>
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" aria-label="Toggle Menu">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </div>
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+       <ul class="mobile-nav-list">
+         <li><a href="#hero-section">{{ _('Home') }}</a></li>
+         <li><a href="#upload-section">{{ _('Analyze') }}</a></li>
+         <li><a href="#media-mentions">{{ _('Featured In') }}</a></li>
+         <li><a href="#team-section">{{ _('Our Team') }}</a></li>
+         <li><a href="#contact-section">{{ _('Contact Us') }}</a></li>
+       </ul>
+     </nav>
   </header>
 
   <!-- HERO SECTION -->
   <section class="hero-section" id="hero-section">
-    <div class="hero-container" data-aos="zoom-in">
-      <h1>{{ _('MpoxDetection.ai') }}</h1>
-      <p class="hero-subtext">
-        {{ _('Your AI-Powered Skin Disease Detection Solution') }}
+     <div class="hero-background-glow"></div> <!-- Glow Effect -->
+    <div class="hero-container">
+      <h1 data-aos="fade-up">{{ _('AI-Powered Skin Disease Detection') }}</h1>
+      <p class="hero-subtext" data-aos="fade-up" data-aos-delay="200">
+        {{ _('Get rapid, preliminary insights into potential skin conditions using advanced artificial intelligence.') }}
       </p>
-      <div class="hero-tagline">
-        {{ _('Accurate • Fast • Reliable') }}
-      </div><br>
-      <div class="hero-instructions">
-        <h3>{{ _('How to use:') }}</h3>
+      <div class="accuracy-highlight" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-bullseye accuracy-icon"></i>
+        <span>{{ _('Achieving') }} <strong>95% {{ _('Accuracy') }}</strong> {{ _('in identifying key skin diseases.') }}</span>
+      </div>
+      <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
+         <a href="#upload-section" class="cta-button">{{ _('Start Analysis Now') }} <i class="fas fa-arrow-right"></i></a>
+      </div>
+       <div class="hero-instructions" data-aos="fade-up" data-aos-delay="500">
+        <h3>{{ _('Easy Steps:') }}</h3>
         <ol>
-          <li>{{ _('Upload a clear image of the affected skin area.') }}</li>
-          <li>{{ _('Click the "Analyze Now" button and wait for the AI prediction.') }}</li>
-          <li>{{ _('To get full disease details, select your preferred language from the top right.') }}</li>
+          <li>{{ _('Upload a clear photo of the skin area.') }}</li>
+          <li>{{ _('Our AI analyzes the image instantly.') }}</li>
+          <li>{{ _('Receive a potential identification and confidence score.') }}</li>
         </ol>
       </div>
     </div>
@@ -81,92 +100,167 @@
 
   <!-- UPLOAD SECTION -->
   <section class="upload-section" id="upload-section">
+     <div class="section-shape top-shape"></div> <!-- Decorative Shape -->
     <div class="upload-container" data-aos="fade-up">
       <div class="upload-header">
-        <h2 class="upload-title">{{ _('AI Skin Analysis') }}</h2>
-        <p class="upload-subtitle">{{ _('Upload your image for instant diagnosis') }}</p>
+        <h2 class="upload-title">{{ _('Analyze Your Image') }}</h2>
+        <p class="upload-subtitle">{{ _('Securely upload for an AI-driven assessment.') }}</p>
       </div>
-  
+
       <form id="upload-form" enctype="multipart/form-data" class="upload-card">
         <div class="drag-and-drop-area" id="drag-and-drop-area">
           <div class="upload-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
-            </svg>
+             <i class="fas fa-cloud-upload-alt fa-3x"></i> <!-- Larger Icon -->
           </div>
           <div class="upload-content">
-            <h3 class="drag-text">{{ _('Drag & Drop Image') }}</h3>
-            <p class="or-text">{{ _('or') }}</p>
-            <label for="uploaded-image" class="browse-button">
-              {{ _('Browse Files') }}
-              <input type="file" id="uploaded-image" name="image" accept="image/*" hidden>
+            <h3 class="drag-text">{{ _('Drag & Drop Here') }}</h3>
+            <p class="or-text"><span>{{ _('or') }}</span></p> <!-- Styled 'or' -->
+            <label for="uploaded-image" class="browse-button btn">
+               <i class="fas fa-folder-open"></i> {{ _('Browse Files') }}
+              <input type="file" id="uploaded-image" name="image" accept="image/jpeg,image/png" hidden> <!-- Specific Accepts -->
             </label>
             <p class="file-requirements">
-              {{ _('Supported formats: JPG, PNG up to 5MB') }}
+              {{ _('Supports: JPG, PNG. Max size: 5MB') }}
             </p>
           </div>
         </div>
-  
+
         <div class="upload-footer">
           <div class="file-info">
-            <span id="file-chosen">{{ _('No file selected') }}</span>
+             <i class="fas fa-file-image"></i> <span id="file-chosen">{{ _('No file selected') }}</span>
           </div>
           <div class="action-buttons">
-            <button type="submit" class="analyze-button">
-              {{ _('Analyze Now') }}
-              <svg class="analyze-icon" width="20" height="20" viewBox="0 0 24 24">
-                <path fill="currentColor" d="M4 12v-2h12V4l8 8-8 8v-6H4z"/>
-              </svg>
+             <button type="button" class="clear-button btn">
+               <i class="fas fa-times-circle"></i> {{ _('Clear') }}
             </button>
-            <button type="button" class="clear-button">
-              {{ _('Clear') }}
+            <button type="submit" class="analyze-button btn">
+               <i class="fas fa-microscope"></i> {{ _('Analyze Now') }}
+               <span class="button-arrow"><i class="fas fa-arrow-right"></i></span>
             </button>
           </div>
         </div>
       </form>
-      
+
       <div id="result" class="result-container">
+         <!-- Results will be loaded here by script.js -->
         {% if prediction %}
           {% if image_url %}
-            <img src="{{ image_url }}" class="uploaded-image">
+            <div class="image-preview" data-aos="zoom-in">
+                <img src="{{ image_url }}" class="uploaded-image" alt="Uploaded analysis image">
+            </div>
           {% endif %}
-          <div class="disease-info">
-            <h2>{{ _('Prediction:') }} {{ prediction }}</h2>
-            <p><strong>{{ _('Confidence:') }}</strong> {{ confidence }}%</p>
+          <div class="diagnosis-report" data-aos="fade-up">
+             <h3 class="report-title"><i class="fas fa-notes-medical"></i> {{ _('Analysis Report') }}</h3>
+              <div class="report-item prediction-item">
+                 <span class="report-label">{{ _('Potential Condition:') }}</span>
+                 <span class="report-value prediction-value">{{ prediction }}</span>
+              </div>
+              <div class="report-item confidence-item">
+                 <span class="report-label">{{ _('Confidence Score:') }}</span>
+                 <div class="confidence-bar-container">
+                     <div class="confidence-bar" style="width: {{ confidence }}%;"></div>
+                 </div>
+                 <span class="report-value confidence-value">{{ confidence }}%</span>
+              </div>
 
-            {% if disease_info.Symptoms %}
-              <h4>{{ _('Symptoms:') }}</h4>
-              <ul>
-                {% for symptom in disease_info.Symptoms %}
-                  <li>{{ symptom }}</li>
-                {% endfor %}
-              </ul>
-            {% endif %}
-
-            {% if disease_info.Causes %}
-              <h4>{{ _('Causes:') }}</h4>
-              <ul>
-                {% for cause in disease_info.Causes %}
-                  <li>{{ cause }}</li>
-                {% endfor %}
-              </ul>
-            {% endif %}
-
-            {% if disease_info.Prevention %}
-              <h4>{{ _('Prevention:') }}</h4>
-              <ul>
-                {% for prev in disease_info.Prevention %}
-                  <li>{{ prev }}</li>
-                {% endfor %}
-              </ul>
-            {% endif %}
-
-            {% if disease_info.Treatment %}
-              <p><strong>{{ _('Treatment:') }}</strong> {{ disease_info.Treatment }}</p>
-            {% endif %}
+             {% if disease_info and (disease_info.Symptoms or disease_info.Causes or disease_info.Prevention or disease_info.Treatment) %}
+              <div class="disease-info-wrapper">
+                 <h4 class="disease-info-title">{{ _('About') }} {{ prediction }} ({{ g.locale|upper }})</h4>
+                 <div class="disease-info">
+                    {% if disease_info.Symptoms %}
+                        <div class="info-section symptoms-section">
+                            <h5><i class="fas fa-head-side-cough"></i> {{ _('Symptoms') }}</h5>
+                            <ul>{% for item in disease_info.Symptoms %}<li>{{ item }}</li>{% endfor %}</ul>
+                        </div>
+                    {% endif %}
+                    {% if disease_info.Causes %}
+                        <div class="info-section causes-section">
+                            <h5><i class="fas fa-virus"></i> {{ _('Causes') }}</h5>
+                            <ul>{% for item in disease_info.Causes %}<li>{{ item }}</li>{% endfor %}</ul>
+                        </div>
+                    {% endif %}
+                    {% if disease_info.Prevention %}
+                        <div class="info-section prevention-section">
+                            <h5><i class="fas fa-shield-alt"></i> {{ _('Prevention') }}</h5>
+                            <ul>{% for item in disease_info.Prevention %}<li>{{ item }}</li>{% endfor %}</ul>
+                        </div>
+                    {% endif %}
+                    {% if disease_info.Treatment %}
+                        <div class="info-section treatment-section">
+                           <h5><i class="fas fa-briefcase-medical"></i> {{ _('Treatment Approaches') }}</h5>
+                           <p>{{ disease_info.Treatment }}</p>
+                        </div>
+                    {% endif %}
+                    <p class="disclaimer-note"><i class="fas fa-exclamation-triangle"></i> <strong>{{ _('Important:') }}</strong> {{ _('This information is for general knowledge only. Consult a doctor for diagnosis and treatment.') }}</p>
+                 </div>
+              </div>
+             {% elif image_url %} {# Show only if image uploaded but no info (e.g., language mismatch) #}
+                <p class="info-notice">{{ _('Detailed information will be displayed once analysis is complete and language is selected.') }}</p>
+             {% endif %}
           </div>
         {% endif %}
       </div>
+    </div>
+     <div class="section-shape bottom-shape"></div> <!-- Decorative Shape -->
+  </section>
+
+  <!-- MEDIA MENTIONS SECTION -->
+  <section class="media-mentions-section" id="media-mentions">
+    <div class="media-container">
+        <h2 class="section-title" data-aos="fade-up">{{ _('As Featured In') }}</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">{{ _('Our project has been recognized by leading media outlets.') }}</p>
+
+        <div class="media-content-wrapper">
+            <!-- YouTube Video Player -->
+            <div class="video-player-container" data-aos="fade-right" data-aos-delay="200">
+                 <div class="video-player">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/jhzdqz3Fl_g?si=WlH1g0D5k5r-6GOs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                 </div>
+                 <p class="video-caption">{{ _('News report by 24.kz covering our AI project.') }}</p>
+            </div>
+
+            <!-- Media Links Grid -->
+            <div class="media-links-grid" data-aos="fade-left" data-aos-delay="300">
+                 <h3 class="media-links-title">{{ _('Read More:') }}</h3>
+                 <div class="media-items">
+                    <a href="https://24.kz/ru/news/obrazovanie-i-nauka/item/682785-shkolnik-iz-almaty-obuchil-ii-raspoznavat-kozhnye-zabolevaniya" target="_blank" class="media-item btn">
+                        <img src="{{ url_for('static', filename='img/media/24kz.png') }}" alt="24.kz"> <span>24.kz News</span>
+                    </a>
+                     <a href="https://dknews.kz/ru/dk-it/344861-shkolnik-iz-almaty-obuchil-iskusstvennyy-intellekt" target="_blank" class="media-item btn">
+                        <img src="{{ url_for('static', filename='img/media/dknews.png') }}" alt="DK News"> <span>DK News</span>
+                    </a>
+                     <a href="https://www.zakon.kz/tekhno/6457237-shkolnik-iz-kazakhstana-obuchil-iskusstvennyy-intellekt-raspoznavat-ospu-obezyan.html" target="_blank" class="media-item btn">
+                        <img src="{{ url_for('static', filename='img/media/zakonkz.png') }}" alt="Zakon.kz"> <span>Zakon.kz</span>
+                    </a>
+                     <a href="https://kz.kursiv.media/kk/2024-11-24/shlpn-artem-lavrentev/" target="_blank" class="media-item btn">
+                        <img src="{{ url_for('static', filename='img/media/kursiv.png') }}" alt="Kursiv Media"> <span>Kursiv Media</span>
+                    </a>
+                    <a href="https://astanatv.kz/ru/news/131587/" target="_blank" class="media-item btn">
+                        <img src="{{ url_for('static', filename='img/media/astanatv.png') }}" alt="Astana TV"> <span>Astana TV</span>
+                    </a>
+                     <a href="https://digitalbusiness.kz/2024-11-20/shkolnik-iz-almati-nauchil-ii-diagnostirovat-ospu-obezyan/" target="_blank" class="media-item btn">
+                        <img src="{{ url_for('static', filename='img/media/digitalbusiness.png') }}" alt="Digital Business"> <span>Digital Business</span>
+                    </a>
+                    <a href="https://bluescreen.kz/uchienik-iz-almaty-obuchil-ii-vyiavliat-obiezianiu-ospu/" target="_blank" class="media-item btn">
+                        <img src="{{ url_for('static', filename='img/media/bluescreen.png') }}" alt="BlueScreen.kz"> <span>BlueScreen.kz</span>
+                    </a>
+                    <a href="https://www.kp.kz/daily/27665/5016382/" target="_blank" class="media-item btn">
+                        <img src="{{ url_for('static', filename='img/media/kp.png') }}" alt="KP.kz"> <span>KP.kz</span>
+                    </a>
+                    <!-- Add other links similarly, creating simple logos if needed -->
+                     <a href="https://mail.kz/ru/news/kz-news/shkolnik-iz-kazahstana-obuchil-iskusstvennyi-intellekt-raspoznavat-ospu-obezyan" target="_blank" class="media-item btn">
+                         <i class="fas fa-newspaper"></i> <span>Mail.kz</span> <!-- Generic Icon -->
+                     </a>
+                    <a href="https://kokshetoday.kz/shkolnik-iz-kazakhstana-obuchil-iskusstvennyjj-intellekt-raspoznavat-ospu-obezyan/" target="_blank" class="media-item btn">
+                         <i class="fas fa-newspaper"></i> <span>Kokshetoday.kz</span>
+                    </a>
+                    <!-- ... more links ... -->
+                     <a href="https://t.me/informburo_kz/50795" target="_blank" class="media-item btn">
+                         <i class="fab fa-telegram-plane"></i> <span>Informburo (Telegram)</span>
+                     </a>
+                 </div>
+            </div>
+        </div>
     </div>
   </section>
 
@@ -174,35 +268,33 @@
   <section class="team-section" id="team-section">
     <div class="team-container">
       <h2 class="section-title" data-aos="fade-up">{{ _('Our Team') }}</h2>
-      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">{{ _('Meet the amazing people behind this project.') }}</p>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">{{ _('The minds behind MpoxDetection.ai') }}</p>
       <div class="team-grid">
-        <div class="team-card" data-aos="flip-left">
-          <img src="{{ url_for('static', filename='img/member1.jpg') }}" alt="Galym Yedigeyev" class="team-photo">
-          <h3>Galym Yedigeyev</h3>
-          <p>{{ _('Full-Stack Developer') }}</p>
+        <!-- Team Member 1 -->
+        <div class="team-card" data-aos="zoom-in-up" data-aos-delay="200">
+           <div class="team-photo-wrapper">
+               <img src="{{ url_for('static', filename='img/member1.jpg') }}" alt="Galym Yedigeyev" class="team-photo">
+           </div>
+          <h3 class="team-name">Galym Yedigeyev</h3>
+          <p class="team-role">{{ _('Full-Stack Developer & Web Architect') }}</p>
           <div class="team-social">
-            <a href="https://wa.me/+77075673195">
-              <img src="{{ url_for('static', filename='img/WhatsApp-icon.png') }}" class="social-icon" alt="WhatsApp">
-            </a>
-            <a href="https://www.instagram.com/edigeev_07/">
-              <img src="{{ url_for('static', filename='img/instagram-icon.png') }}" class="social-icon" alt="Instagram">
-            </a>
-            <a href="mailto:galymtashtek@gmail.com">
-              <img src="{{ url_for('static', filename='img/email-icon.png') }}" class="social-icon" alt="Email">
-            </a>
+            <a href="https://wa.me/+77075673195" target="_blank" aria-label="Galym WhatsApp"><i class="fab fa-whatsapp social-icon"></i></a>
+            <a href="https://www.instagram.com/edigeev_07/" target="_blank" aria-label="Galym Instagram"><i class="fab fa-instagram social-icon"></i></a>
+            <a href="mailto:galymtashtek@gmail.com" aria-label="Galym Email"><i class="fas fa-envelope social-icon"></i></a>
+            <a href="https://github.com/Galym7707" target="_blank" aria-label="Galym GitHub"><i class="fab fa-github social-icon"></i></a>
           </div>
         </div>
-        <div class="team-card" data-aos="flip-right">
-          <img src="{{ url_for('static', filename='img/member2.jpg') }}" alt="Artyom Lavrentyev" class="team-photo">
-          <h3>Artyom Lavrentyev</h3>
-          <p>{{ _('Machine Learning Engineer') }}</p>
+        <!-- Team Member 2 -->
+        <div class="team-card" data-aos="zoom-in-up" data-aos-delay="300">
+           <div class="team-photo-wrapper">
+              <img src="{{ url_for('static', filename='img/member2.jpg') }}" alt="Artyom Lavrentyev" class="team-photo">
+           </div>
+          <h3 class="team-name">Artyom Lavrentyev</h3>
+          <p class="team-role">{{ _('Machine Learning Engineer & AI Specialist') }}</p>
           <div class="team-social">
-            <a href="https://wa.me/+77757831321">
-              <img src="{{ url_for('static', filename='img/WhatsApp-icon.png') }}" class="social-icon" alt="WhatsApp">
-            </a>
-            <a href="mailto:mpoxdetection@gmail.com">
-              <img src="{{ url_for('static', filename='img/email-icon.png') }}" class="social-icon" alt="Email">
-            </a>
+            <a href="https://wa.me/+77757831321" target="_blank" aria-label="Artyom WhatsApp"><i class="fab fa-whatsapp social-icon"></i></a>
+            <a href="mailto:mpoxdetection@gmail.com" aria-label="Artyom Email"><i class="fas fa-envelope social-icon"></i></a>
+            <!-- Add LinkedIn or other relevant links if available -->
           </div>
         </div>
       </div>
@@ -212,33 +304,32 @@
   <!-- CONTACT SECTION -->
   <section class="contact-section" id="contact-section">
     <div class="contact-container" data-aos="fade-up">
-      <h2 class="section-title">{{ _('Contact Us') }}</h2>
-      <p class="section-subtitle">{{ _('If you have any questions or feedback, feel free to reach out!') }}</p>
+      <h2 class="section-title">{{ _('Get In Touch') }}</h2>
+      <p class="section-subtitle">{{ _('Have questions, feedback, or partnership inquiries? Contact us!') }}</p>
       <ul class="contact-list">
         <li>
-          Almaty, Kazakhstan
+           <i class="fas fa-map-marker-alt contact-icon"></i>
+           <span>Almaty, Kazakhstan</span>
         </li>
         <li>
-          <img src="{{ url_for('static', filename='img/email-icon.png') }}" class="contact-icon">
-            galymtashtek@gmail.com (Galym)
+           <i class="fas fa-envelope contact-icon"></i>
+           <span><a href="mailto:galymtashtek@gmail.com">galymtashtek@gmail.com</a> ({{ _('Galym - Web Dev') }})</span>
+        </li>
+         <li>
+           <i class="fas fa-envelope contact-icon"></i>
+           <span><a href="mailto:mpoxdetection@gmail.com">mpoxdetection@gmail.com</a> ({{ _('Artyom - AI/ML') }})</span>
         </li>
         <li>
-          <img src="{{ url_for('static', filename='img/email-icon.png') }}" class="contact-icon">
-          mpoxdetection@gmail.com (Artyom)
+           <i class="fab fa-whatsapp contact-icon"></i>
+           <span><a href="https://wa.me/+77075673195" target="_blank">+7 707 567 3195</a> ({{ _('Galym') }})</span>
         </li>
         <li>
-          <img src="{{ url_for('static', filename='img/Telephone-icon.png') }}" class="contact-icon">
-          <img src="{{ url_for('static', filename='img/WhatsApp-icon.png') }}" class="contact-icon">
-          +7 (707) 567 3195 (Galym)
+           <i class="fab fa-whatsapp contact-icon"></i>
+           <span><a href="https://wa.me/+77757831321" target="_blank">+7 775 783 1321</a> ({{ _('Artyom') }})</span>
         </li>
         <li>
-          <img src="{{ url_for('static', filename='img/Telephone-icon.png') }}" class="contact-icon">
-          <img src="{{ url_for('static', filename='img/WhatsApp-icon.png') }}" class="contact-icon">
-          +7 (775) 783 1321 (Artyom)
-        </li>
-        <li>
-          <img src="{{ url_for('static', filename='img/instagram-icon.png') }}" class="contact-icon">
-          <a href="https://www.instagram.com/edigeev_07/">@edigeev_07</a>
+           <i class="fab fa-instagram contact-icon"></i>
+           <span><a href="https://www.instagram.com/edigeev_07/" target="_blank">@edigeev_07</a> ({{ _('Galym') }})</span>
         </li>
       </ul>
     </div>
@@ -247,21 +338,22 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-content">
-      <p>&copy; 2025 MpoxDetection.ai</p>
-      <a class="github-banner" href="https://github.com/Galym7707/mpox_render" target="_blank">
-        <i class="fab fa-github"></i> {{ _('Fork on GitHub') }}
+       <p class="footer-tagline">{{ _('Advancing health through AI.') }}</p>
+      <div class="footer-links">
+          <a href="#hero-section">{{ _('Home') }}</a> |
+          <a href="#upload-section">{{ _('Analyze') }}</a> |
+          <a href="#media-mentions">{{ _('Featured In') }}</a> |
+          <a href="#team-section">{{ _('Team') }}</a> |
+          <a href="#contact-section">{{ _('Contact') }}</a>
+       </div>
+       <a class="github-banner btn" href="https://github.com/Galym7707/mpox_render" target="_blank">
+        <i class="fab fa-github"></i> {{ _('View Project on GitHub') }}
       </a>
+      <p class="copyright">© {{ current_year }} MpoxDetection.ai - {{ _('All Rights Reserved.') }}</p>
     </div>
   </footer>
-  
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-  </script>
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
