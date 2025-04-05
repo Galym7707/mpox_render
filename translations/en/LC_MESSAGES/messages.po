@@ -1,578 +1,329 @@
-
+# English translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-03-17 20:47+0600\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2025-04-05 21:00+0500\n" # Date will be updated
+"PO-Revision-Date: 2025-04-05 21:00+0500\n" # Date will be updated
+"Last-Translator: Your Name <your.email@example.com>\n" # Fill in your details
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.17.0\n"
+"Generated-By: Babel 2.17.0\n" # Version might change
 
-#: app.py:100
-msgid "No file uploaded"
-msgid "No file uploaded"
+#: app.py:XXX # Line numbers will change
+msgid "Model or mapping is not available, cannot analyze."
+msgstr "Model or mapping is not available, cannot analyze."
 
-#: app.py:104
-#, fuzzy
+#: app.py:XXX
+msgid "No file part"
+msgstr "No file part"
+
+#: app.py:XXX templates/index.html:XXX
 msgid "No file selected"
-msgstr "No file chosen"
+msgstr "No file selected"
 
-#: app.py:142
-msgid "Invalid file format"
-msgstr "Invalid file format"
+#: app.py:XXX
+msgid "Invalid file format or file not allowed"
+msgstr "Invalid file format or file not allowed"
 
-#: templates/index.html:7 templates/index.html:39
-msgid "Disease Prediction"
-msgstr "Disease Prediction"
+#: app.py:XXX
+msgid "Cannot identify image file. Please upload a valid image."
+msgstr "Cannot identify image file. Please upload a valid image."
 
-# --- Новые строки ---
-#: templates/index.html:19
+#: app.py:XXX
+msgid "An error occurred during analysis."
+msgstr "An error occurred during analysis."
+
+#: app.py:XXX
+msgid "Data cleared successfully."
+msgstr "Data cleared successfully."
+
+#: app.py:XXX
+msgid "An error occurred while clearing data."
+msgstr "An error occurred while clearing data."
+
+#: templates/index.html:XXX
+msgid "MpoxDetection.ai - AI Skin Disease Analysis"
+msgstr "MpoxDetection.ai - AI Skin Disease Analysis"
+
+#: templates/index.html:XXX
+msgid "MpoxDetection.ai Logo"
+msgstr "MpoxDetection.ai Logo"
+
+#: templates/index.html:XXX
 msgid "Home"
 msgstr "Home"
 
-#: templates/index.html:20 templates/index.html:100
+#: templates/index.html:XXX
+msgid "Analyze"
+msgstr "Analyze"
+
+#: templates/index.html:XXX
+msgid "Featured In"
+msgstr "Featured In"
+
+#: templates/index.html:XXX
 msgid "Our Team"
 msgstr "Our Team"
 
-#: templates/index.html:21 templates/index.html:120
+#: templates/index.html:XXX
 msgid "Contact Us"
 msgstr "Contact Us"
 
-#: templates/index.html:28
-msgid "Night Mode"
-msgstr "Night Mode"
-
-#: templates/index.html:42
-#, fuzzy
-msgid "Drag and drop your file here, or click to select one."
-msgstr "Drag and drop or click to upload your image."
-
-# --- Стандартные переводы ---
-#: templates/index.html:43
-msgid "Upload an Image"
-msgstr "Upload an Image"
-
-#: templates/index.html:46
-msgid "No file chosen"
-msgstr "No file chosen"
-
-#: templates/index.html:48
-msgid "Submit"
-msgstr "Submit"
-
-#: templates/index.html:49
-msgid "Clear Data"
-msgstr "Clear Data"
-
-#: templates/index.html:58
-msgid "Prediction:"
-msgstr "Prediction:"
-
-#: templates/index.html:59
-msgid "Confidence:"
-msgstr "Confidence:"
-
-#: templates/index.html:62
-msgid "Symptoms:"
-msgstr "Symptoms:"
-
-#: templates/index.html:71
-msgid "Causes:"
-msgstr "Causes:"
-
-#: templates/index.html:80
-msgid "Prevention:"
-msgstr "Prevention:"
-
-#: templates/index.html:89
-msgid "Treatment:"
-msgstr "Treatment:"
-
-#: templates/index.html:101
-#, fuzzy
-msgid "Meet the amazing people behind this project."
-msgstr "We are the minds behind this project"
-
-#: templates/index.html:106
-#, fuzzy
-msgid "Full-Stack Developer"
-msgstr "Full-Stack Web Developer"
-
-#: templates/index.html:111
-msgid "Machine Learning Engineer"
-msgstr "Machine Learning Engineer"
-
-#: templates/index.html:121
-msgid "If you have any questions or feedback, feel free to reach out!"
-msgstr "If you have any questions or feedback, feel free to reach out!"
-
-#: templates/index.html:131
-msgid "All rights reserved"
-msgstr ""
-
-#: venv/Lib/site-packages/click/_termui_impl.py:556
-#, python-brace-format
-msgid "{editor}: Editing failed"
-msgstr ""
-
-#: venv/Lib/site-packages/click/_termui_impl.py:560
-#, python-brace-format
-msgid "{editor}: Editing failed: {e}"
-msgstr ""
-
-#: venv/Lib/site-packages/click/core.py:1124
-msgid "Aborted!"
-msgstr ""
-
-#: venv/Lib/site-packages/click/core.py:1349
-#: venv/Lib/site-packages/click/core.py:1379
-#, python-brace-format
-msgid "(Deprecated) {text}"
-msgstr ""
-
-#: venv/Lib/site-packages/click/core.py:1396
-msgid "Options"
-msgstr ""
-
-#: venv/Lib/site-packages/click/core.py:1422
-#, python-brace-format
-msgid "Got unexpected extra argument ({args})"
-msgid_plural "Got unexpected extra arguments ({args})"
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/Lib/site-packages/click/core.py:1438
-#, python-brace-format
-msgid "DeprecationWarning: The command {name!r} is deprecated."
-msgstr ""
-
-#: venv/Lib/site-packages/click/core.py:1645
-msgid "Commands"
-msgstr ""
-
-#: venv/Lib/site-packages/click/core.py:1677
-msgid "Missing command."
-msgstr ""
-
-#: venv/Lib/site-packages/click/core.py:1755
-#, python-brace-format
-msgid "No such command {name!r}."
-msgstr ""
-
-#: venv/Lib/site-packages/click/core.py:2313
-msgid "Value must be an iterable."
-msgstr ""
-
-#: venv/Lib/site-packages/click/core.py:2334
-#, python-brace-format
-msgid "Takes {nargs} values but 1 was given."
-msgid_plural "Takes {nargs} values but {len} were given."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/Lib/site-packages/click/core.py:2783
-#, python-brace-format
-msgid "env var: {var}"
-msgstr ""
-
-#: venv/Lib/site-packages/click/core.py:2813
-msgid "(dynamic)"
-msgstr ""
-
-#: venv/Lib/site-packages/click/core.py:2828
-#, python-brace-format
-msgid "default: {default}"
-msgstr ""
-
-#: venv/Lib/site-packages/click/core.py:2841
-msgid "required"
-msgstr ""
-
-#: venv/Lib/site-packages/click/decorators.py:457
-#, python-format
-msgid "%(prog)s, version %(version)s"
-msgstr ""
-
-#: venv/Lib/site-packages/click/decorators.py:520
-msgid "Show the version and exit."
-msgstr ""
-
-#: venv/Lib/site-packages/click/decorators.py:541
-msgid "Show this message and exit."
-msgstr ""
-
-#: venv/Lib/site-packages/click/exceptions.py:49
-#: venv/Lib/site-packages/click/exceptions.py:88
-#, python-brace-format
-msgid "Error: {message}"
-msgstr ""
-
-#: venv/Lib/site-packages/click/exceptions.py:80
-#, python-brace-format
-msgid "Try '{command} {option}' for help."
-msgstr ""
-
-#: venv/Lib/site-packages/click/exceptions.py:129
-#, python-brace-format
-msgid "Invalid value: {message}"
-msgstr ""
-
-#: venv/Lib/site-packages/click/exceptions.py:131
-#, python-brace-format
-msgid "Invalid value for {param_hint}: {message}"
-msgstr ""
-
-#: venv/Lib/site-packages/click/exceptions.py:187
-msgid "Missing argument"
-msgstr ""
-
-#: venv/Lib/site-packages/click/exceptions.py:189
-msgid "Missing option"
-msgstr ""
-
-#: venv/Lib/site-packages/click/exceptions.py:191
-msgid "Missing parameter"
-msgstr ""
-
-#: venv/Lib/site-packages/click/exceptions.py:193
-#, python-brace-format
-msgid "Missing {param_type}"
-msgstr ""
-
-#: venv/Lib/site-packages/click/exceptions.py:200
-#, python-brace-format
-msgid "Missing parameter: {param_name}"
-msgstr ""
-
-#: venv/Lib/site-packages/click/exceptions.py:220
-#, python-brace-format
-msgid "No such option: {name}"
-msgstr ""
-
-#: venv/Lib/site-packages/click/exceptions.py:232
-#, python-brace-format
-msgid "Did you mean {possibility}?"
-msgid_plural "(Possible options: {possibilities})"
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/Lib/site-packages/click/exceptions.py:270
-msgid "unknown error"
-msgstr ""
-
-#: venv/Lib/site-packages/click/exceptions.py:277
-#, python-brace-format
-msgid "Could not open file {filename!r}: {message}"
-msgstr ""
-
-#: venv/Lib/site-packages/click/formatting.py:156
-#, fuzzy
-msgid "Usage:"
-msgstr "Causes:"
-
-#: venv/Lib/site-packages/click/parser.py:233
-#, python-brace-format
-msgid "Argument {name!r} takes {nargs} values."
-msgstr ""
-
-#: venv/Lib/site-packages/click/parser.py:415
-#, python-brace-format
-msgid "Option {name!r} does not take a value."
-msgstr ""
-
-#: venv/Lib/site-packages/click/parser.py:476
-#, python-brace-format
-msgid "Option {name!r} requires an argument."
-msgid_plural "Option {name!r} requires {nargs} arguments."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/Lib/site-packages/click/shell_completion.py:326
-msgid "Shell completion is not supported for Bash versions older than 4.4."
-msgstr ""
-
-#: venv/Lib/site-packages/click/shell_completion.py:333
-msgid "Couldn't detect Bash version, shell completion is not supported."
-msgstr ""
-
-#: venv/Lib/site-packages/click/termui.py:158
-msgid "Repeat for confirmation"
-msgstr ""
-
-#: venv/Lib/site-packages/click/termui.py:174
-msgid "Error: The value you entered was invalid."
-msgstr ""
-
-#: venv/Lib/site-packages/click/termui.py:176
-#, python-brace-format
-msgid "Error: {e.message}"
-msgstr ""
-
-#: venv/Lib/site-packages/click/termui.py:187
-msgid "Error: The two entered values do not match."
-msgstr ""
-
-#: venv/Lib/site-packages/click/termui.py:243
-msgid "Error: invalid input"
-msgstr ""
-
-#: venv/Lib/site-packages/click/termui.py:773
-msgid "Press any key to continue..."
-msgstr ""
-
-#: venv/Lib/site-packages/click/types.py:267
-#, python-brace-format
-msgid ""
-"Choose from:\n"
-"\t{choices}"
-msgstr ""
-
-#: venv/Lib/site-packages/click/types.py:299
-#, python-brace-format
-msgid "{value!r} is not {choice}."
-msgid_plural "{value!r} is not one of {choices}."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/Lib/site-packages/click/types.py:393
-#, python-brace-format
-msgid "{value!r} does not match the format {format}."
-msgid_plural "{value!r} does not match the formats {formats}."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/Lib/site-packages/click/types.py:415
-#, python-brace-format
-msgid "{value!r} is not a valid {number_type}."
-msgstr ""
-
-#: venv/Lib/site-packages/click/types.py:471
-#, python-brace-format
-msgid "{value} is not in the range {range}."
-msgstr ""
-
-#: venv/Lib/site-packages/click/types.py:612
-#, python-brace-format
-msgid "{value!r} is not a valid boolean."
-msgstr ""
-
-#: venv/Lib/site-packages/click/types.py:636
-#, python-brace-format
-msgid "{value!r} is not a valid UUID."
-msgstr ""
-
-#: venv/Lib/site-packages/click/types.py:826
-#, fuzzy
-msgid "file"
-msgstr "Title"
-
-#: venv/Lib/site-packages/click/types.py:828
-msgid "directory"
-msgstr ""
-
-#: venv/Lib/site-packages/click/types.py:830
-msgid "path"
-msgstr ""
-
-#: venv/Lib/site-packages/click/types.py:881
-#, python-brace-format
-msgid "{name} {filename!r} does not exist."
-msgstr ""
-
-#: venv/Lib/site-packages/click/types.py:890
-#, python-brace-format
-msgid "{name} {filename!r} is a file."
-msgstr ""
-
-#: venv/Lib/site-packages/click/types.py:898
-#, python-brace-format
-msgid "{name} {filename!r} is a directory."
-msgstr ""
-
-#: venv/Lib/site-packages/click/types.py:907
-#, python-brace-format
-msgid "{name} {filename!r} is not readable."
-msgstr ""
-
-#: venv/Lib/site-packages/click/types.py:916
-#, python-brace-format
-msgid "{name} {filename!r} is not writable."
-msgstr ""
-
-#: venv/Lib/site-packages/click/types.py:925
-#, python-brace-format
-msgid "{name} {filename!r} is not executable."
-msgstr ""
-
-#: venv/Lib/site-packages/click/types.py:992
-#, python-brace-format
-msgid "{len_type} values are required, but {len_value} was given."
-msgid_plural "{len_type} values are required, but {len_value} were given."
-msgstr[0] ""
-msgstr[1] ""
-
-#~ msgid "Choose file"
-#~ msgstr "Choose file"
-
-#~ msgid "Chickenpox"
-#~ msgstr "Chickenpox"
-
-#~ msgid "Hand, foot and mouth disease"
-#~ msgstr "Hand, foot and mouth disease"
-
-#~ msgid "Monkeypox"
-#~ msgstr "Monkeypox"
-
-#~ msgid "Measles"
-#~ msgstr "Measles"
-
-#~ msgid "Cowpox"
-#~ msgstr "Cowpox"
-
-#~ msgid "Healthy"
-#~ msgstr "Healthy"
-
-#~ msgid "Overview"
-#~ msgstr "Overview"
-
-#~ msgid "Symptoms"
-#~ msgstr "Symptoms"
-
-#~ msgid "Causes"
-#~ msgstr "Causes"
-
-#~ msgid "Treatment"
-#~ msgstr "Treatment"
-
-#~ msgid "Prevention"
-#~ msgstr "Prevention"
-
-#~ msgid "Language"
-#~ msgstr "Language"
-
-#~ msgid "AI Explanation"
-#~ msgstr "AI Explanation"
-
-#~ msgid "Ask AI"
-#~ msgstr "Ask AI"
-
-#~ msgid "Type your question here..."
-#~ msgstr "Type your question here..."
-
-#~ msgid "Here is an AI Explanation for:"
-#~ msgstr "Here is an AI Explanation for:"
-
-#~ msgid "Yedigeyev Galym"
-#~ msgstr "Yedigeyev Galym"
-
-#~ msgid "Lavrentyev Artyom"
-#~ msgstr "Lavrentyev Artyom"
-
-#~ msgid "ML Engineer"
-#~ msgstr "ML Engineer"
-
-#~ msgid ""
-#~ "Our AI system can detect certain "
-#~ "diseases from images in just a few"
-#~ " clicks!"
-#~ msgstr ""
-#~ "Our AI system can detect certain "
-#~ "diseases from images in just a few"
-#~ " clicks!"
-
-#~ msgid ""
-#~ "We support multiple languages. Feel free"
-#~ " to switch using the top-right "
-#~ "menu."
-#~ msgstr ""
-#~ "We support multiple languages. Feel free"
-#~ " to switch using the top-right "
-#~ "menu."
-
-#~ msgid "How to Use"
-#~ msgstr "How to Use"
-
-#~ msgid "Press \"Submit\" to get a result from our model."
-#~ msgstr "Press \"Submit\" to get a result from our model."
-
-#~ msgid "Check out the detailed info below!"
-#~ msgstr "Check out the detailed info below!"
-
-#~ msgid "Member One"
-#~ msgstr "Member One"
-
-#~ msgid "Member Two"
-#~ msgstr "Member Two"
-
-#~ msgid "Frontend Dev"
-#~ msgstr "Frontend Dev"
-
-#: templates/index.html:35
-msgid "Welcome to Monkeypox Detector"
-msgstr "Welcome to Monkeypox Detector"
-
-#: templates/index.html:36
-msgid "Our AI-powered tool helps you analyze skin images to predict possible diseases. Upload an image to get started."
-msgstr "Our AI-powered tool helps you analyze skin images to predict possible diseases. Upload an image to get started."
-
-#: templates/index.html:38
-msgid "How to use:"
-msgstr "How to use:"
-
-#: templates/index.html:40
-msgid "Upload a clear image of the affected skin area."
-msgstr "Upload a clear image of the affected skin area."
-
-#: templates/index.html:41
-msgid "Click the \\\"Analyse Now\\\" button and wait for the AI prediction."
-msgstr "Click the \\\"Analyse Now\\\" button and wait for the AI prediction."
-
-#: templates/index.html:42
-msgid "To get full disease details, select your preferred language from the top right."
-msgstr "To get full disease details, select your preferred language from the top right."
-
-#: templates/index.html:35
-msgid "MpoxDetection.ai"
-msgstr "MpoxDetection.ai"
-
-#: templates/index.html:36
-msgid "Your AI-Powered Skin Disease Detection Solution"
-msgstr "Your AI-Powered Skin Disease Detection Solution"
-
-#: templates/index.html:37
-msgid "Accurate • Fast • Reliable"
-msgstr "Accurate • Fast • Reliable"
-
-#: templates/index.html:44
-msgid "Drag & Drop Image"
-msgstr "Drag & Drop Image"
-
-#: templates/index.html:45
+#: templates/index.html:XXX
+msgid "Language"
+msgstr "Language"
+
+#: templates/index.html:XXX
+msgid "Toggle Menu"
+msgstr "Toggle Menu"
+
+#: templates/index.html:XXX
+msgid "AI-Powered Skin Disease Detection"
+msgstr "AI-Powered Skin Disease Detection"
+
+#: templates/index.html:XXX
+msgid "Get rapid, preliminary insights into potential skin conditions using advanced artificial intelligence."
+msgstr "Get rapid, preliminary insights into potential skin conditions using advanced artificial intelligence."
+
+#: templates/index.html:XXX
+msgid "Achieving"
+msgstr "Achieving"
+
+#: templates/index.html:XXX
+msgid "Accuracy"
+msgstr "Accuracy"
+
+#: templates/index.html:XXX
+msgid "in identifying key skin diseases."
+msgstr "in identifying key skin diseases."
+
+#: templates/index.html:XXX
+msgid "Start Analysis Now"
+msgstr "Start Analysis Now"
+
+#: templates/index.html:XXX
+msgid "Easy Steps:"
+msgstr "Easy Steps:"
+
+#: templates/index.html:XXX
+msgid "Upload a clear photo of the skin area."
+msgstr "Upload a clear photo of the skin area."
+
+#: templates/index.html:XXX
+msgid "Our AI analyzes the image instantly."
+msgstr "Our AI analyzes the image instantly."
+
+#: templates/index.html:XXX
+msgid "Receive a potential identification and confidence score."
+msgstr "Receive a potential identification and confidence score."
+
+#: templates/index.html:XXX
+msgid "Analyze Your Image"
+msgstr "Analyze Your Image"
+
+#: templates/index.html:XXX
+msgid "Securely upload for an AI-driven assessment."
+msgstr "Securely upload for an AI-driven assessment."
+
+#: templates/index.html:XXX
+msgid "Drag & Drop Here"
+msgstr "Drag & Drop Here"
+
+#: templates/index.html:XXX
 msgid "or"
 msgstr "or"
 
-#: templates/index.html:46
+#: templates/index.html:XXX
 msgid "Browse Files"
 msgstr "Browse Files"
 
-#: templates/index.html:47
-msgid "Supported formats: JPG, PNG up to 5MB"
-msgstr "Supported formats: JPG, PNG up to 5MB"
+#: templates/index.html:XXX
+msgid "Supports most image formats (PNG, JPG, WEBP, etc.). Max size: 250MB"
+msgstr "Supports most image formats (PNG, JPG, WEBP, etc.). Max size: 250MB"
 
-#: templates/index.html:48
-msgid "Analyze Now"
-msgstr "Analyze Now"
-
-#: templates/index.html:49
+#: templates/index.html:XXX
 msgid "Clear"
 msgstr "Clear"
 
-#: templates/index.html:50
-msgid "Dark Mode"
-msgstr "Dark Mode"
+#: templates/index.html:XXX
+msgid "Analyze Now"
+msgstr "Analyze Now"
+
+#: templates/index.html:XXX
+msgid "Uploaded analysis image"
+msgstr "Uploaded analysis image"
+
+#: templates/index.html:XXX
+msgid "Analysis Report"
+msgstr "Analysis Report"
+
+#: templates/index.html:XXX
+msgid "Potential Condition:"
+msgstr "Potential Condition:"
+
+#: templates/index.html:XXX
+msgid "Confidence Score:"
+msgstr "Confidence Score:"
+
+#: templates/index.html:XXX
+msgid "About"
+msgstr "About"
+
+#: templates/index.html:XXX
+msgid "Symptoms"
+msgstr "Symptoms"
+
+#: templates/index.html:XXX
+msgid "Causes"
+msgstr "Causes"
+
+#: templates/index.html:XXX
+msgid "Prevention"
+msgstr "Prevention"
+
+#: templates/index.html:XXX
+msgid "Treatment Approaches"
+msgstr "Treatment Approaches"
+
+#: templates/index.html:XXX
+msgid "Detailed information for the detected condition is not available in the selected language."
+msgstr "Detailed information for the detected condition is not available in the selected language."
+
+#: templates/index.html:XXX
+msgid "As Featured In"
+msgstr "As Featured In"
+
+#: templates/index.html:XXX
+msgid "Our project has been recognized by leading media outlets."
+msgstr "Our project has been recognized by leading media outlets."
+
+#: templates/index.html:XXX
+msgid "YouTube video player"
+msgstr "YouTube video player"
+
+#: templates/index.html:XXX
+msgid "News report by 24.kz covering our AI project."
+msgstr "News report by 24.kz covering our AI project."
+
+#: templates/index.html:XXX
+msgid "Read More:"
+msgstr "Read More:"
+
+#: templates/index.html:XXX
+msgid "The minds behind MpoxDetection.ai"
+msgstr "The minds behind MpoxDetection.ai"
+
+#: templates/index.html:XXX
+msgid "Galym Yedigeyev"
+msgstr "Galym Yedigeyev"
+
+#: templates/index.html:XXX
+msgid "Full-Stack Developer & Web Architect"
+msgstr "Full-Stack Developer & Web Architect"
+
+#: templates/index.html:XXX
+msgid "Galym WhatsApp"
+msgstr "Galym WhatsApp"
+
+#: templates/index.html:XXX
+msgid "Galym Instagram"
+msgstr "Galym Instagram"
+
+#: templates/index.html:XXX
+msgid "Galym Email"
+msgstr "Galym Email"
+
+#: templates/index.html:XXX
+msgid "Galym GitHub"
+msgstr "Galym GitHub"
+
+#: templates/index.html:XXX
+msgid "Artyom Lavrentyev"
+msgstr "Artyom Lavrentyev"
+
+#: templates/index.html:XXX
+msgid "Machine Learning Engineer & AI Specialist"
+msgstr "Machine Learning Engineer & AI Specialist"
+
+#: templates/index.html:XXX
+msgid "Artyom WhatsApp"
+msgstr "Artyom WhatsApp"
+
+#: templates/index.html:XXX
+msgid "Artyom Email"
+msgstr "Artyom Email"
+
+#: templates/index.html:XXX
+msgid "Get In Touch"
+msgstr "Get In Touch"
+
+#: templates/index.html:XXX
+msgid "Have questions, feedback, or partnership inquiries? Contact us!"
+msgstr "Have questions, feedback, or partnership inquiries? Contact us!"
+
+#: templates/index.html:XXX
+msgid "Galym - Web Dev"
+msgstr "Galym - Web Dev"
+
+#: templates/index.html:XXX
+msgid "Artyom - AI/ML"
+msgstr "Artyom - AI/ML"
+
+#: templates/index.html:XXX
+msgid "Galym"
+msgstr "Galym"
+
+#: templates/index.html:XXX
+msgid "Artyom"
+msgstr "Artyom"
+
+#: templates/index.html:XXX
+msgid "Advancing health through AI."
+msgstr "Advancing health through AI."
+
+#: templates/index.html:XXX
+msgid "Team"
+msgstr "Team"
+
+#: templates/index.html:XXX
+msgid "Contact"
+msgstr "Contact"
+
+#: templates/index.html:XXX
+msgid "View Project on GitHub"
+msgstr "View Project on GitHub"
+
+#: templates/index.html:XXX
+msgid "All Rights Reserved."
+msgstr "All Rights Reserved."
+
+# --- New strings (from JavaScript) ---
+msgid "File is too large (Max 250MB)."
+msgstr "File is too large (Max 250MB)."
+
+msgid "Please select an image file. Max size: 250MB."
+msgstr "Please select an image file. Max size: 250MB."
+
+msgid "Analyzing..."
+msgstr "Analyzing..."
+
+msgid "An error occurred"
+msgstr "An error occurred"
+
+msgid "Please upload an image of skin."
+msgstr "Please upload an image of skin."
+
+msgid "No specific information available."
+msgstr "No specific information available."
+
+# ... Add any other missing strings here ...
+
