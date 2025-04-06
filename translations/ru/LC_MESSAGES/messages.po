@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-04-05 21:00+0500\n" # Күні жаңартылады
-"PO-Revision-Date: 2025-04-05 21:00+0500\n" # Күні жаңартылады
-"Last-Translator: Your Name <your.email@example.com>\n" # Өз атыңыз бен email енгізіңіз
+"POT-Creation-Date: 2025-04-05 21:00+0500\n" # Дата будет обновлена
+"PO-Revision-Date: 2025-04-06 20:50+0500\n" # Обновлено
+"Last-Translator: Your Name <your.email@example.com>\n"
 "Language: ru\n"
 "Language-Team: ru <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
@@ -17,11 +17,11 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.17.0\n" # Нұсқа өзгеруі мүмкін
+"Generated-By: Babel 2.17.0\n"
 
-#: app.py:XXX # Жол нөмірлері өзгереді
+#: app.py:XXX
 msgid "Model or mapping is not available, cannot analyze."
-msgstr "Модель или сопоставление недоступны, анализ невозможен." # Мысал
+msgstr "Модель или сопоставление недоступны, анализ невозможен."
 
 #: app.py:XXX
 msgid "No file part"
@@ -53,11 +53,11 @@ msgstr "Произошла ошибка при очистке данных."
 
 #: templates/index.html:XXX
 msgid "MpoxDetection.ai - AI Skin Disease Analysis"
-msgstr "MpoxDetection.ai - ИИ-анализ кожных заболеваний" # Мысал
+msgstr "MpoxDetection.ai - ИИ-анализ кожных заболеваний"
 
 #: templates/index.html:XXX
 msgid "MpoxDetection.ai Logo"
-msgstr "Логотип MpoxDetection.ai" # Мысал
+msgstr "Логотип MpoxDetection.ai"
 
 #: templates/index.html:XXX
 msgid "Home"
@@ -65,11 +65,11 @@ msgstr "Главная"
 
 #: templates/index.html:XXX
 msgid "Analyze"
-msgstr "Анализ" # Мысал
+msgstr "Анализ"
 
 #: templates/index.html:XXX
 msgid "Featured In"
-msgstr "О нас пишут" # Мысал
+msgstr "О нас пишут"
 
 #: templates/index.html:XXX
 msgid "Our Team"
@@ -85,35 +85,35 @@ msgstr "Язык"
 
 #: templates/index.html:XXX
 msgid "Toggle Menu"
-msgstr "Переключить меню" # Мысал
+msgstr "Переключить меню"
 
 #: templates/index.html:XXX
 msgid "AI-Powered Skin Disease Detection"
-msgstr "Обнаружение кожных заболеваний с помощью ИИ" # Мысал
+msgstr "Обнаружение кожных заболеваний с помощью ИИ"
 
 #: templates/index.html:XXX
 msgid "Get rapid, preliminary insights into potential skin conditions using advanced artificial intelligence."
-msgstr "Получите быструю предварительную информацию о возможных кожных заболеваниях с помощью передового искусственного интеллекта." # Мысал
+msgstr "Получите быструю предварительную информацию о возможных кожных заболеваниях с помощью передового искусственного интеллекта."
 
 #: templates/index.html:XXX
 msgid "Achieving"
-msgstr "Достижение" # Мысал
+msgstr "Достижение"
 
 #: templates/index.html:XXX
 msgid "Accuracy"
-msgstr "Точность" # Мысал
+msgstr "Точность"
 
 #: templates/index.html:XXX
 msgid "in identifying key skin diseases."
-msgstr "в выявлении ключевых кожных заболеваний." # Мысал
+msgstr "в выявлении ключевых кожных заболеваний."
 
 #: templates/index.html:XXX
 msgid "Start Analysis Now"
-msgstr "Начать анализ сейчас" # Мысал
+msgstr "Начать анализ сейчас"
 
 #: templates/index.html:XXX
 msgid "Easy Steps:"
-msgstr "Простые шаги:" # Мысал
+msgstr "Простые шаги:"
 
 #: templates/index.html:XXX
 msgid "Upload a clear photo of the skin area."
@@ -121,23 +121,23 @@ msgstr "Загрузите четкое фото участка кожи."
 
 #: templates/index.html:XXX
 msgid "Our AI analyzes the image instantly."
-msgstr "Наш ИИ мгновенно анализирует изображение." # Мысал
+msgstr "Наш ИИ мгновенно анализирует изображение."
 
 #: templates/index.html:XXX
 msgid "Receive a potential identification and confidence score."
-msgstr "Получите потенциальное определение и оценку уверенности." # Мысал
+msgstr "Получите потенциальное определение и оценку уверенности."
 
 #: templates/index.html:XXX
 msgid "Analyze Your Image"
-msgstr "Анализируйте ваше изображение" # Мысал
+msgstr "Анализируйте ваше изображение"
 
 #: templates/index.html:XXX
 msgid "Securely upload for an AI-driven assessment."
-msgstr "Безопасно загрузите для оценки с помощью ИИ." # Мысал
+msgstr "Безопасно загрузите для оценки с помощью ИИ."
 
 #: templates/index.html:XXX
 msgid "Drag & Drop Here"
-msgstr "Перетащите сюда" # Мысал
+msgstr "Перетащите сюда"
 
 #: templates/index.html:XXX
 msgid "or"
@@ -145,11 +145,11 @@ msgstr "или"
 
 #: templates/index.html:XXX
 msgid "Browse Files"
-msgstr "Выбрать файлы" # Мысал
+msgstr "Выбрать файлы"
 
 #: templates/index.html:XXX
 msgid "Supports most image formats (PNG, JPG, WEBP, etc.). Max size: 250MB"
-msgstr "Поддерживаются большинство форматов изображений (PNG, JPG, WEBP и т.д.). Макс. размер: 250МБ" # Мысал
+msgstr "Поддерживаются большинство форматов изображений (PNG, JPG, WEBP и т.д.). Макс. размер: 250МБ"
 
 #: templates/index.html:XXX
 msgid "Clear"
@@ -157,11 +157,11 @@ msgstr "Очистить"
 
 #: templates/index.html:XXX
 msgid "Analyze Now"
-msgstr "Анализировать сейчас" # Мысал
+msgstr "Анализировать сейчас"
 
 #: templates/index.html:XXX
 msgid "Uploaded analysis image"
-msgstr "Загруженное изображение для анализа" # Мысал
+msgstr "Загруженное изображение для анализа"
 
 #: templates/index.html:XXX
 msgid "Analysis Report"
@@ -169,11 +169,11 @@ msgstr "Отчет об анализе"
 
 #: templates/index.html:XXX
 msgid "Potential Condition:"
-msgstr "Возможное состояние:" # Мысал
+msgstr "Возможное состояние:"
 
 #: templates/index.html:XXX
 msgid "Confidence Score:"
-msgstr "Оценка уверенности:" # Мысал
+msgstr "Оценка уверенности:"
 
 #: templates/index.html:XXX
 msgid "About"
@@ -201,103 +201,103 @@ msgstr "Подробная информация об обнаруженном с
 
 #: templates/index.html:XXX
 msgid "As Featured In"
-msgstr "О нас пишут" # Мысал
+msgstr "О нас пишут"
 
 #: templates/index.html:XXX
 msgid "Our project has been recognized by leading media outlets."
-msgstr "Наш проект был отмечен ведущими СМИ." # Мысал
+msgstr "Наш проект был отмечен ведущими СМИ."
 
 #: templates/index.html:XXX
 msgid "YouTube video player"
-msgstr "Видеоплеер YouTube" # Мысал
+msgstr "Видеоплеер YouTube"
 
 #: templates/index.html:XXX
 msgid "News report by 24.kz covering our AI project."
-msgstr "Новостной репортаж 24.kz о нашем ИИ-проекте." # Мысал
+msgstr "Новостной репортаж 24.kz о нашем ИИ-проекте."
 
 #: templates/index.html:XXX
 msgid "Read More:"
-msgstr "Читать далее:" # Мысал
+msgstr "Читать далее:"
 
 #: templates/index.html:XXX
 msgid "The minds behind MpoxDetection.ai"
-msgstr "Создатели MpoxDetection.ai" # Мысал
+msgstr "Создатели MpoxDetection.ai"
 
 #: templates/index.html:XXX
 msgid "Galym Yedigeyev"
-msgstr "Галым Едигеев" # Мысал
+msgstr "Галым Едигеев"
 
 #: templates/index.html:XXX
 msgid "Full-Stack Developer & Web Architect"
-msgstr "Full-Stack разработчик и веб-архитектор" # Мысал
+msgstr "Full-Stack разработчик и веб-архитектор"
 
 #: templates/index.html:XXX
 msgid "Galym WhatsApp"
-msgstr "Галым WhatsApp" # Мысал
+msgstr "Галым WhatsApp"
 
 #: templates/index.html:XXX
 msgid "Galym Instagram"
-msgstr "Галым Instagram" # Мысал
+msgstr "Галым Instagram"
 
 #: templates/index.html:XXX
 msgid "Galym Email"
-msgstr "Галым Email" # Мысал
+msgstr "Галым Email"
 
 #: templates/index.html:XXX
 msgid "Galym GitHub"
-msgstr "Галым GitHub" # Мысал
+msgstr "Галым GitHub"
 
 #: templates/index.html:XXX
 msgid "Artyom Lavrentyev"
-msgstr "Артём Лаврентьев" # Мысал
+msgstr "Артём Лаврентьев"
 
 #: templates/index.html:XXX
 msgid "Machine Learning Engineer & AI Specialist"
-msgstr "Инженер по машинному обучению и специалист по ИИ" # Мысал
+msgstr "Инженер по машинному обучению и специалист по ИИ"
 
 #: templates/index.html:XXX
 msgid "Artyom WhatsApp"
-msgstr "Артём WhatsApp" # Мысал
+msgstr "Артём WhatsApp"
 
 #: templates/index.html:XXX
 msgid "Artyom Email"
-msgstr "Артём Email" # Мысал
+msgstr "Артём Email"
 
 #: templates/index.html:XXX
 msgid "Get In Touch"
-msgstr "Свяжитесь с нами" # Мысал
+msgstr "Свяжитесь с нами"
 
 #: templates/index.html:XXX
 msgid "Have questions, feedback, or partnership inquiries? Contact us!"
-msgstr "Есть вопросы, отзывы или предложения о партнерстве? Свяжитесь с нами!" # Мысал
+msgstr "Есть вопросы, отзывы или предложения о партнерстве? Свяжитесь с нами!"
 
 #: templates/index.html:XXX
 msgid "Galym - Web Dev"
-msgstr "Галым - Веб-разработка" # Мысал
+msgstr "Галым - Веб-разработка"
 
 #: templates/index.html:XXX
 msgid "Artyom - AI/ML"
-msgstr "Артём - AI/ML" # Мысал
+msgstr "Артём - AI/ML"
 
 #: templates/index.html:XXX
 msgid "Galym"
-msgstr "Галым" # Мысал
+msgstr "Галым"
 
 #: templates/index.html:XXX
 msgid "Artyom"
-msgstr "Артём" # Мысал
+msgstr "Артём"
 
 #: templates/index.html:XXX
 msgid "Advancing health through AI."
-msgstr "Продвигая здоровье с помощью ИИ." # Мысал
+msgstr "Продвигая здоровье с помощью ИИ."
 
 #: templates/index.html:XXX
 msgid "Team"
-msgstr "Команда" # Мысал
+msgstr "Команда"
 
 #: templates/index.html:XXX
 msgid "Contact"
-msgstr "Контакт" # Мысал
+msgstr "Контакт"
 
 #: templates/index.html:XXX
 msgid "View Project on GitHub"
@@ -307,7 +307,7 @@ msgstr "Посмотреть проект на GitHub"
 msgid "All Rights Reserved."
 msgstr "Все права защищены."
 
-# --- Жаңа жолдар (JavaScript-тен) ---
+# --- Новые строки (JavaScript-тен) ---
 msgid "File is too large (Max 250MB)."
 msgstr "Файл слишком большой (Макс 250МБ)."
 
@@ -326,5 +326,109 @@ msgstr "Пожалуйста, загрузите изображение кожи
 msgid "No specific information available."
 msgstr "Конкретная информация недоступна."
 
-# ... Басқа да жетіспейтін жолдарды осында қосыңыз ...
+# --- Старые строки (возможно, не нужны, но могут быть в .po) ---
+# msgid "Disease Prediction"
+# msgstr "Предсказание заболевания"
+
+# msgid "Night Mode"
+# msgstr "Ночной режим"
+
+# msgid "Drag and drop your file here, or click to select one."
+# msgstr "Перетащите файл сюда или нажмите, чтобы выбрать."
+
+# msgid "Upload an Image"
+# msgstr "Загрузите изображение"
+
+# msgid "No file chosen"
+# msgstr "Файл не выбран"
+
+# msgid "Submit"
+# msgstr "Отправить"
+
+# msgid "Clear Data"
+# msgstr "Очистить данные"
+
+# msgid "Prediction:"
+# msgstr "Предсказание:"
+
+# msgid "Confidence:"
+# msgstr "Уверенность:"
+
+# msgid "Symptoms:"
+# msgstr "Симптомы:"
+
+# msgid "Causes:"
+# msgstr "Причины:"
+
+# msgid "Prevention:"
+# msgstr "Профилактика:"
+
+# msgid "Treatment:"
+# msgstr "Лечение:"
+
+# msgid "Meet the amazing people behind this project."
+# msgstr "Познакомьтесь с удивительными людьми, стоящими за этим проектом."
+
+# msgid "Full-Stack Developer"
+# msgstr "Full-Stack разработчик"
+
+# msgid "Machine Learning Engineer"
+# msgstr "Инженер по машинному обучению"
+
+# msgid "If you have any questions or feedback, feel free to reach out!"
+# msgstr "Если у вас есть вопросы или предложения, свяжитесь с нами!"
+
+# msgid "All rights reserved"
+# msgstr "Все права защищены"
+
+# msgid "Welcome to Monkeypox Detector"
+# msgstr "Добро пожаловать в систему определения оспы обезьян"
+
+# msgid "Our AI-powered tool helps you analyze skin images to predict possible diseases. Upload an image to get started."
+# msgstr "Наш инструмент на базе ИИ помогает анализировать изображения кожи и предсказывать возможные заболевания. Загрузите изображение, чтобы начать."
+
+# msgid "How to use:"
+# msgstr "Как пользоваться:"
+
+# msgid "Upload a clear image of the affected skin area."
+# msgstr "Загрузите четкое изображение поражённого участка кожи."
+
+# msgid "Click the \"Analyse Now\" button and wait for the AI prediction."
+# msgstr "Нажмите кнопку «Анализировать сейчас» и дождитесь прогноза от ИИ." # Исправлено с "Отправить"
+
+# msgid "To get full disease details, select your preferred language from the top right."
+# msgstr "Чтобы получить полную информацию о заболевании, выберите язык в правом верхнем углу."
+
+# msgid "MpoxDetection.ai"
+# msgstr "MpoxDetection.ai"
+
+# msgid "Your AI-Powered Skin Disease Detection Solution"
+# msgstr "Ваше решение для обнаружения кожных заболеваний на основе ИИ"
+
+# msgid "Accurate • Fast • Reliable"
+# msgstr "Точно • Быстро • Надёжно"
+
+# msgid "Drag & Drop Image"
+# msgstr "Перетащите изображение"
+
+# msgid "Supported formats: JPG, PNG up to 5MB" # Эта строка устарела
+# msgstr "Поддерживаемые форматы: JPG, PNG до 5MB"
+
+# msgid "Dark Mode"
+# msgstr "Тёмный режим"
+
+# msgid "Upload your image for instant diagnosis"
+# msgstr "Загрузите свое изображение для мгновенной диагностики"
+
+# msgid "AI Skin Analysis"
+# msgstr "Анализ кожи с помощью ИИ"
+
+# msgid "1. Upload a clear image of the affected skin area."
+# msgstr "1. Загрузите четкое изображение поражённого участка кожи."
+
+# msgid "2. Click the \"Analyze Now\" button and wait for the AI prediction."
+# msgstr "2. Нажмите кнопку «Анализировать сейчас» и дождитесь прогноза от ИИ." # Исправлено с "Отправить"
+
+# msgid "3. To get full disease details, select your preferred language from the top right."
+# msgstr "3. Чтобы получить полную информацию о заболевании, выберите язык в правом верхнем углу."
 

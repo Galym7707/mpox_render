@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-04-05 21:00+0500\n" # Күні жаңартылады
-"PO-Revision-Date: 2025-04-05 21:00+0500\n" # Күні жаңартылады
+"POT-Creation-Date: 2025-04-05 21:00+0500\n" # Дата будет обновлена при следующем extract/update
+"PO-Revision-Date: 2025-04-06 20:45+0500\n" # Обновлено
 "Last-Translator: Your Name <your.email@example.com>\n" # Өз атыңыз бен email енгізіңіз
 "Language: kk\n"
 "Language-Team: kk <LL@li.org>\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n" # Нұсқа өзгеруі мүмкін
 
-#: app.py:XXX # Жол нөмірлері өзгереді
+#: app.py:XXX
 msgid "Model or mapping is not available, cannot analyze."
-msgstr "Модель немесе сәйкестендіру қолжетімді емес, талдау мүмкін емес." # Мысал
+msgstr "Модель немесе сәйкестендіру қолжетімді емес, талдау мүмкін емес."
 
 #: app.py:XXX
 msgid "No file part"
-msgstr "Файл бөлігі жоқ"
+msgstr "Файл бөлігі жоқ" # Тексерілді
 
 #: app.py:XXX templates/index.html:XXX
 msgid "No file selected"
@@ -32,7 +32,7 @@ msgstr "Файл таңдалмады"
 
 #: app.py:XXX
 msgid "Invalid file format or file not allowed"
-msgstr "Файл пішімі жарамсыз немесе рұқсат етілмеген"
+msgstr "Файл пішімі жарамсыз немесе рұқсат етілмеген" # Тексерілді
 
 #: app.py:XXX
 msgid "Cannot identify image file. Please upload a valid image."
@@ -52,11 +52,11 @@ msgstr "Деректерді тазалау кезінде қате пайда �
 
 #: templates/index.html:XXX
 msgid "MpoxDetection.ai - AI Skin Disease Analysis"
-msgstr "MpoxDetection.ai - Тері ауруларын AI арқылы талдау" # Мысал
+msgstr "MpoxDetection.ai - Тері ауруларын AI арқылы талдау"
 
 #: templates/index.html:XXX
 msgid "MpoxDetection.ai Logo"
-msgstr "MpoxDetection.ai логотипі" # Мысал
+msgstr "MpoxDetection.ai логотипі"
 
 #: templates/index.html:XXX
 msgid "Home"
@@ -68,7 +68,7 @@ msgstr "Талдау"
 
 #: templates/index.html:XXX
 msgid "Featured In"
-msgstr "Басылымдарда" # Мысал
+msgstr "Басылымдарда"
 
 #: templates/index.html:XXX
 msgid "Our Team"
@@ -84,35 +84,35 @@ msgstr "Тіл"
 
 #: templates/index.html:XXX
 msgid "Toggle Menu"
-msgstr "Мәзірді ауыстыру" # Мысал
+msgstr "Мәзірді ауыстыру"
 
 #: templates/index.html:XXX
 msgid "AI-Powered Skin Disease Detection"
-msgstr "Тері ауруларын AI арқылы анықтау" # Мысал
+msgstr "Тері ауруларын AI арқылы анықтау"
 
 #: templates/index.html:XXX
 msgid "Get rapid, preliminary insights into potential skin conditions using advanced artificial intelligence."
-msgstr "Жетілдірілген жасанды интеллект арқылы ықтимал тері жағдайлары туралы жылдам, алдын ала мәліметтер алыңыз." # Мысал
+msgstr "Жетілдірілген жасанды интеллект арқылы ықтимал тері жағдайлары туралы жылдам, алдын ала мәліметтер алыңыз."
 
 #: templates/index.html:XXX
 msgid "Achieving"
-msgstr "қол жеткізуде" # Мысал
+msgstr "қол жеткізуде"
 
 #: templates/index.html:XXX
 msgid "Accuracy"
-msgstr "Дәлдік" # Мысал
+msgstr "Дәлдік"
 
 #: templates/index.html:XXX
 msgid "in identifying key skin diseases."
-msgstr "негізгі тері ауруларын анықтауда." # Мысал
+msgstr "негізгі тері ауруларын анықтауда."
 
 #: templates/index.html:XXX
 msgid "Start Analysis Now"
-msgstr "Талдауды қазір бастау" # Мысал
+msgstr "Талдауды қазір бастау"
 
 #: templates/index.html:XXX
 msgid "Easy Steps:"
-msgstr "Оңай қадамдар:" # Мысал
+msgstr "Оңай қадамдар:"
 
 #: templates/index.html:XXX
 msgid "Upload a clear photo of the skin area."
@@ -120,23 +120,23 @@ msgstr "Зақымданған тері аймағының анық суреті
 
 #: templates/index.html:XXX
 msgid "Our AI analyzes the image instantly."
-msgstr "Біздің AI суретті лезде талдайды." # Мысал
+msgstr "Біздің AI суретті лезде талдайды."
 
 #: templates/index.html:XXX
 msgid "Receive a potential identification and confidence score."
-msgstr "Ықтимал анықтаманы және сенімділік ұпайын алыңыз." # Мысал
+msgstr "Ықтимал анықтаманы және сенімділік ұпайын алыңыз."
 
 #: templates/index.html:XXX
 msgid "Analyze Your Image"
-msgstr "Суретіңізді талдаңыз" # Мысал
+msgstr "Суретіңізді талдаңыз"
 
 #: templates/index.html:XXX
 msgid "Securely upload for an AI-driven assessment."
-msgstr "AI негізіндегі бағалау үшін қауіпсіз жүктеңіз." # Мысал
+msgstr "AI негізіндегі бағалау үшін қауіпсіз жүктеңіз."
 
 #: templates/index.html:XXX
 msgid "Drag & Drop Here"
-msgstr "Осында әкеліп тастаңыз" # Мысал
+msgstr "Осында әкеліп тастаңыз"
 
 #: templates/index.html:XXX
 msgid "or"
@@ -144,11 +144,11 @@ msgstr "немесе"
 
 #: templates/index.html:XXX
 msgid "Browse Files"
-msgstr "Файлдарды шолу" # Мысал
+msgstr "Файлдарды шолу"
 
 #: templates/index.html:XXX
 msgid "Supports most image formats (PNG, JPG, WEBP, etc.). Max size: 250MB"
-msgstr "Көптеген сурет пішімдерін қолдайды (PNG, JPG, WEBP, т.б.). Макс. өлшем: 250МБ" # Мысал
+msgstr "Көптеген сурет пішімдерін қолдайды (PNG, JPG, WEBP, т.б.). Макс. өлшем: 250МБ"
 
 #: templates/index.html:XXX
 msgid "Clear"
@@ -156,11 +156,11 @@ msgstr "Тазалау"
 
 #: templates/index.html:XXX
 msgid "Analyze Now"
-msgstr "Қазір талдау" # Мысал
+msgstr "Қазір талдау"
 
 #: templates/index.html:XXX
 msgid "Uploaded analysis image"
-msgstr "Жүктелген талдау суреті" # Мысал
+msgstr "Жүктелген талдау суреті"
 
 #: templates/index.html:XXX
 msgid "Analysis Report"
@@ -168,11 +168,11 @@ msgstr "Талдау есебі"
 
 #: templates/index.html:XXX
 msgid "Potential Condition:"
-msgstr "Ықтимал жағдай:" # Мысал
+msgstr "Ықтимал жағдай:"
 
 #: templates/index.html:XXX
 msgid "Confidence Score:"
-msgstr "Сенімділік ұпайы:" # Мысал
+msgstr "Сенімділік ұпайы:"
 
 #: templates/index.html:XXX
 msgid "About"
@@ -200,103 +200,103 @@ msgstr "Анықталған жағдай туралы толық ақпарат
 
 #: templates/index.html:XXX
 msgid "As Featured In"
-msgstr "Басылымдарда" # Мысал
+msgstr "Басылымдарда"
 
 #: templates/index.html:XXX
 msgid "Our project has been recognized by leading media outlets."
-msgstr "Біздің жоба жетекші БАҚ тарапынан танылды." # Мысал
+msgstr "Біздің жоба жетекші БАҚ тарапынан танылды."
 
 #: templates/index.html:XXX
 msgid "YouTube video player"
-msgstr "YouTube видео ойнатқышы" # Мысал
+msgstr "YouTube видео ойнатқышы"
 
 #: templates/index.html:XXX
 msgid "News report by 24.kz covering our AI project."
-msgstr "24.kz жаңалықтар репортажы біздің AI жобамыз туралы." # Мысал
+msgstr "24.kz жаңалықтар репортажы біздің AI жобамыз туралы."
 
 #: templates/index.html:XXX
 msgid "Read More:"
-msgstr "Толығырақ:" # Мысал
+msgstr "Толығырақ:"
 
 #: templates/index.html:XXX
 msgid "The minds behind MpoxDetection.ai"
-msgstr "MpoxDetection.ai артындағы тұлғалар" # Мысал
+msgstr "MpoxDetection.ai артындағы тұлғалар"
 
 #: templates/index.html:XXX
 msgid "Galym Yedigeyev"
-msgstr "Ғалым Едігеев" # Мысал
+msgstr "Ғалым Едігеев"
 
 #: templates/index.html:XXX
 msgid "Full-Stack Developer & Web Architect"
-msgstr "Full-Stack әзірлеуші және веб-архитектор" # Мысал
+msgstr "Full-Stack әзірлеуші және веб-архитектор"
 
 #: templates/index.html:XXX
 msgid "Galym WhatsApp"
-msgstr "Ғалым WhatsApp" # Мысал
+msgstr "Ғалым WhatsApp"
 
 #: templates/index.html:XXX
 msgid "Galym Instagram"
-msgstr "Ғалым Instagram" # Мысал
+msgstr "Ғалым Instagram"
 
 #: templates/index.html:XXX
 msgid "Galym Email"
-msgstr "Ғалым Email" # Мысал
+msgstr "Ғалым Email"
 
 #: templates/index.html:XXX
 msgid "Galym GitHub"
-msgstr "Ғалым GitHub" # Мысал
+msgstr "Ғалым GitHub"
 
 #: templates/index.html:XXX
 msgid "Artyom Lavrentyev"
-msgstr "Артём Лаврентьев" # Мысал
+msgstr "Артём Лаврентьев"
 
 #: templates/index.html:XXX
 msgid "Machine Learning Engineer & AI Specialist"
-msgstr "Машиналық оқыту инженері және AI маманы" # Мысал
+msgstr "Машиналық оқыту инженері және AI маманы"
 
 #: templates/index.html:XXX
 msgid "Artyom WhatsApp"
-msgstr "Артём WhatsApp" # Мысал
+msgstr "Артём WhatsApp"
 
 #: templates/index.html:XXX
 msgid "Artyom Email"
-msgstr "Артём Email" # Мысал
+msgstr "Артём Email"
 
 #: templates/index.html:XXX
 msgid "Get In Touch"
-msgstr "Байланысқа шығу" # Мысал
+msgstr "Байланысқа шығу"
 
 #: templates/index.html:XXX
 msgid "Have questions, feedback, or partnership inquiries? Contact us!"
-msgstr "Сұрақтарыңыз, пікірлеріңіз немесе серіктестік ұсыныстарыңыз болса? Бізбен хабарласыңыз!" # Мысал
+msgstr "Сұрақтарыңыз, пікірлеріңіз немесе серіктестік ұсыныстарыңыз болса? Бізбен хабарласыңыз!"
 
 #: templates/index.html:XXX
 msgid "Galym - Web Dev"
-msgstr "Ғалым - Веб-әзірлеуші" # Мысал
+msgstr "Ғалым - Веб-әзірлеуші"
 
 #: templates/index.html:XXX
 msgid "Artyom - AI/ML"
-msgstr "Артём - AI/ML" # Мысал
+msgstr "Артём - AI/ML"
 
 #: templates/index.html:XXX
 msgid "Galym"
-msgstr "Ғалым" # Мысал
+msgstr "Ғалым"
 
 #: templates/index.html:XXX
 msgid "Artyom"
-msgstr "Артём" # Мысал
+msgstr "Артём"
 
 #: templates/index.html:XXX
 msgid "Advancing health through AI."
-msgstr "AI арқылы денсаулықты дамыту." # Мысал
+msgstr "AI арқылы денсаулықты дамыту."
 
 #: templates/index.html:XXX
 msgid "Team"
-msgstr "Команда" # Мысал
+msgstr "Команда"
 
 #: templates/index.html:XXX
 msgid "Contact"
-msgstr "Байланыс" # Мысал
+msgstr "Байланыс"
 
 #: templates/index.html:XXX
 msgid "View Project on GitHub"
@@ -325,5 +325,109 @@ msgstr "Терінің суретін жүктеңіз."
 msgid "No specific information available."
 msgstr "Нақты ақпарат жоқ."
 
-# ... Басқа да жетіспейтін жолдарды осында қосыңыз ...
+# --- Ескі жолдар (мүмкін қажет емес, бірақ .po файлында болуы мүмкін) ---
+msgid "Disease Prediction" # Бұл жол ескірген болуы мүмкін
+msgstr "Ауруды болжау"
+
+msgid "Night Mode" # Бұл жол ескірген болуы мүмкін
+msgstr "Түнгі режим"
+
+msgid "Drag and drop your file here, or click to select one." # Бұл жол ескірген болуы мүмкін
+msgstr "Файлды осында сүйреп апарыңыз немесе таңдау үшін басыңыз."
+
+msgid "Upload an Image" # Бұл жол ескірген болуы мүмкін
+msgstr "Суретті жүктеңіз"
+
+msgid "No file chosen" # Бұл жол ескірген болуы мүмкін
+msgstr "Файл таңдалмады"
+
+msgid "Submit" # Бұл жол ескірген болуы мүмкін
+msgstr "Жіберу"
+
+msgid "Clear Data" # Бұл жол ескірген болуы мүмкін
+msgstr "Деректерді тазалау"
+
+msgid "Prediction:" # Бұл жол ескірген болуы мүмкін
+msgstr "Болжау:"
+
+msgid "Confidence:" # Бұл жол ескірген болуы мүмкін
+msgstr "Сенімділік:"
+
+msgid "Symptoms:" # Бұл жол ескірген болуы мүмкін
+msgstr "Белгілері:"
+
+msgid "Causes:" # Бұл жол ескірген болуы мүмкін
+msgstr "Себептері:"
+
+msgid "Prevention:" # Бұл жол ескірген болуы мүмкін
+msgstr "Алдын алу жолдары:"
+
+msgid "Treatment:" # Бұл жол ескірген болуы мүмкін
+msgstr "Емдеу жолдары:"
+
+msgid "Meet the amazing people behind this project." # Бұл жол ескірген болуы мүмкін
+msgstr "Бұл жобаның авторларымен танысыңыз."
+
+msgid "Full-Stack Developer" # Бұл жол ескірген болуы мүмкін
+msgstr "Full-Stack веб-әзірлеуші"
+
+msgid "Machine Learning Engineer" # Бұл жол ескірген болуы мүмкін
+msgstr "Машинамен оқыту инженері"
+
+msgid "If you have any questions or feedback, feel free to reach out!" # Бұл жол ескірген болуы мүмкін
+msgstr "Сұрақтарыңыз немесе пікірлеріңіз болса, бізбен байланысыңыз!"
+
+msgid "All rights reserved" # Бұл жол ескірген болуы мүмкін
+msgstr "Барлық құқықтар қорғалған"
+
+msgid "Welcome to Monkeypox Detector" # Бұл жол ескірген болуы мүмкін
+msgstr "Маймыл шешегін анықтау жүйесіне қош келдіңіз"
+
+msgid "Our AI-powered tool helps you analyze skin images to predict possible diseases. Upload an image to get started." # Бұл жол ескірген болуы мүмкін
+msgstr "AI жүйеміз тері суреттерін талдап, ықтимал ауруларды болжауға көмектеседі. Бастау үшін сурет жүктеңіз."
+
+msgid "How to use:" # Бұл жол ескірген болуы мүмкін
+msgstr "Қалай қолдануға болады:"
+
+msgid "Upload a clear image of the affected skin area." # Бұл жол ескірген болуы мүмкін
+msgstr "Зақымданған тері аймағының анық суретін жүктеңіз."
+
+msgid "Click the \\\"Analyse Now\\\" button and wait for the AI prediction." # Бұл жол ескірген болуы мүмкін
+msgstr "\"Жіберу\" түймесін басып, AI болжауын күтіңіз."
+
+msgid "To get full disease details, select your preferred language from the top right." # Бұл жол ескірген болуы мүмкін
+msgstr "Ауру туралы толық ақпарат алу үшін оң жақ жоғарғы бұрыштан тілді таңдаңыз."
+
+msgid "MpoxDetection.ai" # Бұл жол ескірген болуы мүмкін
+msgstr "MpoxDetection.ai"
+
+msgid "Your AI-Powered Skin Disease Detection Solution" # Бұл жол ескірген болуы мүмкін
+msgstr "Тері ауруларын анықтайтын AI жүйесі"
+
+msgid "Accurate • Fast • Reliable" # Бұл жол ескірген болуы мүмкін
+msgstr "Дәл • Жылдам • Сенімді"
+
+msgid "Drag & Drop Image" # Бұл жол ескірген болуы мүмкін
+msgstr "Суретті сүйреп апарыңыз"
+
+msgid "Supported formats: JPG, PNG up to 5MB" # Бұл жол ескірген болуы мүмкін
+msgstr "Қолдайтын форматтар: JPG, PNG (5MB дейін)"
+
+msgid "Dark Mode" # Бұл жол ескірген болуы мүмкін
+msgstr "Қараңғы режим"
+
+msgid "Upload your image for instant diagnosis" # Бұл жол ескірген болуы мүмкін
+msgstr "Жедел диагноз алу үшін суретті жүктеңіз"
+
+msgid "AI Skin Analysis" # Бұл жол ескірген болуы мүмкін
+msgstr "Теріні AI арқылы талдау"
+
+msgid "1. Upload a clear image of the affected skin area." # Бұл жол ескірген болуы мүмкін
+msgstr "1. Зақымданған тері аймағының анық суретін жүктеңіз."
+
+msgid "2. Click the \"Analyze Now\" button and wait for the AI prediction." # Бұл жол ескірген болуы мүмкін
+msgstr "2. \"Талдау\" түймесін басып, AI болжауын күтіңіз."
+
+msgid "3. To get full disease details, select your preferred language from the top right." # Бұл жол ескірген болуы мүмкін
+msgstr "3. Ауру туралы толық ақпарат алу үшін оң жақ жоғарғы бұрыштан тілді таңдаңыз."
 
