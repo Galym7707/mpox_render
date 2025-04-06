@@ -1,26 +1,25 @@
 # C:\Users\galym\Desktop\monkeypox_final\app.py
 import os
-# Убедись, что эта строка в самом начале, ДО импорта tensorflow
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 
 from flask import Flask, request, jsonify, render_template, g, url_for, session, redirect, make_response
+from flask_babel import gettext
 from flask_babel import Babel, _
 from PIL import Image
 import numpy as np
-# !!! Используйте правильный import для вашей модели и препроцессинга !!!
-# Если вы перешли на новую модель, импорты должны соответствовать ей
 from tensorflow.keras.models import load_model
-# from tensorflow.keras.applications.efficientnet import preprocess_input # Пример
-from tensorflow.keras.applications.resnet_v2 import preprocess_input # Пример, если остался ResNet
+# !!! Убедитесь, что импорт preprocess_input СООТВЕТСТВУЕТ вашей модели !!!
+# from tensorflow.keras.applications.efficientnet import preprocess_input
+from tensorflow.keras.applications.resnet_v2 import preprocess_input # Оставил для примера
 import logging
-# import requests # Не нужен, если модель локально или уже скачана
 from werkzeug.utils import secure_filename
-from translations.disease_data import disease_info # Оставьте, если используете
+from translations.disease_data import disease_info
 import datetime
-import json # Для загрузки маппинга, если перешли на новую модель
+import json
+import shutil
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
-app.secret_key = "mysecretkey" # Используйте безопасный ключ
+app.secret_key = "mysecretkey"
 app.config['BABEL_DEFAULT_LOCALE'] = 'en'
 app.config['BABEL_SUPPORTED_LOCALES'] = ['en', 'ru', 'kk']
 app.config['BABEL_TRANSLATION_DIRECTORIES'] = 'translations'
@@ -32,47 +31,50 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 babel = Babel(app, locale_selector=lambda: g.get('locale', 'en'))
 
 # --- Загрузка модели и маппинга ---
-MODEL_PATH = os.path.join('models', 'simple_model.keras') # Или 'final_skin_detector_model.keras'
-MAPPING_PATH = os.path.join('data', 'label_mapping.json') # Если используете новую модель
+MODEL_PATH = os.path.join('models', 'simple_model.keras') # Укажите ПРАВИЛЬНЫЙ путь
+MAPPING_PATH = os.path.join('data', 'label_mapping.json')
 
 model = None
 int_to_label = None
 label_mapping = None
 num_classes = 0
 
+# Улучшаем формат логов
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
 try:
+    logging.info(f"Попытка загрузки модели из: {MODEL_PATH}")
     if os.path.exists(MODEL_PATH):
         model = load_model(MODEL_PATH)
-        print("✅ Модель успешно загружена!")
+        logging.info("✅ Модель успешно загружена!")
     else:
-        print(f"КРИТИЧЕСКАЯ ОШИБКА: Файл модели не найден: {MODEL_PATH}")
+        logging.error(f"КРИТИЧЕСКАЯ ОШИБКА: Файл модели не найден: {MODEL_PATH}")
 
+    logging.info(f"Попытка загрузки маппинга из: {MAPPING_PATH}")
     if os.path.exists(MAPPING_PATH):
          with open(MAPPING_PATH, 'r', encoding='utf-8') as f:
             int_to_label_str_keys = json.load(f)
             int_to_label = {int(k): v for k, v in int_to_label_str_keys.items()}
          num_classes = len(int_to_label)
-         print(f"✅ Маппинг меток загружен ({num_classes} классов): {int_to_label}")
+         logging.info(f"✅ Маппинг меток загружен ({num_classes} классов): {int_to_label}")
          label_mapping = {k: v for k, v in int_to_label.items()}
     else:
-        print(f"Файл маппинга {MAPPING_PATH} не найден. Используется старый label_mapping.")
+        logging.warning(f"Файл маппинга {MAPPING_PATH} не найден. Используется старый label_mapping.")
         label_mapping = {
              0: 'Chickenpox', 1: 'Cowpox', 2: 'Hand, foot and mouth disease',
              3: 'Healthy', 4: 'Measles', 5: 'Monkeypox'
         }
         int_to_label = {k: v for k, v in label_mapping.items()}
         num_classes = len(label_mapping)
-        print(f"Используется старый маппинг ({num_classes} классов).")
+        logging.info(f"Используется старый маппинг ({num_classes} классов).")
 
 except Exception as e:
-    print(f"КРИТИЧЕСКАЯ ОШИБКА при загрузке модели или маппинга: {e}")
+    logging.exception(f"КРИТИЧЕСКАЯ ОШИБКА при загрузке модели или маппинга: {e}")
     model = None
     int_to_label = None
     label_mapping = None
 
 # --- Конфигурация Flask ---
-logging.basicConfig(level=logging.INFO)
-
 app.config['ALLOWED_EXTENSIONS'] = {
     'png', 'jpg', 'jpeg', 'gif', 'bmp', 'tiff', 'tif', 'webp',
     'ppm', 'pgm', 'pbm', 'pnm', 'ico', 'jfif', 'jpe',
@@ -95,16 +97,37 @@ def inject_current_year():
 
 @app.route('/')
 def index():
+    # ... (код без изменений) ...
     prediction_key = session.get('prediction')
     image_url = session.get('image_url')
     confidence = session.get('confidence')
     disease_info_translated = {}
     translated_disease_name = None
 
+    # Сбор переводов для JavaScript
+    js_translations = {
+        "fileTooLarge": gettext('File is too large (Max 250MB).'),
+        "fileNotChosen": gettext('No file selected'),
+        "uploadError": gettext('Please select an image file.'),
+        "errorOccurred": gettext('An error occurred'),
+        "uploadedImageAlt": gettext('Uploaded analysis image'),
+        "imageLoadError": gettext('Image load error'),
+        "reportTitle": gettext('Analysis Report'),
+        "potentialCond": gettext('Potential Condition:'),
+        "confScore": gettext('Confidence Score:'),
+        "about": gettext('About'),
+        "symptoms": gettext('Symptoms'),
+        "causes": gettext('Causes'),
+        "prevention": gettext('Prevention'),
+        "treatment": gettext('Treatment Approaches'),
+        "notSkinMessage": gettext('Please upload an image of skin.'), # Пример для NotSkin
+        "noData": gettext('No specific information available.'),
+        # Добавь сюда ЛЮБЫЕ другие ключи, которые ты используешь в script.js
+    }
+    translations_json = json.dumps(js_translations) # Преобразуем в JSON строку
+
     if prediction_key and g.locale:
-        # Используем актуальный маппинг для получения ключа, если нужно
         current_mapping_inv = {v: k for k, v in (int_to_label if int_to_label else label_mapping).items()}
-        # Используем текстовый ключ для поиска в disease_info
         disease_info_data = disease_info.get(prediction_key, {})
         disease_info_localized = disease_info_data.get(g.locale, disease_info_data.get('en', {}))
         translated_disease_name = disease_info_localized.get("title", prediction_key)
@@ -115,73 +138,81 @@ def index():
             "Prevention": disease_info_localized.get("prevention", []),
             "Treatment": disease_info_localized.get("treatment", "")
         }
-    # ... (fallback logic) ...
 
     return render_template(
         'index.html',
         prediction=translated_disease_name,
         confidence=confidence,
         image_url=image_url,
-        disease_info=disease_info_translated
+        disease_info=disease_info_translated,
+        translations_json=translations_json # Передаем JSON в шаблон
     )
+
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
+    logging.info("Получен запрос /upload")
     if model is None or (label_mapping is None and int_to_label is None):
-        logging.error("Модель или маппинг не загружены, анализ невозможен.")
+        logging.error("Запрос отклонен: Модель или маппинг не загружены.")
         return jsonify(error=_('Model or mapping is not available, cannot analyze.')), 503
 
     if 'image' not in request.files:
+        logging.warning("Запрос отклонен: 'image' отсутствует в request.files")
         return jsonify(error=_('No file part')), 400
 
     file = request.files['image']
     if file.filename == '':
+        logging.warning("Запрос отклонен: Имя файла пустое")
         return jsonify(error=_('No file selected')), 400
 
-    if file and allowed_file(file.filename):
+    logging.info(f"Получен файл: {file.filename}, Тип: {file.content_type}, Размер: {request.content_length} байт") # Лог размера
 
-        # --- !!! НАЧАЛО: Очистка папки uploads перед сохранением нового файла !!! ---
+    if file and allowed_file(file.filename):
+        logging.info("Файл прошел проверку allowed_file.")
+
+        # --- Очистка папки uploads ---
         try:
-            logging.info(f"Очистка папки {app.config['UPLOAD_FOLDER']}...")
+            logging.info(f"Попытка очистки папки {app.config['UPLOAD_FOLDER']}...")
+            cleaned_count = 0
             for filename_to_delete in os.listdir(app.config['UPLOAD_FOLDER']):
                 file_path_to_delete = os.path.join(app.config['UPLOAD_FOLDER'], filename_to_delete)
                 try:
                     if os.path.isfile(file_path_to_delete) or os.path.islink(file_path_to_delete):
-                        os.unlink(file_path_to_delete) # Удаляем файл или символическую ссылку
-                        logging.info(f"Удален старый файл: {file_path_to_delete}")
-                    # elif os.path.isdir(file_path_to_delete): # На всякий случай, если там окажутся папки
-                    #     shutil.rmtree(file_path_to_delete)
+                        os.unlink(file_path_to_delete)
+                        cleaned_count += 1
                 except Exception as e_delete:
                     logging.error(f"Не удалось удалить {file_path_to_delete}. Ошибка: {e_delete}")
-            logging.info("Папка uploads очищена.")
+            logging.info(f"Очистка завершена. Удалено файлов: {cleaned_count}")
         except Exception as e_clear:
-            logging.error(f"Ошибка при очистке папки uploads: {e_clear}")
-        # --- !!! КОНЕЦ: Очистка папки uploads !!! ---
+            logging.error(f"Ошибка при доступе/очистке папки uploads: {e_clear}")
+        # -----------------------------
 
         file_path = None
         try:
             filename = secure_filename(file.filename)
             file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            file.save(file_path) # Сохраняем НОВЫЙ файл ПОСЛЕ очистки
-            logging.info(f"Новый файл сохранен: {file_path}")
+            logging.info(f"Попытка сохранения файла в: {file_path}")
+            file.save(file_path)
+            logging.info(f"Файл успешно сохранен: {file_path}")
 
             # --- Обработка изображения ---
             logging.info(f"Обработка изображения: {filename}")
-            IMG_SIZE = 128 # !!! Установите РАЗМЕР ВХОДА вашей ТЕКУЩЕЙ модели !!!
+            IMG_SIZE = 128 # !!! УБЕДИТЕСЬ, ЧТО ЭТО РАЗМЕР ВАШЕЙ МОДЕЛИ !!!
             image = Image.open(file_path).convert('RGB').resize((IMG_SIZE, IMG_SIZE))
             image_array = np.array(image, dtype=np.float32)
 
-            # !!! Препроцессинг зависит от модели !!!
+            # !!! ПРЕПРОЦЕССИНГ !!!
             image_array = image_array / 255.0 # Для старой модели
             # image_array = preprocess_input(image_array) # Для новой модели
 
             image_array = np.expand_dims(image_array, axis=0)
-            logging.info(f"Изображение обработано (размер {IMG_SIZE}x{IMG_SIZE}).")
+            # !!! ДОБАВЛЕН ЛОГ: Форма и тип данных перед предсказанием !!!
+            logging.info(f"Подготовлен массив для модели. Shape: {image_array.shape}, Dtype: {image_array.dtype}")
             # -----------------------------
 
-            logging.info(f"Предсказание для: {filename}")
+            logging.info(f"Начало предсказания для: {filename}")
             prediction = model.predict(image_array)
-            logging.info(f"Предсказание завершено.")
+            logging.info(f"Предсказание завершено. Shape: {prediction.shape}")
 
             predicted_class_int = int(np.argmax(prediction[0]))
             confidence = float(round(prediction[0][predicted_class_int] * 100, 2))
@@ -197,14 +228,20 @@ def upload_file():
                 disease_info_localized = disease_info_data.get(g.locale, disease_info_data.get('en', {}))
                 translated_disease_name = disease_info_localized.get("title", disease_key)
 
+            # !!! ДОБАВЛЕН ЛОГ: Генерируемый URL изображения !!!
+            image_url_response = url_for('static', filename=f'uploads/{filename}')
+            logging.info(f"URL изображения для ответа: {image_url_response}")
+            # ------------------------------------------------
+
             image_url_for_session = url_for('static', filename=f'uploads/{filename}', _external=False)
             session['image_url'] = image_url_for_session
             session['prediction'] = disease_key
             session['confidence'] = confidence
             session['disease_info'] = disease_info_localized
 
+            logging.info("Отправка JSON ответа клиенту.")
             return jsonify(
-                image_url=url_for('static', filename=f'uploads/{filename}'),
+                image_url=image_url_response, # Используем переменную для логгирования
                 prediction_key=disease_key,
                 prediction_title=translated_disease_name,
                 confidence=confidence,
@@ -215,43 +252,23 @@ def upload_file():
              logging.warning(f"Не удалось распознать файл как изображение: {filename}")
              return jsonify(error=_('Cannot identify image file. Please upload a valid image.')), 400
         except Exception as e:
-            logging.exception("Ошибка при предсказании")
-            # Важно: НЕ удаляем файл здесь, если хотим его показать
+            logging.exception("Неожиданная ошибка при обработке файла и предсказании")
             return jsonify(error=_('An error occurred during analysis.')), 500
-        # finally: # Блок finally больше не нужен для удаления
-        #     pass
 
     else:
+        logging.warning(f"Запрос отклонен: Файл {file.filename} не прошел проверку allowed_file.")
         return jsonify(error=_('Invalid file format or file not allowed')), 400
 
 # ... (остальной код app.py: /clear и запуск) ...
 @app.route('/clear', methods=['POST'])
 def clear_session_route():
     try:
-        # Очистка сессии
         session.pop('image_url', None)
         session.pop('prediction', None)
         session.pop('confidence', None)
         session.pop('disease_info', None)
         logging.info("Сессия очищена.")
-
-        # Опционально: Очистка папки uploads при нажатии кнопки Clear
-        # Раскомментируйте, если хотите очищать папку и по кнопке Clear
-        # try:
-        #     logging.info(f"Очистка папки {app.config['UPLOAD_FOLDER']} по кнопке Clear...")
-        #     for filename_to_delete in os.listdir(app.config['UPLOAD_FOLDER']):
-        #         file_path_to_delete = os.path.join(app.config['UPLOAD_FOLDER'], filename_to_delete)
-        #         try:
-        #             if os.path.isfile(file_path_to_delete) or os.path.islink(file_path_to_delete):
-        #                 os.unlink(file_path_to_delete)
-        #         except Exception as e_delete:
-        #             logging.error(f"Не удалось удалить {file_path_to_delete}. Ошибка: {e_delete}")
-        #     logging.info("Папка uploads очищена по кнопке Clear.")
-        # except Exception as e_clear:
-        #     logging.error(f"Ошибка при очистке папки uploads по кнопке Clear: {e_clear}")
-
         return jsonify(message=_("Data cleared successfully."))
-
     except Exception as e:
         logging.exception("Ошибка при очистке данных")
         return jsonify(error=_('An error occurred while clearing data.')), 500
@@ -260,6 +277,8 @@ def clear_session_route():
 if __name__ == '__main__':
     if model is None:
         print("ЗАПУСК НЕВОЗМОЖЕН: Модель не загружена.")
+        logging.critical("ЗАПУСК НЕВОЗМОЖЕН: Модель не загружена.") # Добавим в лог
     else:
         port = int(os.environ.get('PORT', 8080))
+        print(f" * Запуск Flask приложения на http://0.0.0.0:{port}")
         app.run(host='0.0.0.0', port=port, debug=False) # debug=False для продакшена
