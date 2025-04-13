@@ -11,62 +11,64 @@
 
 html {
   scroll-behavior: smooth;
-  /* Плавная прокрутка по якорям */
-  font-size: 100%; /* 1rem = 16px по умолчанию */
+  font-size: 100%;
 }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.7; /* Улучшенная читаемость */
-  -webkit-font-smoothing: antialiased; /* Сглаживание шрифтов в WebKit */
-  -moz-osx-font-smoothing: grayscale; /* Сглаживание шрифтов в Firefox */
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   transition: background-color 0.4s ease, color 0.4s ease;
-  overflow-x: hidden; /* Предотвращение горизонтального скролла */
-  position: relative; /* Для позиционирования псевдоэлементов */
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* -------- CSS VARIABLES (THEMES) -------- */
 :root {
   /* --- Цветовая палитра --- */
-  --color-primary-light: #66FFFF; /* Основной акцент (светлый циан) */
-  --color-primary-dark: #0ea5e9; /* Основной акцент (темный голубой) */
-  --color-secondary-light: #88FFEE; /* Вторичный акцент (светлее циан) */
-  --color-secondary-dark: #38bdf8; /* Вторичный акцент (светлее голубой) */
+  --color-primary-light: #66FFFF;
+  --color-primary-dark: #0ea5e9;
+  --color-secondary-light: #88FFEE;
+  --color-secondary-dark: #38bdf8;
 
-  --color-text-light-primary: #e2e8f0; /* Светлый текст (основной) */
-  --color-text-light-secondary: #94a3b8; /* Светлый текст (вторичный) */
-  --color-text-dark-primary: #1e293b; /* Темный текст (основной) */
-  --color-text-dark-secondary: #475569; /* Темный текст (вторичный) */
+  /* Светлый текст (для темной темы) */
+  --color-text-light-primary: #e2e8f0; /* Был основным */
+  --color-text-light-secondary: #94a3b8; /* Был вторичным */
 
-  --color-bg-dark-primary: #0f172a; /* Темный фон (основной) */
-  --color-bg-dark-secondary: #1e293b; /* Темный фон (вторичный) */
-  --color-bg-light-primary: #f8fafc; /* Светлый фон (основной) */
-  --color-bg-light-secondary: #f1f5f9; /* Светлый фон (вторичный) */
+  /* Темный текст (для светлой темы) */
+  --color-text-dark-primary: #111827; /* Сделал темнее для лучшего контраста */
+  --color-text-dark-secondary: #374151; /* Сделал темнее для лучшего контраста */
 
-  --color-card-dark: rgba(30, 41, 59, 0.7); /* Карточки (темная тема, полупрозрачные) */
-  --color-card-light: #ffffff; /* Карточки (светлая тема) */
+  --color-bg-dark-primary: #0f172a;
+  --color-bg-dark-secondary: #1e293b;
+  --color-bg-light-primary: #f8fafc;
+  --color-bg-light-secondary: #f1f5f9;
 
-  --color-border-dark: rgba(100, 116, 139, 0.3); /* Границы (темная тема) */
-  --color-border-light: #e2e8f0; /* Границы (светлая тема) */
+  --color-card-dark: rgba(30, 41, 59, 0.7);
+  --color-card-light: #ffffff;
 
-  --color-error: #f87171; /* Цвет ошибки */
+  --color-border-dark: rgba(100, 116, 139, 0.3);
+  --color-border-light: #e5e7eb; /* Немного темнее для видимости */
+
+  --color-error: #f87171;
   --color-error-bg-dark: rgba(248, 113, 113, 0.1);
   --color-error-border-dark: rgba(248, 113, 113, 0.3);
   --color-error-text-dark: #fca5a5;
   --color-error-bg-light: rgba(239, 68, 68, 0.1);
   --color-error-border-light: rgba(239, 68, 68, 0.3);
-  --color-error-text-light: #b91c1c;
+  --color-error-text-light: #b91c1c; /* Темно-красный, контрастный */
 
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04); /* Тень для светлой темы чуть мягче */
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.08); /* Более заметная тень для светлой темы */
   --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
 
-  /* --- Переменные для тем --- */
+  /* --- Переменные для тем (по умолчанию ТЕМНАЯ) --- */
   --bg-primary: var(--color-bg-dark-primary);
   --bg-secondary: var(--color-bg-dark-secondary);
   --card-bg: var(--color-card-dark);
@@ -82,71 +84,301 @@ body {
 
   /* --- Градиенты --- */
   --gradient-accent: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
-  --gradient-text: var(--gradient-accent); /* По умолчанию текст градиентный */
+  /* Текстовый градиент по умолчанию для темной темы */
+  --gradient-text: linear-gradient(45deg, var(--color-text-light-primary), var(--color-text-light-secondary));
 }
 
+/* ---------------------- */
+/* --- СВЕТЛАЯ ТЕМА --- */
+/* ---------------------- */
 body.light-theme {
   --bg-primary: var(--color-bg-light-primary);
   --bg-secondary: var(--color-bg-light-secondary);
   --card-bg: var(--color-card-light);
-  --text-primary: var(--color-text-dark-primary);
-  --text-secondary: var(--color-text-dark-secondary);
+  --text-primary: var(--color-text-dark-primary); /* Используем темный текст */
+  --text-secondary: var(--color-text-dark-secondary); /* Используем темный вторичный текст */
   --border-color: var(--color-border-light);
-  --accent-primary: var(--color-primary-dark);
-  --accent-secondary: var(--color-secondary-dark);
+  --accent-primary: var(--color-primary-dark); /* Темно-голубой акцент */
+  --accent-secondary: var(--color-secondary-dark); /* Светло-голубой акцент */
   --error-bg: var(--color-error-bg-light);
   --error-border: var(--color-error-border-light);
-  --error-text: var(--color-error-text-light);
-  --current-shadow: var(--shadow-md);
+  --error-text: var(--color-error-text-light); /* Используем темный текст ошибки */
+  --current-shadow: var(--shadow-md); /* Используем тень для светлой темы */
+
+  /* --- Градиенты для СВЕТЛОЙ темы --- */
+  /* Акцентный градиент остается синим */
+  --gradient-accent: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+  /* Текстовый градиент для светлой темы - ИСПОЛЬЗУЕМ АКЦЕНТНЫЙ (синий) */
+  --gradient-text: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+
+  /* --- Явное указание цветов для ключевых элементов --- */
+  color: var(--text-primary); /* Базовый цвет текста */
 }
 
-/* Применение основных цветов */
+/* Убедимся, что основные текстовые элементы наследуют правильный цвет */
+body.light-theme p,
+body.light-theme li,
+body.light-theme span,
+body.light-theme h3, /* h1/h2 часто с градиентом, их не трогаем */
+body.light-theme h4,
+body.light-theme h5,
+body.light-theme h6,
+body.light-theme label {
+  color: var(--text-primary); /* Основной темный текст */
+}
+body.light-theme code, /* На всякий случай */
+body.light-theme pre {
+   color: var(--text-primary);
+}
+
+/* Вторичный текст */
+body.light-theme .section-subtitle,
+body.light-theme .hero-subtext,
+body.light-theme .file-requirements,
+body.light-theme .file-info,
+body.light-theme .video-caption,
+body.light-theme .team-role,
+body.light-theme .contact-list span,
+body.light-theme .footer-tagline,
+body.light-theme .copyright,
+body.light-theme .info-section li,
+body.light-theme .info-section p,
+body.light-theme .report-label,
+body.light-theme .team-social .social-icon {
+    color: var(--text-secondary); /* Вторичный темный текст */
+}
+
+/* Ссылки */
+body.light-theme a {
+    color: var(--accent-primary); /* Акцентный цвет для ссылок по умолчанию */
+    text-decoration: none; /* Убираем подчеркивание по умолчанию */
+}
+body.light-theme a:hover {
+    color: var(--accent-secondary); /* Более светлый акцент при наведении */
+    text-decoration: underline; /* Добавляем подчеркивание при наведении */
+}
+
+/* Навигационные ссылки */
+body.light-theme .main-nav-list li a,
+body.light-theme .mobile-nav-list li a,
+body.light-theme .footer-links a {
+    color: var(--text-secondary); /* Вторичный цвет для неактивных ссылок */
+}
+body.light-theme .main-nav-list li a:hover,
+body.light-theme .mobile-nav-list li a:hover,
+body.light-theme .footer-links a:hover {
+    color: var(--accent-primary); /* Акцентный цвет при наведении */
+    text-decoration: none; /* Убираем подчеркивание у навигации */
+}
+body.light-theme .main-nav-list li a::after { /* Подчеркивание для нав. ссылок */
+     background: var(--accent-primary);
+}
+
+/* Контакты и соцсети */
+body.light-theme .contact-list a {
+    color: var(--text-primary); /* Основной цвет для контактных ссылок */
+}
+body.light-theme .contact-list a:hover {
+    color: var(--accent-primary); /* Акцент при наведении */
+}
+body.light-theme .team-social a:hover .social-icon {
+    color: var(--accent-primary); /* Акцент при наведении на иконки */
+}
+
+/* Кнопки */
+body.light-theme .btn {
+    background: var(--gradient-accent); /* Градиент остается синим */
+    color: #ffffff; /* БЕЛЫЙ текст на синем градиенте - хороший контраст */
+    box-shadow: var(--shadow-sm); /* Легкая тень для кнопок */
+}
+body.light-theme .btn:hover {
+    filter: brightness(1.1);
+    box-shadow: var(--shadow-md);
+}
+body.light-theme .clear-button { /* Кнопка очистки */
+    background: transparent;
+    border: 1px solid var(--color-error-text-light); /* Темно-красная граница */
+    color: var(--color-error-text-light); /* Темно-красный текст */
+    box-shadow: none;
+}
+body.light-theme .clear-button:hover {
+    background: var(--color-error-bg-light); /* Светло-красный фон */
+    color: var(--color-error-text-light);
+    border-color: var(--color-error-text-light);
+}
+
+/* Карточки и фон */
+body.light-theme .upload-card,
+body.light-theme .hero-instructions,
+body.light-theme .result-container,
+body.light-theme .media-item,
+body.light-theme .team-card,
+body.light-theme .contact-list li,
+body.light-theme .info-section {
+    background: var(--card-bg); /* Белый фон карточек */
+    box-shadow: var(--current-shadow);
+    border: 1px solid var(--border-color);
+}
+body.light-theme .info-section { /* Вложенные секции с информацией */
+     background: var(--bg-secondary); /* Слегка серый фон */
+}
+body.light-theme .drag-and-drop-area {
+    border: 2px dashed var(--border-color);
+}
+body.light-theme .drag-and-drop-area:hover,
+body.light-theme .drag-and-drop-area.highlight {
+    border-color: var(--accent-primary);
+    background: rgba(14, 165, 233, 0.05); /* Очень легкий синий фон */
+}
+body.light-theme .or-text span { /* Текст "или" на карточке */
+    background: var(--card-bg); /* Должен совпадать с фоном карточки */
+}
+
+
+/* Элементы с акцентным цветом (иконки, спец. текст) */
+body.light-theme .accuracy-highlight,
+body.light-theme .info-notice {
+    border: 1px solid rgba(14, 165, 233, 0.3);
+    background: rgba(14, 165, 233, 0.08); /* Чуть более заметный фон */
+    color: var(--accent-primary); /* Текст уже акцентный */
+}
+body.light-theme .accuracy-highlight strong,
+body.light-theme .confidence-value,
+body.light-theme .disease-info-title,
+body.light-theme .report-title {
+    color: var(--accent-primary);
+}
+body.light-theme .file-info i,
+body.light-theme .upload-icon i,
+body.light-theme .info-section h5 i,
+body.light-theme .info-section li::before,
+body.light-theme .accuracy-highlight .accuracy-icon,
+body.light-theme .contact-list .contact-icon,
+body.light-theme .hero-instructions li::before,
+body.light-theme .report-title i,
+body.light-theme .media-item i {
+    color: var(--accent-primary); /* Акцентный цвет для иконок */
+}
+
+/* Градиентный текст (заголовки, результат) */
+body.light-theme .section-title,
+body.light-theme .prediction-value {
+    background: var(--gradient-text); /* Используем синий градиент */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    color: var(--accent-primary); /* Fallback цвет - синий */
+}
+
+/* Переключатель темы */
+body.light-theme .night-mode-toggle .slider { background-color: #ccc; }
+body.light-theme .night-mode-toggle input:checked + .slider { background-color: var(--accent-primary); }
+body.light-theme .night-mode-toggle .moon { color: var(--accent-primary); } /* Луна становится синей */
+body.light-theme .night-mode-toggle .sun { color: #f39c12; } /* Солнце остается желтым */
+
+/* Языковое меню */
+body.light-theme .lang-btn {
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    background: transparent;
+}
+body.light-theme .lang-btn:hover {
+    background: var(--bg-secondary); /* Слегка серый фон при наведении */
+    border-color: var(--accent-primary);
+    color: var(--text-primary);
+}
+body.light-theme .lang-dropdown-content {
+    background: rgba(248, 250, 252, 0.95); /* Фон выпадающего списка */
+    border: 1px solid var(--border-color);
+}
+body.light-theme .lang-link { color: var(--text-secondary); }
+body.light-theme .lang-link:hover {
+    background: rgba(14, 165, 233, 0.1);
+    color: var(--accent-primary);
+}
+body.light-theme .lang-link.active-lang {
+    color: var(--accent-primary);
+}
+
+/* Шапка */
+body.light-theme .site-header {
+    background-color: rgba(248, 250, 252, 0.8); /* Почти белый фон шапки */
+    border-bottom: 1px solid var(--border-color);
+}
+body.light-theme .mobile-menu-btn {
+    color: var(--text-primary); /* Иконка бургер-меню */
+}
+body.light-theme .mobile-nav {
+    background-color: rgba(248, 250, 252, 0.98); /* Фон мобильного меню */
+}
+
+/* Подвал */
+body.light-theme .footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+}
+body.light-theme .github-banner {
+    border-color: var(--border-color);
+    background: var(--card-bg); /* Белый фон */
+    color: var(--text-primary);
+    box-shadow: var(--shadow-sm);
+}
+body.light-theme .github-banner:hover {
+    color: var(--accent-primary);
+    border-color: var(--accent-primary);
+    background: rgba(14, 165, 233, 0.1);
+}
+
+/* Конец стилей для светлой темы */
+/* ----------------------------- */
+
+
+/* Применение основных цветов (БАЗОВЫЕ ДЛЯ ТЕМНОЙ ТЕМЫ) */
 body {
   background-color: var(--bg-primary);
-  color: var(--text-primary);
+  color: var(--text-primary); /* По умолчанию светлый текст */
 }
 
 /* -------- UTILITIES -------- */
 .container {
   width: 100%;
-  max-width: 1200px; /* Максимальная ширина контента */
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5rem; /* Отступы по бокам */
+  padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
 
-/* Общие стили для кнопок */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.8rem 1.8rem; /* Немного увеличены отступы */
-  border-radius: 50px; /* Форма таблетки */
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Плавный переход */
-  border: 1px solid transparent; /* Граница для консистентности */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid transparent;
   position: relative;
   overflow: hidden;
   font-size: 0.95rem;
   gap: 0.6rem;
   box-shadow: var(--shadow-md);
-  background: var(--gradient-accent); /* Градиент по умолчанию */
-  color: var(--color-bg-dark-primary); /* Темный текст на градиенте */
+  /* Стили фона и цвета текста теперь зависят от темы */
+  background: var(--gradient-accent);
+  color: #0f172a; /* Темный текст по умолчанию (хорошо для светлого градиента темной темы) */
 }
-body.light-theme .btn {
-    color: #fff; /* Белый текст на светлом градиенте */
-}
+/* Светлая тема переопределит цвет текста выше */
 
 .btn:hover {
-  transform: translateY(-3px) scale(1.02); /* Легкий подъем и увеличение */
+  transform: translateY(-3px) scale(1.02);
   box-shadow: var(--shadow-lg);
-  filter: brightness(1.1); /* Немного ярче при наведении */
+  filter: brightness(1.1);
 }
 .btn:active {
-    transform: translateY(-1px) scale(0.98); /* Эффект нажатия */
+    transform: translateY(-1px) scale(0.98);
     box-shadow: var(--shadow-sm);
 }
 .btn:disabled {
@@ -164,36 +396,35 @@ body.light-theme .btn {
 .btn .button-arrow i { margin-left: 0.5rem; }
 .btn:hover .button-arrow i { transform: translateX(4px); }
 
-/* Стили для заголовков секций */
 .section-title {
-  font-size: clamp(2rem, 5vw, 3rem); /* Адаптивный размер шрифта */
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
   margin-bottom: 1rem;
   text-align: center;
+  /* Градиент и цвет задаются через переменные темы */
   background: var(--gradient-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+  color: var(--text-primary); /* Fallback цвет */
   line-height: 1.2;
 }
 
-/* Стили для подзаголовков секций */
 .section-subtitle {
   font-size: clamp(1rem, 2.5vw, 1.15rem);
   text-align: center;
-  margin-bottom: 4rem; /* Увеличен отступ снизу */
+  margin-bottom: 4rem;
   max-width: 650px;
   margin-left: auto;
   margin-right: auto;
-  color: var(--text-secondary);
+  color: var(--text-secondary); /* Используем вторичный цвет текста темы */
 }
 
-/* Общие стили для секций */
 section {
-  padding: clamp(3rem, 8vw, 6rem) 0; /* Адаптивные вертикальные отступы */
+  padding: clamp(3rem, 8vw, 6rem) 0;
   position: relative;
-  overflow: hidden; /* Предотвращение вылезания псевдоэлементов */
+  overflow: hidden;
 }
 
 /* -------- HEADER -------- */
@@ -201,21 +432,21 @@ section {
   position: fixed;
   width: 100%;
   top: 0;
-  left: 0; /* Убедимся, что шапка начинается слева */
+  left: 0;
   z-index: 1000;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  background-color: rgba(var(--bg-primary-rgb, 15, 23, 42), 0.8); /* Полупрозрачный фон */
+  /* Цвет фона и граница задаются через переменные темы */
+  background-color: rgba(var(--bg-primary-rgb, 15, 23, 42), 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
-  box-shadow: none; /* Убираем тень по умолчанию */
+  box-shadow: none;
 }
-/* Добавляем тень при скролле (можно добавить JS для этого) */
 body.scrolled .site-header {
     box-shadow: var(--shadow-md);
 }
 
-/* Устанавливаем RGB версии цветов для rgba() */
+/* RGB версии цветов для rgba() */
 body { --bg-primary-rgb: 15, 23, 42; }
 body.light-theme { --bg-primary-rgb: 248, 250, 252; }
 
@@ -225,33 +456,32 @@ body.light-theme { --bg-primary-rgb: 248, 250, 252; }
   justify-content: space-between;
   align-items: center;
   height: 70px;
-  /* Используем класс .container для отступов и ширины */
 }
 
 .site-logo {
   height: 45px;
   width: auto;
-  display: block; /* Убрать лишний отступ под лого */
+  display: block;
 }
 
 /* --- Навигация --- */
-.main-nav { display: none; } /* Скрыта по умолчанию, покажем на больших экранах */
-.mobile-nav { display: none; } /* Скрыто по умолчанию */
+.main-nav { display: none; }
+.mobile-nav { display: none; }
 .mobile-menu-btn {
-  display: block; /* Показываем кнопку бургера */
+  display: block;
   background: none;
   border: none;
-  color: var(--text-primary);
+  color: var(--text-primary); /* Цвет иконки зависит от темы */
   font-size: 1.5rem;
   cursor: pointer;
   padding: 0.5rem;
-  z-index: 1002; /* Выше навигации */
+  z-index: 1002;
 }
 
 .main-nav-list {
   list-style: none;
   display: flex;
-  gap: 1.8rem; /* Увеличен промежуток */
+  gap: 1.8rem;
 }
 .main-nav-list li a {
   text-decoration: none;
@@ -260,7 +490,7 @@ body.light-theme { --bg-primary-rgb: 248, 250, 252; }
   position: relative;
   padding-bottom: 6px;
   transition: color 0.3s ease;
-  color: var(--text-secondary);
+  color: var(--text-secondary); /* Используем вторичный цвет */
 }
 .main-nav-list li a::after {
   content: '';
@@ -270,33 +500,34 @@ body.light-theme { --bg-primary-rgb: 248, 250, 252; }
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--accent-primary);
+  background: var(--accent-primary); /* Акцентный цвет для подчеркивания */
   transition: width 0.3s ease;
 }
 .main-nav-list li a:hover {
-  color: var(--text-primary);
+  color: var(--text-primary); /* Основной цвет при наведении */
 }
 .main-nav-list li a:hover::after {
-  width: 60%; /* Подчеркивание не на всю ширину */
+  width: 60%;
 }
 
 /* --- Мобильная навигация --- */
 .mobile-nav {
     position: fixed;
-    top: 70px; /* Под шапкой */
+    top: 70px;
     left: 0;
     width: 100%;
     height: calc(100vh - 70px);
-    background-color: rgba(var(--bg-primary-rgb), 0.98); /* Почти непрозрачный фон */
+    /* Фон и цвет текста зависят от темы */
+    background-color: rgba(var(--bg-primary-rgb), 0.98);
     backdrop-filter: blur(5px);
-    transform: translateX(-100%); /* Скрыто за левым краем */
+    transform: translateX(-100%);
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     padding: 2rem;
     z-index: 999;
-    overflow-y: auto; /* Скролл, если не влезает */
+    overflow-y: auto;
 }
 .mobile-nav.active {
-    transform: translateX(0); /* Показываем */
+    transform: translateX(0);
 }
 .mobile-nav-list {
     list-style: none;
@@ -308,14 +539,14 @@ body.light-theme { --bg-primary-rgb: 248, 250, 252; }
 }
 .mobile-nav-list li a {
     text-decoration: none;
-    font-size: 1.2rem; /* Крупнее на мобильных */
+    font-size: 1.2rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--text-primary); /* Основной цвет текста */
     padding: 0.5rem 1rem;
     transition: color 0.3s ease;
 }
 .mobile-nav-list li a:hover {
-    color: var(--accent-primary);
+    color: var(--accent-primary); /* Акцентный цвет при наведении */
 }
 
 
@@ -329,6 +560,7 @@ body.light-theme { --bg-primary-rgb: 248, 250, 252; }
 /* Языковое меню */
 .lang-dropdown { position: relative; }
 .lang-btn {
+  /* Цвет фона, границы и текста зависит от темы */
   background: transparent;
   border: 1px solid var(--border-color);
   padding: 0.5rem 1rem;
@@ -342,11 +574,12 @@ body.light-theme { --bg-primary-rgb: 248, 250, 252; }
   font-size: 0.9rem;
 }
 .lang-btn:hover {
-    background: var(--card-bg);
+    /* Стили при наведении зависят от темы */
+    background: var(--card-bg); /* Используем фон карточки */
     border-color: var(--accent-primary);
     color: var(--text-primary);
 }
-.lang-btn .lang-text { display: none; } /* Скрываем текст по умолчанию */
+.lang-btn .lang-text { display: none; }
 
 .lang-dropdown-content {
   position: absolute;
@@ -356,23 +589,25 @@ body.light-theme { --bg-primary-rgb: 248, 250, 252; }
   border-radius: 8px;
   box-shadow: var(--shadow-lg);
   padding: 0.5rem 0;
+  /* Фон, граница зависят от темы */
   background: rgba(var(--bg-primary-rgb), 0.95);
   backdrop-filter: blur(5px);
   border: 1px solid var(--border-color);
-  opacity: 0; /* Скрыто по умолчанию */
+  opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
   z-index: 1001;
 }
 .lang-dropdown:hover .lang-dropdown-content,
-.lang-dropdown-content:hover /* Чтобы не скрывалось при наведении на сам список */
+.lang-dropdown-content:hover
 {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
 .lang-link {
+  /* Цвет текста и фона при наведении зависит от темы */
   color: var(--text-secondary);
   padding: 0.75rem 1.5rem;
   display: block;
@@ -380,17 +615,18 @@ body.light-theme { --bg-primary-rgb: 248, 250, 252; }
   font-size: 0.9rem;
   text-decoration: none;
 }
-.lang-link:hover {
-  background: rgba(var(--accent-rgb, 102, 255, 255), 0.1); /* Используем RGB версию акцента */
-  color: var(--accent-primary);
-}
-.lang-link.active-lang { /* Стиль для активного языка */
-    font-weight: 600;
-    color: var(--accent-primary);
-}
 /* RGB версии акцентов */
-body { --accent-rgb: 102, 255, 255; }
-body.light-theme { --accent-rgb: 14, 165, 233; }
+body { --accent-rgb: 102, 255, 255; } /* Для темной темы */
+body.light-theme { --accent-rgb: 14, 165, 233; } /* Для светлой темы */
+
+.lang-link:hover {
+  background: rgba(var(--accent-rgb), 0.1); /* Фон при наведении зависит от темы */
+  color: var(--accent-primary); /* Акцентный цвет текста при наведении */
+}
+.lang-link.active-lang {
+    font-weight: 600;
+    color: var(--accent-primary); /* Акцентный цвет для активного языка */
+}
 
 
 /* Переключатель темы */
@@ -403,27 +639,34 @@ body.light-theme { --accent-rgb: 14, 165, 233; }
 .night-mode-toggle .slider {
   position: absolute; cursor: pointer;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: #ccc;
+  /* Цвет фона зависит от темы */
+  background-color: #555; /* Базовый серый для темной */
   transition: .4s; border-radius: 26px;
 }
+/* Светлая тема переопределит это */
+
 .night-mode-toggle .slider:before {
   position: absolute; content: "";
   height: 20px; width: 20px; left: 3px; bottom: 3px;
-  background-color: white;
+  background-color: white; /* Кружок всегда белый */
   transition: .4s; border-radius: 50%;
   box-shadow: var(--shadow-sm);
 }
 .night-mode-toggle .theme-icon {
   position: absolute; top: 50%; transform: translateY(-50%);
   font-size: 12px; transition: opacity 0.4s ease;
-  pointer-events: none; /* Иконки не должны перехватывать клики */
+  pointer-events: none;
 }
+/* Цвета и видимость иконок зависят от состояния checked И ТЕМЫ */
 .night-mode-toggle .moon { left: 6px; color: #f1c40f; opacity: 0;}
 .night-mode-toggle .sun { right: 6px; color: #f39c12; opacity: 1;}
-.night-mode-toggle input:checked + .slider { background-color: var(--accent-primary); }
+/* Темная тема (checked) */
+.night-mode-toggle input:checked + .slider { background-color: var(--accent-primary); } /* Светлый циан */
 .night-mode-toggle input:checked + .slider:before { transform: translateX(24px); }
 .night-mode-toggle input:checked ~ .moon { opacity: 1; }
 .night-mode-toggle input:checked ~ .sun { opacity: 0; }
+
+/* Светлая тема (not checked) - переопределено в body.light-theme */
 
 
 /* -------- HERO SECTION -------- */
@@ -431,32 +674,63 @@ body.light-theme { --accent-rgb: 14, 165, 233; }
   padding-top: clamp(6rem, 15vh, 10rem); padding-bottom: clamp(4rem, 10vh, 8rem);
   margin-top: 70px; background: var(--bg-primary); position: relative;
 }
-.hero-section::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120%; max-width: 1000px; height: 500px; background: radial-gradient(circle, rgba(var(--accent-rgb), 0.15) 0%, transparent 70%); filter: blur(80px); z-index: 0; pointer-events: none; }
-
-.hero-container { /* Uses .container */
-  position: relative; z-index: 1;
-  text-align: center; /* !!! ЯВНОЕ ЦЕНТРИРОВАНИЕ ДЛЯ H1, P, BUTTON !!! */
+.hero-section::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 120%; max-width: 1000px; height: 500px;
+  background: radial-gradient(circle, rgba(var(--accent-rgb), 0.15) 0%, transparent 70%);
+  filter: blur(80px); z-index: 0; pointer-events: none;
 }
-.hero-container h1 { margin-bottom: 1.5rem; }
+
+.hero-container {
+  position: relative; z-index: 1; text-align: center;
+}
+.hero-container h1 {
+    margin-bottom: 1.5rem;
+    /* Стиль заголовка (градиент) уже задан в .section-title */
+}
 .hero-subtext {
     margin-bottom: 2.5rem; max-width: 700px;
-    margin-left: auto; margin-right: auto; /* Центрирование блока */
-    /* text-align: center; - Наследуется от .hero-container */
+    margin-left: auto; margin-right: auto;
+    color: var(--text-secondary); /* Используем вторичный цвет */
 }
-.accuracy-highlight { display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.8rem 1.8rem; border-radius: 30px; margin-bottom: 2.5rem; font-size: 1rem; border: 1px solid rgba(var(--accent-rgb), 0.3); background: rgba(var(--accent-rgb), 0.1); color: var(--accent-primary); backdrop-filter: blur(3px); }
+.accuracy-highlight {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    padding: 0.8rem 1.8rem; border-radius: 30px; margin-bottom: 2.5rem;
+    font-size: 1rem;
+    /* Цвет фона, границы и текста зависит от темы */
+    border: 1px solid rgba(var(--accent-rgb), 0.3);
+    background: rgba(var(--accent-rgb), 0.1);
+    color: var(--accent-primary);
+    backdrop-filter: blur(3px);
+}
 .accuracy-highlight .accuracy-icon { font-size: 1.2em; }
 .accuracy-highlight strong { font-weight: 700; }
 .hero-cta .cta-button { font-size: 1.05rem; padding: 0.9rem 2.2rem; }
-.hero-instructions { text-align: left; margin: 3rem auto 0; max-width: 600px; padding: 2rem; border-radius: 16px; font-size: 0.95rem; background: var(--card-bg); border: 1px solid var(--border-color); box-shadow: var(--current-shadow); color: var(--text-secondary); }
-.hero-instructions h3 { margin-bottom: 1rem; font-weight: 600; color: var(--text-primary); }
+.hero-instructions {
+    text-align: left; margin: 3rem auto 0; max-width: 600px;
+    padding: 2rem; border-radius: 16px; font-size: 0.95rem;
+    /* Фон, граница, тень и цвет текста зависят от темы */
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--current-shadow);
+    color: var(--text-secondary); /* Вторичный текст по умолчанию */
+}
+.hero-instructions h3 {
+    margin-bottom: 1rem; font-weight: 600;
+    color: var(--text-primary); /* Основной текст для заголовка */
+}
 .hero-instructions ol { list-style: none; padding-left: 0; }
 .hero-instructions li { margin-bottom: 0.6rem; padding-left: 1.8rem; position: relative; }
-.hero-instructions li::before { content: '✓'; position: absolute; left: 0; font-weight: bold; color: var(--accent-primary); font-size: 1.1em; }
+.hero-instructions li::before {
+    content: '✓'; position: absolute; left: 0; font-weight: bold;
+    color: var(--accent-primary); /* Акцентный цвет для галочки */
+    font-size: 1.1em;
+}
 
 
 /* -------- UPLOAD SECTION -------- */
 .upload-section {
-  background: var(--bg-secondary);
+  background: var(--bg-secondary); /* Вторичный фон темы */
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
 }
@@ -468,15 +742,17 @@ body.light-theme { --accent-rgb: 14, 165, 233; }
 
 .upload-card {
   border-radius: 16px;
-  padding: clamp(1.5rem, 5vw, 3rem); /* Адаптивные отступы */
+  padding: clamp(1.5rem, 5vw, 3rem);
+  /* Тень, граница, фон зависят от темы */
   box-shadow: var(--current-shadow);
   border: 1px solid var(--border-color);
   background: var(--card-bg);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px); /* Работает лучше на темном фоне */
 }
 
 /* Drag-and-drop */
 .drag-and-drop-area {
+  /* Граница зависит от темы */
   border: 2px dashed var(--border-color);
   border-radius: 12px;
   padding: clamp(2rem, 6vw, 3.5rem);
@@ -486,14 +762,15 @@ body.light-theme { --accent-rgb: 14, 165, 233; }
   cursor: pointer;
 }
 .drag-and-drop-area:hover,
-.drag-and-drop-area.highlight { /* Используем .highlight для JS */
+.drag-and-drop-area.highlight {
+  /* Цвета при наведении зависят от темы */
   border-color: var(--accent-primary);
   background: rgba(var(--accent-rgb), 0.05);
-  transform: scale(1.01); /* Легкое увеличение */
+  transform: scale(1.01);
 }
 .upload-icon i {
   font-size: 3rem; margin-bottom: 1rem; display: block;
-  color: var(--accent-primary);
+  color: var(--accent-primary); /* Акцентный цвет для иконки */
   transition: transform 0.3s ease;
 }
 .drag-and-drop-area:hover .upload-icon i {
@@ -501,15 +778,15 @@ body.light-theme { --accent-rgb: 14, 165, 233; }
 }
 .drag-text {
   font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: 600;
-  color: var(--text-primary);
+  color: var(--text-primary); /* Основной цвет текста */
 }
 .or-text {
   margin: 1.5rem 0; font-weight: 400; position: relative; text-align: center;
-  color: var(--text-secondary);
+  color: var(--text-secondary); /* Вторичный цвет текста */
 }
 .or-text span {
   padding: 0 15px; position: relative; z-index: 1;
-  background: var(--card-bg); /* Фон под текстом "or" */
+  background: var(--card-bg); /* Фон под текстом "or" (должен быть как у карточки) */
 }
 .or-text::before {
   content: ''; position: absolute; top: 50%; left: 0;
@@ -519,7 +796,9 @@ body.light-theme { --accent-rgb: 14, 165, 233; }
   /* Стили кнопки Browse уже заданы в .btn */
 }
 .file-requirements {
-  font-size: 0.85rem; margin-top: 1.5rem; color: var(--text-secondary); opacity: 0.9;
+  font-size: 0.85rem; margin-top: 1.5rem;
+  color: var(--text-secondary); /* Вторичный цвет текста */
+  opacity: 0.9;
 }
 
 /* Upload Footer */
@@ -530,60 +809,61 @@ body.light-theme { --accent-rgb: 14, 165, 233; }
 .file-info {
   font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  flex-shrink: 1; color: var(--text-secondary);
+  flex-shrink: 1;
+  color: var(--text-secondary); /* Вторичный цвет текста */
 }
-.file-info i { color: var(--accent-primary); }
+.file-info i { color: var(--accent-primary); } /* Акцентный цвет иконки */
 .action-buttons { display: flex; gap: 1rem; flex-shrink: 0; }
 
 .analyze-button {
   padding-left: 2rem; padding-right: 2rem;
-  position: relative; /* Для спиннера */
+  position: relative;
 }
 .analyze-button .spinner {
-    display: none; /* Скрыт по умолчанию */
-    position: absolute; /* Позиционируем внутри кнопки */
+    display: none;
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
 .analyze-button .spinner i {
-    font-size: 1.2em; /* Размер спиннера */
-    color: inherit; /* Наследуем цвет текста кнопки */
+    font-size: 1.2em;
+    color: inherit;
 }
-/* Когда кнопка в состоянии загрузки */
 .analyze-button.loading .spinner { display: inline-block; }
-.analyze-button.loading > *:not(.spinner) { /* Скрываем все, кроме спиннера */
+.analyze-button.loading > *:not(.spinner) {
     opacity: 0;
     visibility: hidden;
 }
 
 
 .clear-button {
+  /* Стили кнопки зависят от темы (определено выше) */
   background: transparent;
-  border: 1px solid var(--color-error);
-  color: var(--color-error);
-  box-shadow: none; /* Убираем тень у кнопки очистки */
+  border: 1px solid var(--error-text); /* Используем цвет текста ошибки для границы */
+  color: var(--error-text); /* Цвет текста ошибки */
+  box-shadow: none;
 }
 .clear-button:hover {
-  background: var(--error-bg);
+  background: var(--error-bg); /* Фон ошибки */
   color: var(--error-text);
-  border-color: var(--error-border);
+  border-color: var(--error-border); /* Граница ошибки */
   box-shadow: var(--shadow-sm);
-  filter: none; /* Убираем brightness */
+  filter: none;
 }
 .clear-button:disabled {
     filter: grayscale(70%);
 }
 
 /* -------- RESULT SECTION -------- */
-/* Стили из предыдущего шага, интегрированные и адаптированные */
 .result-container {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     align-items: flex-start;
-    margin-top: 4rem; /* Увеличен отступ сверху */
-    padding: clamp(1rem, 3vw, 2rem); /* Адаптивные отступы */
+    margin-top: 4rem;
+    padding: clamp(1rem, 3vw, 2rem);
+    /* Фон, граница, тень зависят от темы */
     background: var(--card-bg);
     border-radius: 16px;
     border: 1px solid var(--border-color);
@@ -602,35 +882,35 @@ body.light-theme { --accent-rgb: 14, 165, 233; }
     display: block;
     margin: 0 auto;
     border-radius: 12px;
-    box-shadow: var(--shadow-lg); /* Более выраженная тень */
-    border: 3px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+    border: 3px solid var(--border-color); /* Граница зависит от темы */
     transition: transform 0.3s ease;
 }
 .uploaded-image:hover {
-    transform: scale(1.03); /* Легкое увеличение при наведении */
+    transform: scale(1.03);
 }
 
 .diagnosis-report {
     flex: 1 1 50%;
     min-width: 300px;
-    border-radius: 0; /* Убираем, т.к. фон у родителя */
-    padding: 0; /* Убираем, т.к. фон у родителя */
-    max-width: none; /* Убираем, flexbox управляет шириной */
+    max-width: none;
     text-align: left;
-    background: none; /* Убираем фон, он у родителя */
-    border: none; /* Убираем границу, она у родителя */
-    box-shadow: none; /* Убираем тень, она у родителя */
+    /* Убираем фон/границу/тень, т.к. они у родителя */
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
 }
 
 .report-title {
-    font-size: 1.6rem; /* Крупнее */
+    font-size: 1.6rem;
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 1rem; /* Больше отступ */
-    color: var(--accent-primary);
+    border-bottom: 1px solid var(--border-color); /* Граница зависит от темы */
+    padding-bottom: 1rem;
+    color: var(--accent-primary); /* Акцентный цвет */
 }
 .report-title i { font-size: 1.2em; }
 
@@ -638,52 +918,62 @@ body.light-theme { --accent-rgb: 14, 165, 233; }
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.2rem; /* Больше отступ */
+    margin-bottom: 1.2rem;
     padding: 0.5rem 0;
     gap: 1rem;
     flex-wrap: wrap;
-    border-bottom: 1px dashed var(--border-color); /* Разделитель */
+    border-bottom: 1px dashed var(--border-color); /* Граница зависит от темы */
 }
 .report-item:last-of-type {
-    border-bottom: none; /* Убираем у последнего элемента */
+    border-bottom: none;
 }
 
 .report-label {
     font-weight: 600;
     flex-shrink: 0;
-    color: var(--text-secondary);
+    color: var(--text-secondary); /* Вторичный цвет текста */
 }
 
-.report-value { font-weight: 500; color: var(--text-primary); }
+.report-value {
+    font-weight: 500;
+    color: var(--text-primary); /* Основной цвет текста */
+}
 .prediction-value {
-    font-size: 1.3rem; /* Крупнее */
+    font-size: 1.3rem;
     font-weight: 700;
+    /* Градиентный текст, стиль зависит от темы */
     background: var(--gradient-text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    color: var(--accent-primary); /* Fallback */
 }
 
 .confidence-item { align-items: center; }
 .confidence-bar-container {
-    flex-grow: 1; height: 12px; /* Чуть толще */
-    background-color: rgba(var(--accent-rgb), 0.15); /* Фон под цвет акцента */
+    flex-grow: 1; height: 12px;
+    background-color: rgba(var(--accent-rgb), 0.15); /* Фон зависит от темы */
     border-radius: 6px; overflow: hidden; margin: 0 1rem; min-width: 100px;
 }
 .confidence-bar {
-    height: 100%; background: var(--gradient-accent);
-    border-radius: 6px; transition: width 0.8s cubic-bezier(0.25, 0.8, 0.25, 1); /* Плавнее */
+    height: 100%;
+    background: var(--gradient-accent); /* Градиент зависит от темы */
+    border-radius: 6px; transition: width 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-.confidence-value { font-size: 1.1rem; font-weight: 700; min-width: 55px; text-align: right; color: var(--accent-primary); }
+.confidence-value {
+    font-size: 1.1rem; font-weight: 700; min-width: 55px; text-align: right;
+    color: var(--accent-primary); /* Акцентный цвет */
+}
 
 
 /* --- Информация о болезни --- */
 .disease-info-wrapper {
     margin-top: 2.5rem; padding-top: 2rem;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color); /* Граница зависит от темы */
 }
 .disease-info-title {
-    font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--accent-primary);
+    font-size: 1.4rem; margin-bottom: 1.5rem;
+    color: var(--accent-primary); /* Акцентный цвет */
     font-weight: 600;
 }
 .disease-info {
@@ -692,32 +982,49 @@ body.light-theme { --accent-rgb: 14, 165, 233; }
     gap: 2rem;
 }
 .info-section {
-    background: rgba(var(--bg-primary-rgb), 0.4); /* Легкий фон для секций */
+    /* Фон, паддинг, граница зависят от темы */
+    background: rgba(var(--bg-primary-rgb), 0.4); /* Легкий фон */
     padding: 1.5rem;
     border-radius: 12px;
     border: 1px solid var(--border-color);
 }
+/* В светлой теме фон info-section будет другим */
+body.light-theme .info-section {
+    background: var(--bg-secondary); /* Светло-серый фон для вложенных секций */
+}
+
 .info-section h5 {
     font-size: 1.1rem; margin-bottom: 1rem; display: flex;
-    align-items: center; gap: 0.6rem; color: var(--text-primary);
+    align-items: center; gap: 0.6rem;
+    color: var(--text-primary); /* Основной текст */
 }
-.info-section h5 i { color: var(--accent-primary); font-size: 1.1em; }
+.info-section h5 i {
+    color: var(--accent-primary); /* Акцентный цвет иконки */
+    font-size: 1.1em;
+}
 .info-section ul { list-style: none; padding-left: 0.5rem; }
 .info-section li {
     margin-bottom: 0.6rem; padding-left: 1.5rem; position: relative;
-    color: var(--text-secondary); font-size: 0.95rem;
+    color: var(--text-secondary); /* Вторичный текст */
+    font-size: 0.95rem;
 }
 .info-section li::before {
-    content: '•'; position: absolute; left: 0; color: var(--accent-primary);
+    content: '•'; position: absolute; left: 0;
+    color: var(--accent-primary); /* Акцентный цвет маркера */
     font-weight: bold; font-size: 1.2em; line-height: 1; top: 2px;
 }
-.info-section p { line-height: 1.7; color: var(--text-secondary); font-size: 0.95rem; }
+.info-section p {
+    line-height: 1.7;
+    color: var(--text-secondary); /* Вторичный текст */
+    font-size: 0.95rem;
+}
 
 
 /* Уведомление об отсутствии данных */
 .info-notice {
     margin-top: 1.5rem; padding: 1rem 1.5rem; border-radius: 8px;
     display: flex; align-items: center; gap: 0.75rem;
+    /* Фон, граница и текст зависят от темы */
     background-color: rgba(var(--accent-rgb), 0.1);
     border: 1px solid rgba(var(--accent-rgb), 0.3);
     color: var(--accent-primary);
@@ -727,22 +1034,23 @@ body.light-theme { --accent-rgb: 14, 165, 233; }
 
 /* Сообщение об ошибке */
 .error-message {
-  color: var(--error-text); padding: 1rem 1.5rem;
-  background: var(--error-bg); border: 1px solid var(--error-border);
+  /* Цвета зависят от темы */
+  color: var(--error-text);
+  padding: 1rem 1.5rem;
+  background: var(--error-bg);
+  border: 1px solid var(--error-border);
   border-radius: 8px; margin-top: 2rem; font-weight: 500;
 }
 
 
 /* -------- MEDIA MENTIONS SECTION -------- */
 .media-mentions-section {
-  background: var(--bg-primary);
+  background: var(--bg-primary); /* Основной фон темы */
 }
-.media-container {
-  /* Используем .container для ширины и отступов */
-}
+.media-container {}
 .media-content-wrapper {
   display: grid;
-  grid-template-columns: 1fr; /* Одна колонка по умолчанию */
+  grid-template-columns: 1fr;
   gap: 3rem;
   align-items: flex-start;
 }
@@ -750,20 +1058,22 @@ body.light-theme { --accent-rgb: 14, 165, 233; }
 .video-player-container { text-align: center; }
 .video-player {
   position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
-  border-radius: 16px; /* Более скругленный */
-  box-shadow: var(--shadow-xl); /* Сильная тень */
-  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: var(--shadow-xl); /* Тень зависит от темы */
+  border: 1px solid var(--border-color); /* Граница зависит от темы */
 }
 .video-player iframe {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
 }
 .video-caption {
-  margin-top: 1.5rem; font-size: 0.9rem; font-style: italic; color: var(--text-secondary);
+  margin-top: 1.5rem; font-size: 0.9rem; font-style: italic;
+  color: var(--text-secondary); /* Вторичный текст */
 }
 /* Ссылки на медиа */
 .media-links-grid {}
 .media-links-title {
-  font-size: 1.6rem; margin-bottom: 1.5rem; font-weight: 600; color: var(--text-primary);
+  font-size: 1.6rem; margin-bottom: 1.5rem; font-weight: 600;
+  color: var(--text-primary); /* Основной текст */
 }
 .media-items {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -772,8 +1082,12 @@ body.light-theme { --accent-rgb: 14, 165, 233; }
 .media-item {
   display: flex; align-items: center; padding: 0.8rem 1.2rem;
   border-radius: 8px; text-decoration: none;
-  transition: all 0.3s ease; border: 1px solid var(--border-color);
-  gap: 0.75rem; background: var(--card-bg); color: var(--text-secondary);
+  transition: all 0.3s ease;
+  /* Фон, граница, тень, цвет текста зависят от темы */
+  border: 1px solid var(--border-color);
+  gap: 0.75rem;
+  background: var(--card-bg);
+  color: var(--text-secondary);
   box-shadow: var(--shadow-sm);
 }
 .media-item:hover {
@@ -781,37 +1095,38 @@ body.light-theme { --accent-rgb: 14, 165, 233; }
   box-shadow: var(--current-shadow);
   border-color: var(--accent-primary);
   background: rgba(var(--accent-rgb), 0.05);
-  color: var(--accent-primary);
+  color: var(--accent-primary); /* Акцентный цвет текста при наведении */
 }
 .media-item img {
   width: 24px; height: 24px; object-fit: contain; border-radius: 4px;
 }
-.media-item i { font-size: 1.2rem; width: 24px; text-align: center; color: var(--accent-primary); }
+.media-item i {
+    font-size: 1.2rem; width: 24px; text-align: center;
+    color: var(--accent-primary); /* Акцентный цвет иконки */
+}
 .media-item span { font-size: 0.9rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 
 /* -------- TEAM SECTION -------- */
 .team-section {
-  background: var(--bg-secondary);
+  background: var(--bg-secondary); /* Вторичный фон темы */
 }
-.team-container {
-  /* Используем .container */
-}
+.team-container {}
 .team-grid {
-  display: flex; justify-content: center; gap: 2.5rem; /* Больше промежуток */
+  display: flex; justify-content: center; gap: 2.5rem;
   flex-wrap: wrap; margin-top: 2rem;
 }
 .team-card {
-  width: 280px; /* Шире */
+  width: 280px;
   border-radius: 16px; padding: 2rem; text-align: center;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  /* Фон, граница, тень зависят от темы */
   border: 1px solid var(--border-color);
   background: var(--card-bg);
   box-shadow: var(--current-shadow);
   position: relative;
   overflow: hidden;
 }
-/* Эффект свечения при наведении */
 .team-card::before {
     content: '';
     position: absolute;
@@ -827,40 +1142,43 @@ body.light-theme { --accent-rgb: 14, 165, 233; }
     opacity: 1;
     transform: rotate(180deg);
 }
-.team-card > * { position: relative; z-index: 1; } /* Контент над свечением */
+.team-card > * { position: relative; z-index: 1; }
 
 .team-card:hover {
   transform: translateY(-10px);
-  box-shadow: var(--shadow-xl);
+  box-shadow: var(--shadow-xl); /* Используем более заметную тень */
 }
 .team-photo-wrapper {
   width: 130px; height: 130px; border-radius: 50%;
   margin: 0 auto 1.5rem; overflow: hidden;
-  border: 4px solid var(--accent-primary); /* Толще граница */
-  box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.3); /* Свечение вокруг фото */
+  border: 4px solid var(--accent-primary); /* Граница акцентного цвета */
+  box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.3); /* Свечение зависит от темы */
 }
 .team-photo {
   width: 100%; height: 100%; object-fit: cover; display: block;
 }
 .team-name {
-  margin: 0 0 0.4rem; font-size: 1.3rem; font-weight: 600; color: var(--text-primary);
+  margin: 0 0 0.4rem; font-size: 1.3rem; font-weight: 600;
+  color: var(--text-primary); /* Основной текст */
 }
 .team-role {
-  margin: 0 0 1.5rem; font-size: 0.95rem; color: var(--text-secondary);
+  margin: 0 0 1.5rem; font-size: 0.95rem;
+  color: var(--text-secondary); /* Вторичный текст */
 }
 .team-social { display: flex; gap: 1.2rem; justify-content: center; }
 .team-social .social-icon {
-  font-size: 1.5rem; transition: color 0.3s, transform 0.3s; color: var(--text-secondary);
+  font-size: 1.5rem; transition: color 0.3s, transform 0.3s;
+  color: var(--text-secondary); /* Вторичный цвет для иконок */
 }
 .team-social a:hover .social-icon {
-  transform: scale(1.15) rotate(5deg); /* Поворот при наведении */
-  color: var(--accent-primary);
+  transform: scale(1.15) rotate(5deg);
+  color: var(--accent-primary); /* Акцентный цвет при наведении */
 }
 
 
 /* -------- CONTACT SECTION -------- */
 .contact-section {
-  background: var(--bg-primary);
+  background: var(--bg-primary); /* Основной фон темы */
 }
 .contact-container {
   max-width: 700px;
@@ -869,8 +1187,11 @@ body.light-theme { --accent-rgb: 14, 165, 233; }
 .contact-list li {
   display: flex; align-items: center; gap: 1rem;
   padding: 1rem 1.5rem; margin-bottom: 1rem; border-radius: 12px;
-  border: 1px solid var(--border-color); background: var(--card-bg);
-  box-shadow: var(--shadow-sm); transition: all 0.3s ease;
+  /* Фон, граница, тень зависят от темы */
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
 }
 .contact-list li:hover {
     border-color: var(--accent-primary);
@@ -878,34 +1199,48 @@ body.light-theme { --accent-rgb: 14, 165, 233; }
     box-shadow: var(--shadow-md);
 }
 .contact-list .contact-icon {
-  font-size: 1.3rem; width: 28px; text-align: center; color: var(--accent-primary);
+  font-size: 1.3rem; width: 28px; text-align: center;
+  color: var(--accent-primary); /* Акцентный цвет иконки */
 }
-.contact-list span { font-size: 0.95rem; color: var(--text-secondary); }
+.contact-list span {
+    font-size: 0.95rem;
+    color: var(--text-secondary); /* Вторичный цвет для обычного текста */
+}
 .contact-list a {
-  color: var(--text-primary); /* Ссылки чуть заметнее */
+  color: var(--text-primary); /* Основной цвет для ссылок в контактах */
   text-decoration: none; font-weight: 500; transition: color 0.3s;
-  word-break: break-word; /* Перенос длинных email/номеров */
+  word-break: break-word;
 }
-.contact-list a:hover { color: var(--accent-primary); text-decoration: underline; }
+.contact-list a:hover {
+    color: var(--accent-primary); /* Акцентный цвет при наведении */
+    text-decoration: underline;
+}
 
 
 /* -------- FOOTER -------- */
 .footer {
   padding: 3rem 1rem 2rem; margin-top: auto; text-align: center;
-  background: var(--bg-secondary); border-top: 1px solid var(--border-color);
+  /* Фон и граница зависят от темы */
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
 }
-.footer-content {
-  /* Используем .container */
+.footer-content {}
+.footer-tagline {
+    font-size: 1rem; margin-bottom: 1.5rem;
+    color: var(--text-secondary); /* Вторичный текст */
 }
-.footer-tagline { font-size: 1rem; margin-bottom: 1.5rem; color: var(--text-secondary); }
 .footer-links { margin-bottom: 1.5rem; }
 .footer-links a {
   margin: 0 0.8rem; text-decoration: none; font-size: 0.9rem;
-  transition: color 0.3s ease; color: var(--text-secondary);
+  transition: color 0.3s ease;
+  color: var(--text-secondary); /* Вторичный цвет для ссылок */
 }
-.footer-links a:hover { color: var(--accent-primary); }
+.footer-links a:hover {
+    color: var(--accent-primary); /* Акцентный цвет при наведении */
+}
 .github-banner {
     margin-bottom: 1.5rem;
+    /* Фон, граница, цвет текста зависят от темы */
     border-color: var(--border-color);
     background: var(--card-bg);
     color: var(--text-primary);
@@ -915,28 +1250,30 @@ body.light-theme { --accent-rgb: 14, 165, 233; }
     color: var(--accent-primary);
     border-color: var(--accent-primary);
     background: rgba(var(--accent-rgb), 0.1);
-    filter: none;
+    filter: none; /* Убираем brightness, если был у .btn:hover */
 }
-.copyright { font-size: 0.85rem; color: var(--text-secondary); opacity: 0.8; }
+.copyright {
+    font-size: 0.85rem;
+    color: var(--text-secondary); /* Вторичный текст */
+    opacity: 0.8;
+}
 
 
 /* -------- RESPONSIVENESS & MOBILE FIXES -------- */
 
-/* Планшеты и небольшие десктопы */
 @media (min-width: 769px) {
-    .main-nav { display: block; } /* Показываем основную навигацию */
-    .mobile-menu-btn { display: none; } /* Скрываем бургер */
-    .lang-btn .lang-text { display: inline; } /* Показываем текст "Language" */
-    .media-content-wrapper { grid-template-columns: 1fr 1fr; } /* 2 колонки для медиа */
+    .main-nav { display: block; }
+    .mobile-menu-btn { display: none; }
+    .lang-btn .lang-text { display: inline; }
+    .media-content-wrapper { grid-template-columns: 1fr 1fr; }
 }
 
-/* Мобильные устройства */
 @media (max-width: 768px) {
-    .header-content { padding: 0 1rem; } /* Уменьшаем отступы в шапке */
-    .controls-container { gap: 0.5rem; } /* Уменьшаем промежутки в контролах */
-    .lang-btn { padding: 0.4rem 0.8rem; } /* Уменьшаем кнопку языка */
+    .header-content { padding: 0 1rem; }
+    .controls-container { gap: 0.5rem; }
+    .lang-btn { padding: 0.4rem 0.8rem; }
 
-    .hero-section { padding-top: 4rem; padding-bottom: 3rem; margin-top: 60px; /* Если шапка стала ниже */ }
+    .hero-section { padding-top: 4rem; padding-bottom: 3rem; margin-top: 70px; }
     .hero-container h1 { font-size: 2.5rem; }
     .hero-subtext { font-size: 1rem; }
 
@@ -949,21 +1286,20 @@ body.light-theme { --accent-rgb: 14, 165, 233; }
     .upload-footer { flex-direction: column; align-items: stretch; gap: 1rem; }
     .action-buttons { justify-content: center; }
 
-    /* Исправление для секции результатов на мобильных (уже было в прошлом CSS) */
     .result-container {
         flex-direction: column; align-items: center; gap: 1.5rem; padding: 1rem;
     }
-    .image-preview { max-width: 90%; width: 100%; margin-bottom: 1rem; }
-    .diagnosis-report { width: 100%; max-width: 100%; padding: 0; } /* Убираем лишнее */
+    .image-preview { max-width: 90%; width: 100%; margin-bottom: 1rem; flex-basis: auto; } /* Исправлено */
+    .diagnosis-report { width: 100%; max-width: 100%; padding: 0; flex-basis: auto; } /* Исправлено */
     .report-item { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
     .confidence-bar-container { margin-left: 0; margin-right: 0.5rem; }
-    .disease-info { grid-template-columns: 1fr; } /* 1 колонка для информации */
+    .disease-info { grid-template-columns: 1fr; }
 
-    .media-content-wrapper { grid-template-columns: 1fr; } /* 1 колонка для медиа */
-    .media-items { grid-template-columns: 1fr; } /* Ссылки друг под другом */
+    .media-content-wrapper { grid-template-columns: 1fr; }
+    .media-items { grid-template-columns: 1fr; }
 
     .team-grid { gap: 1.5rem; }
-    .team-card { width: calc(100% - 2rem); max-width: 300px; } /* Карточки команды шире */
+    .team-card { width: calc(100% - 2rem); max-width: 300px; }
 
     .contact-list li { padding: 0.8rem 1rem; }
 
@@ -971,17 +1307,17 @@ body.light-theme { --accent-rgb: 14, 165, 233; }
 }
 
 @media (max-width: 480px) {
-    html { font-size: 95%; } /* Чуть уменьшаем базовый шрифт */
+    html { font-size: 95%; }
     .container { padding-left: 1rem; padding-right: 1rem; }
-    .header-content { height: 60px; } /* Ниже шапка */
+    .header-content { height: 60px; }
     .site-logo { height: 35px; }
     .hero-section { margin-top: 60px; }
     .mobile-nav { top: 60px; height: calc(100vh - 60px); }
     .hero-container h1 { font-size: 2rem; }
     .section-title { font-size: 1.8rem; }
     .btn { padding: 0.7rem 1.5rem; font-size: 0.9rem; }
-    .action-buttons { flex-direction: column; align-items: stretch; } /* Кнопки друг под другом */
-    .action-buttons .btn { width: 100%; } /* Кнопки на всю ширину */
+    .action-buttons { flex-direction: column; align-items: stretch; }
+    .action-buttons .btn { width: 100%; }
 }
 
 /* Spinner Animation */
