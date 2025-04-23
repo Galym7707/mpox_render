@@ -432,3 +432,10 @@ msgstr "Конкретная информация недоступна."
 # msgid "3. To get full disease details, select your preferred language from the top right."
 # msgstr "3. Чтобы получить полную информацию о заболевании, выберите язык в правом верхнем углу."
 
+#: templates/index.html:301
+msgid "Gaziz Nigmetbek"
+msgstr "Gaziz Nigmetbek"
+
+#: templates/index.html:303
+msgid "Data Analyst & Content Creator"
+msgstr "Аналитик данных и Контент-креатор"

@@ -327,3 +327,8 @@ msgstr "No specific information available."
 
 # ... Add any other missing strings here ...
 
+msgid "Data Analyst & Content Creator"
+msgstr "Data Analyst & Content Creator"
+
+msgid "Gaziz Nigmetbek"
+msgstr "Gaziz Nigmetbek"

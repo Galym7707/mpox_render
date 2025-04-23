@@ -284,6 +284,20 @@
               <a href="mailto:mpoxdetection@gmail.com" aria-label="Artyom Email"><i class="fas fa-envelope social-icon"></i></a>
             </div>
           </div>
+            <!-- START: Added Team Member Card for Gaziz Nigmetbek -->
+            <div class="team-card" data-aos="zoom-in-up" data-aos-delay="400">
+              <div class="team-photo-wrapper">
+                <img src="{{ url_for('static', filename='img/member3.jpg') }}" alt="Gaziz Nigmetbek" class="team-photo">
+              </div>
+              <!-- ИЗМЕНЕНИЕ 1: Добавить _() вокруг имени -->
+              <h3 class="team-name">{{ _('Gaziz Nigmetbek') }}</h3>
+              <!-- ИЗМЕНЕНИЕ 2: Заменить текст роли внутри _() -->
+              <p class="team-role">{{ _('Data Analyst & Content Creator') }}</p>
+              <div class="team-social">
+                <!-- Социальные ссылки (оставить как есть или добавить) -->
+              </div>
+            </div>
+            <!-- END: Added Team Member Card for Gaziz Nigmetbek -->
         </div>
       </div>
     </section>
@@ -341,9 +355,10 @@
   </footer>
 
   <script>
+    // Ensure this is populated correctly by your Flask backend
     window.translations = {{ translations_json | tojson }};
   </script>
-  
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>

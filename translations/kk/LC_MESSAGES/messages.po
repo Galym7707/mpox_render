@@ -431,3 +431,10 @@ msgstr "2. \"Талдау\" түймесін басып, AI болжауын к�
 msgid "3. To get full disease details, select your preferred language from the top right." # Бұл жол ескірген болуы мүмкін
 msgstr "3. Ауру туралы толық ақпарат алу үшін оң жақ жоғарғы бұрыштан тілді таңдаңыз."
 
+#: templates/index.html:301
+msgid "Gaziz Nigmetbek"
+msgstr "Gaziz Nigmetbek"
+
+#: templates/index.html:303
+msgid "Data Analyst & Content Creator"
+msgstr "Деректер талдаушысы және Контент жасаушы"
