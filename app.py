@@ -1,4 +1,3 @@
-# C:\Users\galym\Desktop\monkeypox_final\app.py
 import os
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 
@@ -8,22 +7,22 @@ from flask_babel import Babel, _
 from PIL import Image
 import numpy as np
 from tensorflow.keras.models import load_model
-# !!! Убедитесь, что импорт preprocess_input СООТВЕТСТВУЕТ вашей модели !!!
-# from tensorflow.keras.applications.efficientnet import preprocess_input
-from tensorflow.keras.applications.resnet_v2 import preprocess_input # Оставил для примера
+
+from tensorflow.keras.applications.resnet_v2 import preprocess_input 
 import logging
 from werkzeug.utils import secure_filename
 from translations.disease_data import disease_info
 import datetime
 import json
 import shutil
-
+import requests
 app = Flask(__name__, static_folder='static', template_folder='templates')
 app.secret_key = "mysecretkey"
 app.config['BABEL_DEFAULT_LOCALE'] = 'en'
 app.config['BABEL_SUPPORTED_LOCALES'] = ['en', 'ru', 'kk']
 app.config['BABEL_TRANSLATION_DIRECTORIES'] = 'translations'
 
+DROPBOX_LINK = "https://www.dropbox.com/scl/fi/m9a3rj98z7zcnxxkeqv4j/simple_model.keras?rlkey=fw291bkxrh38sr5swbnouosom&dl=1"
 UPLOAD_FOLDER = os.path.join(app.static_folder, 'uploads')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -31,7 +30,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 babel = Babel(app, locale_selector=lambda: g.get('locale', 'en'))
 
 # --- Загрузка модели и маппинга ---
-MODEL_PATH = os.path.join('models', 'simple_model.keras') # Укажите ПРАВИЛЬНЫЙ путь
+MODEL_PATH = os.path.join('models', 'simple_model.keras') 
 MAPPING_PATH = os.path.join('data', 'label_mapping.json')
 
 model = None
@@ -42,11 +41,25 @@ num_classes = 0
 # Улучшаем формат логов
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+def download_model():
+    if not os.path.exists(MODEL_PATH):
+        print("📦 Модель не найдена. Скачиваю с Dropbox...")
+        response = requests.get(DROPBOX_LINK, stream=True)
+        if response.status_code == 200:
+            os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
+            with open(MODEL_PATH, 'wb') as f:
+                for chunk in response.iter_content(chunk_size=8192):
+                    f.write(chunk)
+            print("✅ Модель успешно скачана!")
+        else:
+            raise Exception(f"Ошибка при скачивании модели: {response.status_code}")
+
 try:
+    download_model()  # ⬅️ Вызов скачивания с Dropbox
+
     logging.info(f"Попытка загрузки модели из: {MODEL_PATH}")
     if os.path.exists(MODEL_PATH):
         model = load_model(MODEL_PATH)
-        logging.info("✅ Модель успешно загружена!")
     else:
         logging.error(f"КРИТИЧЕСКАЯ ОШИБКА: Файл модели не найден: {MODEL_PATH}")
 
@@ -97,7 +110,6 @@ def inject_current_year():
 
 @app.route('/')
 def index():
-    # ... (код без изменений) ...
     prediction_key = session.get('prediction')
     image_url = session.get('image_url')
     confidence = session.get('confidence')
