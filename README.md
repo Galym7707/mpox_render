@@ -1,4 +1,4 @@
-# Monkeypox Detection Bot
+# Monkeypox Detection  (for railway deployment modification in app.py ).
 
 Monkeypox Detection Bot — это веб-приложение на основе Flask, предназначенное для распознавания симптомов оспы обезьян с использованием искусственного интеллекта.
 
