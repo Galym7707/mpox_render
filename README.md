@@ -1,39 +1,28 @@
-# Monkeypox Detection  (for railway deployment modification in app.py ).
-
-Monkeypox Detection Bot — это веб-приложение на основе Flask, предназначенное для распознавания симптомов оспы обезьян с использованием искусственного интеллекта.
-
-## 🚀 Deployment
-
-1. Fork this repository
-2. Create Railway account
-3. Connect your GitHub account
-4. Deploy using this config:
+1. **Build**
 
 ```yaml
 build:
   command: pip install -r requirements.txt && python app.py
 environment:
   FLASK_ENV: production
+```
 
-## 🛠 Структура проекта
+2. **Project Structure**
 
-- `app.py`: основной файл приложения Flask.
-- `models/`: содержит обученные модели и вспомогательные файлы для работы искусственного интеллекта.
-- `templates/`: HTML-шаблоны для фронтенда.
-- `static/`: статические файлы, включая CSS, JavaScript и изображения.
-- `translations/`: файлы перевода для многоязычной поддержки.
-- `requirements.txt`: список зависимостей Python.
-- `venv/`: виртуальное окружение (создаётся локально при настройке).
+ `app.py`: Main Flask application file.
+ `models/`: Stores trained models and supporting AI-related files.
+ `templates/`: HTML templates for the frontend.
+ `static/`: Static assets, including CSS, JavaScript, and images.
+ `translations/`: Translation files for multilingual support.
+ `requirements.txt`: List of Python dependencies.
+ `venv/`: Virtual environment (created locally during setup).
 
-## 🧰 Инструменты и технологии
+3. **Tools and Technologies**
 
-- **Flask**: веб-фреймворк для создания backend.
-- **TensorFlow**: библиотека для разработки моделей машинного обучения.
-- **Pillow**: обработка изображений.
-- **Flask-Babel**: поддержка перевода и локализации.
+ **Flask**: Web framework for building the backend.
+ **TensorFlow**: Library for developing machine learning models.
+ **Pillow**: Image processing.
+ **Flask-Babel**: Translation and localization support.
 
-
-## 📞 Поддержка
-
-Если у вас возникли вопросы или проблемы с проектом, пожалуйста, свяжитесь со мной через мой профиль GitHub: [Galym7707](https://github.com/Galym7707),
-по электронной почте: galymtashtek@gmail.com или в Telegram: [@kemmeq](https://t.me/kemmeq).
+4. **Support**
+   If you have any questions or run into issues, feel free to contact me via GitHub: [Galym7707](https://github.com/Galym7707), email: [galymtashtek@gmail.com](mailto:galymtashtek@gmail.com), or Telegram: [@kemmeq](https://t.me/kemmeq).
